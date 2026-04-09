@@ -1,0 +1,37 @@
+{
+  "id": "birthday_party_guide",
+  "title": "Birthday Party Planning Guide",
+  "category": "event_planning",
+  "description": "Comprehensive step-by-step guide for planning birthday parties of all sizes",
+  "tags": ["birthday", "party", "planning", "checklist", "timeline"],
+  "chunks": [
+    {
+      "chunk_id": "birthday_01",
+      "text": "Birthday Party Planning Timeline: 4-6 Weeks Before. Start by setting your budget before anything else — common ranges are $100-200 for intimate gatherings (under 15 guests), $200-400 for medium parties (15-30 guests), and $400+ for larger celebrations. Choose your date and time: afternoon parties (2-5pm) work best for children, evening parties (7-10pm) for adults. Decide on your venue — home parties save 30-40% vs. rented spaces. For home parties, assess indoor vs. outdoor space needs based on guest count. Send save-the-dates for parties over 20 guests."
+    },
+    {
+      "chunk_id": "birthday_02",
+      "text": "Birthday Party Planning: 2-4 Weeks Before. Send formal invitations (physical or digital) with RSVP deadline 1 week before the party. Plan your menu based on confirmed dietary restrictions from RSVPs. Order or plan the birthday cake — lead time needed: 1-2 weeks for custom bakery cakes, 2-3 days for grocery store cakes. Confirm any hired entertainment (clowns, face painters, DJs) at least 2 weeks in advance. Purchase non-perishable decorations and supplies. Create a shopping list divided by category: food, beverages, decorations, tableware, activities."
+    },
+    {
+      "chunk_id": "birthday_03",
+      "text": "Birthday Party Planning: 1 Week Before. Confirm final guest count and adjust food quantities. Prepare games and activities list. Make a timeline for the day. Assign tasks to helpers if available. Prepare a playlist (2-3 hours of music for a 2-hour party). Check outdoor weather forecast and prepare backup indoor plan. Confirm all vendor deliveries and their arrival times. Prepare gift opening area or registry info if needed."
+    },
+    {
+      "chunk_id": "birthday_04",
+      "text": "Birthday Party: Day Before. Buy all perishable groceries. Prepare make-ahead dishes and refrigerate. Set up non-food decorations: banners, balloons (inflate day-of), table centerpieces. Prepare party favor bags if applicable. Charge any music or entertainment equipment. Clean and arrange the party space. Set up tables and chairs. Prepare drinks station with cups, ice, and beverage options."
+    },
+    {
+      "chunk_id": "birthday_05",
+      "text": "Birthday Party: Day Of Schedule. 2-3 hours before: Final food preparation, inflate balloons, final decoration touches. 1 hour before: Set up food and drinks stations, prepare ice, set out tableware. 30 minutes before: Final walkthrough, yourself ready. At start time: Welcome guests, offer drinks. During party: Serve food within first 30-45 minutes of guest arrival. Games/activities in middle portion. Cake cutting 30-45 minutes before end. Gift opening (optional) after cake. 30 minutes before end: Begin cleanup of food items."
+    },
+    {
+      "chunk_id": "birthday_06",
+      "text": "Birthday Party Themes and Age Considerations. Children under 5: Keep parties short (1.5-2 hours), simple activities, afternoon timing (2-4pm). Children 6-12: 2-3 hours, organized games work well, popular themes include superheroes, princesses, sports, unicorns. Teenagers: Evening parties, music-focused, themed or social activities. Adults: Evening or brunch/afternoon depending on preference, often less structured. For milestone birthdays (30, 40, 50, etc.), consider surprise element, formal dress code, or themed decade party."
+    },
+    {
+      "chunk_id": "birthday_07",
+      "text": "Birthday Party Common Mistakes to Avoid. Not accounting for setup and cleanup time in the schedule — add 1-2 hours before and after the party. Underestimating food quantities — plan for 20% more than expected. Forgetting ice — plan for 1-1.5 lbs of ice per guest for drinks. Not having a wet weather backup for outdoor parties. Forgetting candles and a lighter for the birthday cake. Not assigning a designated photographer or creating a photo sharing group. Overscheduling activities leaving no free time for socializing."
+    }
+  ]
+}

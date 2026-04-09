@@ -1,0 +1,29 @@
+{
+  "id": "accessibility_guide",
+  "title": "Event Accessibility Guide",
+  "category": "accessibility",
+  "description": "Accessibility considerations for household events including mobility, sensory, and age-related accommodations",
+  "tags": ["accessibility", "mobility", "wheelchair", "elderly", "children", "sensory"],
+  "chunks": [
+    {
+      "chunk_id": "access_01",
+      "text": "Physical Accessibility for Home Events. Wheelchair and mobility aid access: Ensure at least 36-inch wide pathways throughout event space. Remove rugs or secure edges to prevent tripping. Clear path to accessible bathroom. Provide seating options — not everyone can stand for extended periods. If venue has steps, arrange for assistance or alternative entry. For outdoor events: level ground or firm surface for wheelchairs, avoid grass for wheelchair users unless on firm paths."
+    },
+    {
+      "chunk_id": "access_02",
+      "text": "Elderly Guest Considerations. Seating: Provide chairs with armrests for easier standing/sitting. Avoid low seating (floor cushions, low sofas) as primary option. Lighting: Ensure adequate lighting, especially in walkways and near food tables. Noise: Consider a quieter seating area away from speakers/music. Temperature: Elderly guests often feel colder — ensure adequate warmth, especially at outdoor events. Timing: Earlier start and end times accommodate those who tire earlier. Food: Soft food options for those with dental concerns; clearly label ingredients."
+    },
+    {
+      "chunk_id": "access_03",
+      "text": "Child Safety and Accessibility. Childproofing for events with young children: Secure or remove fragile items within reach. Cover electrical outlets in accessible areas. Designate a safe play area away from main traffic. Keep hot food and beverages away from children's reach. Baby changing area with privacy. Age-appropriate seating: high chairs for toddlers, booster seats for young children. Supervision: If many young children are present, consider having a designated child activity area with adult supervision."
+    },
+    {
+      "chunk_id": "access_04",
+      "text": "Sensory Considerations. Guests with sensory sensitivities (autism spectrum, sensory processing differences): Offer a quiet room away from loud music. Avoid strong perfumes/scented candles. Provide a schedule/agenda so guests know what to expect. Keep lighting adjustable — not too harsh. Food sensitivities vs. dietary: Separate concept from traditional dietary restrictions. Texture sensitivities are common — offer varied food textures. Loud noise sensitivity: consider lowering music during meal times."
+    },
+    {
+      "chunk_id": "access_05",
+      "text": "Inclusive Event Communication. Send invitations in accessible formats: large print available on request, digital formats compatible with screen readers. RSVP form: include questions about accessibility needs (mobility, dietary, sensory). Day-of communication: Designate a contact person for accessibility needs. Clearly label all food items including allergens. Provide event schedule in writing so guests with hearing difficulties can follow along. Consider whether your event could accommodate a sign language interpreter if needed."
+    }
+  ]
+}

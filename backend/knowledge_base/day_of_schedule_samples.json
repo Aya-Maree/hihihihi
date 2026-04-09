@@ -1,0 +1,29 @@
+{
+  "id": "day_of_schedule_samples",
+  "title": "Day-Of Event Schedule Templates",
+  "category": "scheduling",
+  "description": "Time-blocked schedule templates for 2-hour, 3-hour, and 4-hour household events",
+  "tags": ["schedule", "timeline", "day-of", "timing", "blocks", "activities"],
+  "chunks": [
+    {
+      "chunk_id": "schedule_01",
+      "text": "2-Hour Children's Birthday Party Schedule Template (3:00 PM - 5:00 PM). 1:00 PM: Host arrives, setup begins — decorations, food stations, activity areas. 2:30 PM: Final food prep complete, personal readiness. 3:00 PM: Guest arrival window (first 20 min). Welcome drinks/juice for kids, parents offered beverages. 3:20 PM: Organized activity 1 (craft, game, or activity) — 20 minutes. 3:40 PM: Food service — cake, snacks, beverages. Sing Happy Birthday, cake cutting. 4:10 PM: Free play, open gifts (optional), parent socialization. 4:40 PM: Party winding down, distribute favors. 5:00 PM: Party ends. 5:00-6:00 PM: Cleanup."
+    },
+    {
+      "chunk_id": "schedule_02",
+      "text": "3-Hour Adult Birthday Party Schedule Template (7:00 PM - 10:00 PM). 5:00 PM: Setup begins — 2 hours before guests. 6:30 PM: Final food prep, personal readiness. 7:00 PM: Guest arrival window. Welcome drinks served immediately. 7:00-7:45 PM: Cocktail hour — appetizers, drinks, mingling. 7:45 PM: Transition to dinner/main food service (for sit-down dinners, call guests to seats). 8:00 PM: Main food service. 8:30 PM: Birthday cake/dessert, Happy Birthday song. 9:00-10:00 PM: Dancing, music, continued socializing, dessert table available. 10:00 PM: Party ends. 10:00-11:30 PM: Cleanup."
+    },
+    {
+      "chunk_id": "schedule_03",
+      "text": "4-Hour Holiday Gathering Schedule Template (2:00 PM - 6:00 PM). 12:00 PM: Setup begins. 1:30 PM: Final food preparation. 2:00 PM: Guest arrival, welcome drinks and appetizers. 2:00-3:00 PM: Cocktail hour — appetizers served, guests settle in. 3:00 PM: Main meal service begins. Announce food is ready, guests serve themselves (buffet) or are seated. 3:45 PM: Dessert service begins, coffee/tea. 4:15 PM: Activities or group games (optional) OR continued conversation. 5:00 PM: Second round of snacks/leftovers available for continuing guests. 5:30 PM: Wind-down, host signals closing time gracefully. 6:00 PM: Event ends. 6:00-8:00 PM: Cleanup with helpers."
+    },
+    {
+      "chunk_id": "schedule_04",
+      "text": "Dinner Party Schedule Template (Formal, 3-4 Hours). 5:00 PM: Prep completed, host gets ready. 6:30 PM: Final table setting, candles lit, music on. 7:00 PM: Guests arrive, cocktails and appetizers served at table or in living room. 7:30 PM: Move to dining table (for sit-down dinners). First course served. 8:00 PM: Main course served. Clear appetizer plates before serving. 9:00 PM: Dessert and coffee served. 9:30 PM: After-dinner conversation, optional after-dinner drinks. 10:30-11:00 PM: Event concludes. General rule: each course approximately 30-40 minutes, buffer 10-15 min between courses for kitchen."
+    },
+    {
+      "chunk_id": "schedule_05",
+      "text": "Critical Timing Dependencies in Event Schedules. Food timing dependencies: Frozen items need 24-48 hours to thaw in refrigerator. Marinating needs 4-24 hours. Large roasts need 30 min rest time after cooking. Ice must be purchased day-of. Cake from bakery needs day-before or day-of pickup. Guest arrival pattern: 20-30% arrive on time, 50% arrive 10-15 minutes late, 20% arrive 20-30 minutes late. Buffer your arrival window by 20-30 minutes. Cleanup dependencies: Leftovers need refrigeration within 2 hours of food being served. Borrowed equipment must be returned same evening or next day."
+    }
+  ]
+}

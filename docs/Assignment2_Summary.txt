@@ -1,0 +1,59 @@
+================================================================================
+              ASSIGNMENT 2 SUMMARY - HOUSEHOLD EVENT PLANNER
+================================================================================
+
+1. WHAT IS WORKING
+--------------------------------------------------------------------------------
+- User authentication (register, login, logout)
+- Household creation and member management
+- Event creation with categories and time/location
+- Task creation with priority and due dates
+- Task assignment to household members
+- Category management (create custom categories)
+- SQLite database with all required tables
+- Working Python prototype with CLI interface
+
+The prototype successfully demonstrates 6 use cases (UC1, UC2, UC3, UC6, UC7, UC10).
+All automated tests pass.
+
+
+2. WHAT IS NOT YET COMPLETE
+--------------------------------------------------------------------------------
+- Recurring events (UC11) - database tables exist but logic not implemented
+- Reminders (UC9) - database ready, notification system pending
+- Guest invitations (UC12) - table exists, RSVP tracking not built
+- Calendar view - only list views available
+- GUI - command-line only, no desktop GUI yet
+- Full Android app integration
+
+
+3. DESIGN DECISIONS SINCE DELIVERABLE 1
+--------------------------------------------------------------------------------
+- Changed from Android mobile app to Python desktop prototype
+- Selected 4-tier Layered Architecture (UI, Business Logic, Data Access, Storage)
+- Using SQLite for local database storage
+- All 13 use cases fully documented with detailed specifications
+- Database schema includes 8 tables with proper relationships
+
+
+4. TARGET TIER
+--------------------------------------------------------------------------------
+Tier 2 - Complete System Design + Working Prototype
+- All 8 design document sections complete
+- Working prototype demonstrating core functionality
+- Database design with full SQL schema
+
+
+5. REMAINING IMPLEMENTATION PLAN
+--------------------------------------------------------------------------------
+Phase 3:
+- Build desktop GUI (Tkinter/PyQt)
+- Implement reminders and recurring events
+- Add calendar view
+- Complete guest invitation system
+- Final testing and polish
+
+
+================================================================================
+FILES SUBMITTED: System Design Document, Prototype Code (6 Python files)
+================================================================================

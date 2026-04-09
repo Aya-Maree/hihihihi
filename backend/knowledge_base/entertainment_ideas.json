@@ -1,0 +1,29 @@
+{
+  "id": "entertainment_ideas",
+  "title": "Entertainment Ideas for Household Events",
+  "category": "entertainment",
+  "description": "Age-appropriate entertainment options, DIY game ideas, and budget recommendations",
+  "tags": ["entertainment", "games", "activities", "music", "children", "adults", "DIY"],
+  "chunks": [
+    {
+      "chunk_id": "entertain_01",
+      "text": "Children's Entertainment Options (Ages 5-12). Active games: musical chairs, freeze dance, treasure hunt, relay races (outdoor). Craft activities: painting, bracelet making, slime-making station, decorating cookies or cupcakes. Passive entertainment: hired face painter ($100-200/2 hrs), magician ($150-300/45 min show), bubble performer. DIY carnival: ring toss ($10 supplies), duck pond, beanbag toss — kids love carnival games and prizes cost $0.50-2 each. Movie corner: for longer events, set up a movie in a separate room as an option. Activity packs: coloring books + crayons ($2-3 per child) as gift + activity."
+    },
+    {
+      "chunk_id": "entertain_02",
+      "text": "Adult Entertainment Options. Music-focused: Spotify playlist (free), rent a karaoke machine ($75-150/day), hire a DJ ($400-800), live acoustic musician ($200-400/2 hrs). Interactive games: trivia night (free to DIY, apps available), Pictionary, Jackbox Games (multiplayer phone-based games, $25-35), Escape room box ($30-50). Outdoor games: cornhole, bocce ball, croquet, giant Jenga — most can be DIY for $20-50 or rented. Casino night theme: poker sets + play money ($30-50). Photo activities: DIY photo booth with props ($20-30) or scavenger hunt."
+    },
+    {
+      "chunk_id": "entertain_03",
+      "text": "Multi-Generational Entertainment. Activities that work across ages: Simple card games (Uno, Go Fish), trivia with different difficulty levels, outdoor lawn games (everyone can participate at their own pace), cooking/decorating activities, group photo activities. Avoid: Activities requiring significant physical ability that excludes elderly guests. Activities with complex rules that exclude young children. Digital-only activities that exclude those not comfortable with technology. Best approach: offer 2-3 activity options simultaneously so different age groups can self-select."
+    },
+    {
+      "chunk_id": "entertain_04",
+      "text": "Music Planning for Events. Create playlists in advance — 1.5x the length of the party (for a 3-hour party, create a 4.5-hour playlist). Volume guidelines: background music during dinner at 60-70 dB (conversation-friendly), party music 75-85 dB (energizing but not ear-damaging). Spotify party playlists: search for pre-made playlists by decade, genre, or mood. Consider guests' age range in song selection — mix decades. Special moments: have the birthday song cued up and ready to play at the right moment. Outdoor events: Bluetooth speaker minimum 20W for outdoor spaces; 50W+ for groups over 20."
+    },
+    {
+      "chunk_id": "entertain_05",
+      "text": "DIY Entertainment Budget Guide. DIY photo booth: $15-30 (photo props, backdrop, stand or wall space). Trivia game (handmade): $0 with a free template. Scavenger hunt: $0-10 for printed clues/prizes. Lawn games (DIY): Cornhole boards $40-50 to build, Bocce ball $20-30. Party games kit (store-bought): $25-40 for Codenames, Exploding Kittens, or similar. Karaoke on YouTube (TV + microphone): $20-40 for a basic USB microphone, free songs on YouTube. Budget guideline: entertainment should be 10-15% of total event budget. For a $300 budget, allocate $30-45 to entertainment."
+    }
+  ]
+}

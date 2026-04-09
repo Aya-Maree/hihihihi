@@ -1,0 +1,29 @@
+{
+  "id": "budget_planning_guide",
+  "title": "Event Budget Planning Guide",
+  "category": "budget",
+  "description": "Budget breakdown templates, cost categories, and money-saving tips for household events",
+  "tags": ["budget", "cost", "money", "savings", "planning", "expenses"],
+  "chunks": [
+    {
+      "chunk_id": "budget_01",
+      "text": "Event Budget Breakdown by Category (Percentage of Total). Food and beverages: 40-50% of total budget. Decorations: 15-20%. Venue (if rented): 20-30%. Entertainment: 10-15%. Invitations and stationery: 2-5%. Party favors: 5-10%. Miscellaneous/contingency: 5-10%. Example for $300 budget (25 guests): Food/beverages $135 (45%), Decorations $55 (18%), Entertainment $35 (12%), Invitations $15 (5%), Party favors $25 (8%), Contingency $35 (12%)."
+    },
+    {
+      "chunk_id": "budget_02",
+      "text": "Budget by Event Type and Guest Count. Intimate gathering (10-15 guests): $100-250. Standard household party (20-30 guests): $250-500. Larger celebration (30-50 guests): $500-1000. Per-person cost breakdown: Budget tier: $8-15/person. Mid-range: $15-25/person. Premium: $25-40/person. These figures include food, beverages, decorations, and basic supplies but not venue rental. Home venues save $150-400 vs. rented halls for parties under 50 guests."
+    },
+    {
+      "chunk_id": "budget_03",
+      "text": "Budget Saving Strategies. Food savings: Cook at home vs. catering saves 50-70%. Buy ingredients in bulk from warehouse stores. Make simple dishes like pasta, tacos, or chili that feed many people affordably. DIY cake vs. custom bakery cake saves $30-80. Decoration savings: Dollar store and craft store supplies. Balloon decorations are very cost-effective ($20-40 for impactful displays). Reusable tableware instead of disposable. Use natural greenery from garden. Entertainment savings: Create your own playlist (free) vs. DJ ($200-500). DIY photo booth with props ($15-25 total)."
+    },
+    {
+      "chunk_id": "budget_04",
+      "text": "Hidden Costs and Budget Pitfalls. Ice: Often forgotten — budget $0.50-1.00 per guest for bagged ice. Extra bags/garbage supplies: $10-20 for cleanup. Serving equipment rental (if needed): Chafing dishes $15-25 each per day. Extension cords, power strips for outdoor events. Paper towels, extra napkins beyond table settings. Parking and transportation if hosting at a venue. Contingency fund: Always reserve 10% of budget for unexpected costs. Common overspend areas: food quantities (over-purchasing perishables), decoration impulse buys, last-minute additions."
+    },
+    {
+      "chunk_id": "budget_05",
+      "text": "Budget Tracking Template. Track expenses in these categories: Venue (deposit, balance, setup fee), Food (groceries, catering, cake), Beverages (alcohol, soft drinks, ice), Decorations (purchased, rented, DIY supplies), Tableware (plates, cups, utensils, napkins), Entertainment (music, activities, games), Invitations (printing, postage, digital service fees), Party favors, Labor (if any), Miscellaneous. Update running total after each purchase. Compare against budget allocation percentages weekly during planning period."
+    }
+  ]
+}

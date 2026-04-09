@@ -1,0 +1,33 @@
+{
+  "id": "shopping_list_templates",
+  "title": "Event Shopping List Templates",
+  "category": "shopping",
+  "description": "Categorized shopping list templates for different event types and guest counts",
+  "tags": ["shopping", "groceries", "supplies", "quantities", "list", "food"],
+  "chunks": [
+    {
+      "chunk_id": "shopping_01",
+      "text": "Tableware and Supplies per Guest Count. For 10 guests: 12 plates (20% buffer), 12 cups, 12 sets of cutlery, 20 napkins, 2 rolls paper towels, 3 garbage bags. For 20 guests: 24 plates, 24 cups, 24 cutlery sets, 40 napkins, 3 rolls paper towels, 5 garbage bags. For 30 guests: 36 plates, 36 cups, 36 cutlery sets, 60 napkins, 4 rolls paper towels, 6 garbage bags. For 50 guests: 60 plates, 60 cups, 60 cutlery sets, 100 napkins, 6 rolls paper towels, 10 garbage bags. Always order 20% more than needed to account for breakage and second servings."
+    },
+    {
+      "chunk_id": "shopping_02",
+      "text": "Beverage Quantities per Guest Count. Non-alcoholic party: 3-4 drinks per person over 3 hours. For 20 guests/3-hour party: 12 cans soda (variety), 3 liters juice, 2 cases water bottles, 2 bags ice (10 lbs each). Alcoholic party: 1 bottle wine per 2-3 guests, 1 case beer per 8-10 guests, 1 liter spirits per 8-10 guests. Non-alcoholic alternatives: always have 20-30% of beverage volume as non-alcoholic. Coffee/tea for end of evening: 1 lb coffee per 20 guests who drink coffee."
+    },
+    {
+      "chunk_id": "shopping_03",
+      "text": "Food Quantities: Appetizers and Snacks. Cocktail party (appetizers only): 8-12 pieces per person over 2 hours. Appetizers before dinner: 3-5 pieces per person. Chip and dip: 1 oz chips per person + 2 tbsp dip per person. Veggie tray: 3-4 oz vegetables per person + 2 tbsp dip. Cheese and crackers: 2-3 oz cheese per person, 4-6 crackers per person. Fruit platter: 4-6 oz per person. Mini sandwiches/sliders: 2-3 per person as appetizer."
+    },
+    {
+      "chunk_id": "shopping_04",
+      "text": "Food Quantities: Main Courses. Protein per person (as main): Chicken 6-8 oz, Beef/Pork 6-8 oz, Fish 5-6 oz, Vegetarian protein (beans, tofu) 4-6 oz. Side dishes per person: Salad 2-3 oz (dressed), Pasta 3-4 oz (dry), Rice 2 oz (dry), Roasted vegetables 4-6 oz, Bread/rolls 1-2 pieces. For buffet-style service, increase quantities by 15-20% as guests tend to take more. For plated service, amounts are more controlled."
+    },
+    {
+      "chunk_id": "shopping_05",
+      "text": "Food Quantities: Desserts. Cake: one 9-inch round cake serves 8-10 people; one 9x13 sheet cake serves 15-20. Budget 1-1.5 slices per person. Cupcakes: 1.5 per person. Cookies: 3-4 per person. Ice cream: 1/2 cup per person for dessert supplement. For dessert table at party: offer 3-4 options, budget 2 dessert servings per person total. Always have at least one option that accommodates common restrictions (gluten-free or dairy-free)."
+    },
+    {
+      "chunk_id": "shopping_06",
+      "text": "Decoration Shopping List Essentials. Balloons: 12-20 latex balloons for standard decoration + 2-3 foil accent balloons. Streamers: 2-3 rolls for full decoration effect. Banner: 1 event-specific banner (Happy Birthday, Welcome, etc.). Table covers: 1 per table. Centerpiece materials: flowers, candles, or themed items. Tape, command strips: for hanging decorations. Twinkle lights: 1-2 strands for ambient lighting. Photo backdrop (optional): fabric or paper roll ($15-30). Estimated decoration spend: $25-60 for a standard 20-person party."
+    }
+  ]
+}

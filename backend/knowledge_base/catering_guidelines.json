@@ -1,0 +1,29 @@
+{
+  "id": "catering_guidelines",
+  "title": "Catering and Food Quantity Guidelines",
+  "category": "catering",
+  "description": "Per-person food quantities, buffet vs. plated service guidelines, and catering tips",
+  "tags": ["catering", "food", "quantities", "buffet", "plated", "portions", "serving"],
+  "chunks": [
+    {
+      "chunk_id": "catering_01",
+      "text": "Per-Person Quantity Guide for Household Events. Buffet-style (guests serve themselves): protein 6-8 oz per person, increase quantities by 20% vs. plated service. Sit-down plated service: protein 5-7 oz per person. Appetizers before dinner: 3-5 pieces per person. Cocktail party (appetizers only, 2 hours): 8-12 pieces per person. Soup: 6-8 oz per person as first course, 10-12 oz as main. Salad: 2-3 oz dressed greens per person. Bread: 1-2 rolls or 2 slices per person."
+    },
+    {
+      "chunk_id": "catering_02",
+      "text": "Scaling Recipes for Large Groups. General rule: recipes scale linearly up to about 4x original size without adjustment. For larger batches, reduce salt and spices by 10-15% as flavors concentrate. Baking recipes do not scale well — better to make multiple batches. Make-ahead advantage: stews, casseroles, soups, and baked pasta dishes taste better made 1-2 days ahead and reheated. For 20 guests, one large (9x13) casserole dish feeds 8-10; need 2-3 such dishes. Crockpot/slow cooker for large batches: a 6-quart slow cooker feeds 8-10 people per recipe."
+    },
+    {
+      "chunk_id": "catering_03",
+      "text": "Buffet Setup Best Practices. Flow: arrange buffet in logical order — plates first, then salads, then sides, then protein, then bread, then sauces/condiments. Keep hot foods in chafing dishes or slow cookers. Keep cold foods on ice trays or in refrigerator until serving. Replenish every 30-45 minutes. Label all dishes (ingredient list for allergy awareness). Have serving utensils for each dish. Buffer time: expect guests to take 12-18 minutes to go through a buffet line for 20 guests. Position buffet away from main traffic flow to avoid congestion."
+    },
+    {
+      "chunk_id": "catering_04",
+      "text": "Food Safety at Events. Hot food holding temperature: maintain above 140°F using chafing dishes, slow cookers, or warming trays. Cold food: keep below 40°F on ice or in refrigerator. 2-hour rule: do not leave any food at room temperature for more than 2 hours (1 hour if ambient temperature is over 90°F). Ice for food display: plan for 5-10 lbs of ice per chilled display item. Leftovers: refrigerate within 2 hours of serving. Proper storage: use airtight containers, label with date. Leftovers safely kept for 3-4 days refrigerated."
+    },
+    {
+      "chunk_id": "catering_05",
+      "text": "Special Catering Considerations for Household Events. Self-catering vs. hired catering decision: For under 30 guests, self-catering is generally manageable with good planning. For 30-50+ guests, consider partial catering (hire someone for the main dish, DIY the sides). Menu complexity rule: reduce active cooking items on day-of — aim for no more than 2-3 dishes that need active attention. Make-ahead percentage: ideally 70% of menu should be completable before guests arrive. Day-of tasks: reheating, final assembly, fresh salad dressing, and serving should be the focus."
+    }
+  ]
+}

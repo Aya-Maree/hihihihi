@@ -1,0 +1,29 @@
+{
+  "id": "dinner_party_guide",
+  "title": "Dinner Party Planning Guide",
+  "category": "event_planning",
+  "description": "Complete guide for hosting intimate dinner parties and formal dining events",
+  "tags": ["dinner", "party", "hosting", "menu", "table", "formal"],
+  "chunks": [
+    {
+      "chunk_id": "dinner_01",
+      "text": "Dinner Party Planning: Setting the Stage. Ideal dinner party size: 6-12 guests allows for single-table conversation. For larger groups (12-20), consider round tables of 6-8 for better conversation flow. Set your budget: casual dinner party averages $20-35 per person including food, wine, and decorations; formal dinner $40-70 per person. Choose a date that avoids major holidays and local events. Send invitations 2-3 weeks in advance for casual, 4-6 weeks for formal. Ask about dietary restrictions in the invitation."
+    },
+    {
+      "chunk_id": "dinner_02",
+      "text": "Dinner Party Menu Planning. Choose a cohesive theme or cuisine: Mediterranean, Italian, farm-to-table, etc. Structure: appetizer/starter, main course, sides (2-3), dessert. Consider a signature cocktail or mocktail. For 8-10 guests, plan 2-3 appetizer options, 1-2 main dishes, 2-3 sides, 1-2 desserts. At least 30% of menu should be make-ahead dishes. Avoid recipes you haven't tested before. Plan for a vegetarian or vegan option if guests have dietary restrictions."
+    },
+    {
+      "chunk_id": "dinner_03",
+      "text": "Dinner Party Table Setting. Formal setting includes: dinner plate, salad plate (to the left), bread plate (upper left), water glass (upper right), wine glass(es) (red and white if serving both), fork(s) on left (salad fork outer, dinner fork inner), knife on right (blade facing plate), spoon(s) on right of knife. Cloth napkins for formal events. For casual dinners, simplify: dinner plate, one glass, basic cutlery. Centerpieces should not obstruct sightlines (keep under 12 inches high or use low floral arrangements)."
+    },
+    {
+      "chunk_id": "dinner_04",
+      "text": "Dinner Party Timeline. 2 hours before guests arrive: Finish all prep work, start slow-cooking dishes. 1 hour before: Set table, prepare drinks/bar area, light candles (if using), arrange flowers. 30 minutes before: Tidy up, change if needed. At arrival: Greet guests with welcome drinks (prosecco, wine, or mocktail). During appetizers: Serve 30-45 minutes. Dinner: Serve when appetizers are cleared. Dessert: 20-30 minutes after main course cleared. Total duration for dinner party: typically 3-4 hours."
+    },
+    {
+      "chunk_id": "dinner_05",
+      "text": "Dinner Party Food Safety and Prep. Keep hot foods above 140°F, cold foods below 40°F. Do not leave perishables out for more than 2 hours. Prepare a cooking schedule working backward from dinner service time. Allow 30-40 minutes of rest time for meats after cooking. Label all prepared dishes in the refrigerator. Have serving utensils ready for each dish. Consider allergies: keep allergen-containing dishes clearly labeled and use separate serving utensils."
+    }
+  ]
+}

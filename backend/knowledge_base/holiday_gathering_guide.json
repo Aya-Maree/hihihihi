@@ -1,0 +1,29 @@
+{
+  "id": "holiday_gathering_guide",
+  "title": "Holiday Gathering Planning Guide",
+  "category": "event_planning",
+  "description": "Planning guide for holiday gatherings including Thanksgiving, Christmas, New Year, and family celebrations",
+  "tags": ["holiday", "gathering", "thanksgiving", "christmas", "family", "seasonal"],
+  "chunks": [
+    {
+      "chunk_id": "holiday_01",
+      "text": "Holiday Gathering Overview. Holiday gatherings often involve larger groups (15-50 people), multi-generational guests, and higher emotional stakes than regular parties. Start planning 6-8 weeks in advance for major holidays. Key challenges: dietary diversity across generations, managing family dynamics, coordinating guest contributions (potluck style), seating arrangements, and balancing traditions with new preferences. Average cost: $25-50 per person for Thanksgiving/Christmas dinners; $15-30 per person for casual holiday parties."
+    },
+    {
+      "chunk_id": "holiday_02",
+      "text": "Holiday Gathering: Food Planning for Large Groups. For Thanksgiving (20+ guests): Turkey 1-1.5 lbs per person (serves as centerpiece), supplement with 2-3 other proteins for non-turkey eaters. Side dishes: mashed potatoes (1 lb potatoes per 3 people), stuffing (1 lb per 6 people), green beans (1 lb per 4 people), cranberry sauce (1 can per 8 people). Pie: one 9-inch pie serves 8 people, plan for 2-3 varieties. For Christmas dinner: similar quantities, consider ham as alternative to turkey at 0.5-0.75 lb per person."
+    },
+    {
+      "chunk_id": "holiday_03",
+      "text": "Holiday Gathering: Potluck Coordination. Potluck-style holiday gatherings reduce host burden significantly. Use a sign-up system (Google Sheets, group text, or dedicated app). Organize by category: appetizers, mains, sides, desserts, beverages. Host should cover the main dish and ensure dietary restriction dishes are available. Provide specific quantities: for 20 guests, need 3-4 appetizer dishes, 1 main, 6-8 sides, 3-4 desserts. Send coordination reminder 1 week before event."
+    },
+    {
+      "chunk_id": "holiday_04",
+      "text": "Holiday Gathering: Decorating Timeline. 2-3 weeks before: Purchase or retrieve decorations from storage, plan decoration scheme. 1 week before: Outdoor decorations (weather-permitting), wreath/door decor. 2-3 days before: Indoor decorations, table settings, centerpieces. Day before: Fresh flowers or greenery, final touches. Day of: Candles set up (never leave unattended), final walkthrough. Holiday-specific tip: For Christmas gatherings, have a dedicated area for coats and gifts to reduce clutter."
+    },
+    {
+      "chunk_id": "holiday_05",
+      "text": "Holiday Gathering: Managing Multi-Generational Guests. Seating: Separate kids' table for children 3-10, mix generations at adult tables for conversation. Entertainment: Have age-appropriate activities for all groups — board games, card games for adults; supervised activities or a movie setup for young children. Quiet space: Designate a quieter room for elderly guests or those needing a break from noise. Schedule: Start early (noon-2pm start) for multi-generational gatherings to accommodate early bedtimes for children and elderly."
+    }
+  ]
+}

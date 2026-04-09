@@ -1,0 +1,29 @@
+{
+  "id": "vendor_decoration_ideas",
+  "title": "Vendor and Decoration Ideas",
+  "category": "vendors_decor",
+  "description": "DIY decoration ideas, rental options, and service categories with approximate price ranges",
+  "tags": ["decorations", "vendors", "DIY", "rentals", "catering", "photography", "entertainment"],
+  "chunks": [
+    {
+      "chunk_id": "vendor_01",
+      "text": "DIY Decoration Ideas and Costs. Balloon arch or cluster: $15-30 for materials (latex balloons, balloon strip tape, fishing line). Paper lanterns and fairy lights: $10-20 total. Photo backdrop with streamers: $5-15 for streamers and dowel rod. Table centerpieces — mason jar flower arrangements: $15-30 for 5 tables. Balloon bouquets: $1-3 per bouquet. DIY photo booth: $20-30 (printed props, foam board). Banner from craft store: $5-15. Tissue paper pom-poms: $2-4 each. Total DIY decoration budget for 20-person party: $50-100 achieves impressive results."
+    },
+    {
+      "chunk_id": "vendor_02",
+      "text": "Food and Catering Services Price Ranges. Full-service catering (setup, serve, cleanup): $35-75 per person. Drop-off catering only: $20-40 per person. Sandwich/deli trays (grocery store): $30-60 per tray (serves 10-15). Pizza catering: $8-12 per person. Taco bar catering: $12-18 per person. BBQ catering: $15-25 per person. Grocery store prepared foods (party platters): $20-50 per platter (serves 10-20). Custom birthday cake (bakery): $50-200 depending on size and complexity. Sheet cake (grocery store): $25-45 serves 20-24."
+    },
+    {
+      "chunk_id": "vendor_03",
+      "text": "Entertainment Services Price Ranges. DJ (4-hour set): $400-800 for professionals; $150-300 for mobile DJ/less experienced. Photo booth rental: $500-900 (4 hours, attendant, prints). Balloon artist/sculptor: $150-300 for 2 hours. Face painter: $100-200 for 2 hours. Caricature artist: $150-250 for 2 hours. Jump castle/bouncy house rental: $150-300 for half-day. Magician/entertainer (children's): $150-300 for 45-minute show. Games rental (lawn games, arcade): $50-200 depending on items. Cheap alternatives: YouTube DJ mixes (free), DIY photo booth ($20-30)."
+    },
+    {
+      "chunk_id": "vendor_04",
+      "text": "Photography and Memory Services. Professional photographer (3 hours): $300-600. Videographer: $500-1000 for event coverage. Photo booth app services (iPad-based): $200-400. DIY option: Create a shared Google Photos album or iCloud shared album ($0). Instax camera rental (Polaroid-style): $50-100 for camera + film for 40 photos. Disposable cameras at tables: $10-15 each (10-20 photos each). Hiring a photography student: $100-200 for 3 hours, more affordable than professionals."
+    },
+    {
+      "chunk_id": "vendor_05",
+      "text": "Rental Equipment and Supplies. Folding tables (6-foot): $10-15 per table per day. Folding chairs: $1.50-3 per chair per day. Linen tablecloths: $8-15 per cloth per day. Chafing dish set (keeps food warm): $15-25 per set per day. Punch bowl or beverage dispenser: $10-20 per day. Tent/canopy rental: $100-300 depending on size. String light setup: $50-150 for installation. Minimum order for most rental companies: check if they have 1-day minimums. Alternative: Purchase disposable chafing fuel cans ($8-12 for 6) and use borrowed or purchased aluminum pans."
+    }
+  ]
+}

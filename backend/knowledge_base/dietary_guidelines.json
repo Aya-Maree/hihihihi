@@ -1,0 +1,29 @@
+{
+  "id": "dietary_guidelines",
+  "title": "Dietary Restrictions and Accommodation Guide",
+  "category": "dietary",
+  "description": "Comprehensive guide for managing dietary restrictions including vegetarian, vegan, gluten-free, allergies, and religious dietary laws",
+  "tags": ["dietary", "vegetarian", "vegan", "gluten-free", "allergy", "kosher", "halal", "nut-free"],
+  "chunks": [
+    {
+      "chunk_id": "dietary_01",
+      "text": "Common Dietary Restrictions Overview. Vegetarian: No meat, poultry, or seafood. May consume dairy and eggs. Vegan: No animal products whatsoever — no meat, dairy, eggs, honey. Gluten-free: No wheat, barley, rye, or contaminated oats. Nut allergy (tree nuts): Avoid almonds, cashews, walnuts, pistachios. Nut allergy (peanuts): Peanuts are legumes, not tree nuts — must be specified separately. Dairy-free: No milk, cheese, butter, cream. May be due to lactose intolerance or milk allergy. Kosher: Follows Jewish dietary laws — no pork or shellfish, meat and dairy not combined. Halal: Follows Islamic dietary laws — no pork, alcohol, or improperly slaughtered meat."
+    },
+    {
+      "chunk_id": "dietary_02",
+      "text": "Planning for Dietary Restrictions at Household Events. Best practice: Include a dietary restriction question in invitations. At least 15-20% of guests at any household event will have some dietary consideration. Vegetarian guests: 8-10% of population. Gluten-free needs: approximately 2-5% (celiac disease and sensitivity). Nut allergies: 1-2% of adults, 3-4% of children. Safe baseline menu strategy: Make at least one dish that is vegan (automatically accommodates vegetarians too), have gluten-free options labeled, avoid nuts in dishes served to children."
+    },
+    {
+      "chunk_id": "dietary_03",
+      "text": "Vegetarian and Vegan Menu Ideas for Events. Vegetarian crowd-pleasers: pasta with marinara or pesto, cheese pizza, stuffed bell peppers, quiche, cheese-based dips and appetizers. Vegan options: hummus and vegetable platter, bean-based dishes (chili, tacos with beans), fruit platters, roasted vegetable dishes, lentil dishes. Vegan protein sources for parties: chickpea dishes (falafel, roasted chickpeas), edamame, tempeh dishes, bean-based dips. Note: Many guests who don't identify as vegan will choose plant-based options when available and appealing."
+    },
+    {
+      "chunk_id": "dietary_04",
+      "text": "Gluten-Free Party Planning. Naturally gluten-free foods: fruits, vegetables, meat, fish, poultry, rice, potatoes, corn. Gluten-free labeling at buffet: use clearly marked signs for all dishes. Cross-contamination prevention: use separate serving utensils for gluten-free dishes, serve them first before gluten-containing dishes, keep separately if possible. Gluten-free alternatives to offer: rice crackers instead of regular crackers, gluten-free pasta/bread. Beverages: most are naturally gluten-free (beer is NOT, most wine and spirits are okay). Desserts: fruit salad, flourless chocolate cake, macarons, meringue are naturally gluten-free."
+    },
+    {
+      "chunk_id": "dietary_05",
+      "text": "Nut Allergy Safety at Events. Severity varies from mild to life-threatening (anaphylaxis). If any child or confirmed severe allergy guest is attending, go completely nut-free. Common hidden nut sources: pesto (pine nuts), Asian sauces, some chocolate products, trail mix, granola. Cross-contamination concerns: cooking oils, shared kitchen surfaces, pre-packaged foods processed in shared facilities. Always read ingredient labels, even for familiar products. Have an allergy-safe area for highly sensitive guests. If someone has an EpiPen, know where it is located."
+    }
+  ]
+}

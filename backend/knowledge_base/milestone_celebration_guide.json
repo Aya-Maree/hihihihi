@@ -1,0 +1,25 @@
+{
+  "id": "milestone_celebration_guide",
+  "title": "Milestone Celebration Planning Guide",
+  "category": "event_planning",
+  "description": "Planning guide for milestone events: graduations, anniversaries, retirements, baby showers, and bridal showers",
+  "tags": ["graduation", "anniversary", "retirement", "baby shower", "bridal shower", "milestone"],
+  "chunks": [
+    {
+      "chunk_id": "milestone_01",
+      "text": "Baby Shower Planning. Typically hosted 4-8 weeks before the due date. Size: 15-30 guests typical. Traditional host: best friend, sister, or co-worker (traditionally not the mother herself, though modern etiquette accepts it). Timing: afternoon tea (2-5pm) is classic; brunch (11am-1pm) is popular modern option. Activities: opening gifts (central activity, plan 30-45 min), games (3-4 games over 30 min), food service (30-45 min). Registry: display or include in invitations. Gifts: guests expect to bring gifts; have a display area ready. Budget: $15-30 per guest for a nicely done shower."
+    },
+    {
+      "chunk_id": "milestone_02",
+      "text": "Graduation Party Planning. Timing: host within 2 weeks of graduation. Consider: outdoor vs. indoor based on season and guest count. Common format: open house (guests come and go over 3-4 hours) or sit-down party. Guest list: mix of family, friends from different chapters of the graduate's life. Personalization: photo displays of graduate's journey, colors of their school/college. Food: casual and abundant — barbecue, tacos, and pizza all work well. Gifts: guests typically bring gifts; have a designated gift table. Acknowledging the achievement: a short speech or toast is appropriate and meaningful."
+    },
+    {
+      "chunk_id": "milestone_03",
+      "text": "Anniversary Party Planning. Scale to milestone: 1st-10th anniversaries typically intimate (20-40 guests); 25th and 50th merit larger celebrations (40-100+ guests). For 25th and 50th: formal venue may be more appropriate than home. Theme: recreate the original wedding theme, decade theme, or couple's favorite travel destination. Activities: slide show of couple's memories, renewal of vows (optional), first dance replay, speech from family/friends. Registry: not traditional for anniversaries, but experiences or charitable donations can be listed. Budget: $50-100 per person for milestone anniversary dinner."
+    },
+    {
+      "chunk_id": "milestone_04",
+      "text": "Retirement Party Planning. Guest list: colleagues, friends, and family. Work with HR for colleague list if office-hosted portion desired. Budget: typically organized by workplace group OR hosted by family; $25-50 per person. Activities: speeches and toasts (plan 20-30 min), funny retirement roast (optional but popular), slide show of career highlights, gifts presentation. Venue: company event room, restaurant private room, or home depending on size. Timing: often at end of workday or weekend afternoon. Key speeches: boss/manager, closest colleague, family member."
+    }
+  ]
+}

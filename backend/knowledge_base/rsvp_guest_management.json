@@ -1,0 +1,29 @@
+{
+  "id": "rsvp_guest_management",
+  "title": "RSVP and Guest Management Guide",
+  "category": "guest_management",
+  "description": "Best practices for invitations, RSVP tracking, and managing guest lists for household events",
+  "tags": ["RSVP", "invitations", "guests", "tracking", "attendance", "dietary"],
+  "chunks": [
+    {
+      "chunk_id": "rsvp_01",
+      "text": "Invitation Timing Guidelines. Send invitations: 4-6 weeks before for major events (milestone birthdays, holiday gatherings, formal dinner parties), 2-3 weeks before for casual parties, 1-2 weeks before for informal gatherings. Set RSVP deadline: 1-2 weeks before the event. Include in every invitation: date, time (start and suggested end), location with address, dress code (if any), RSVP method and deadline, dietary restriction inquiry, contact information. Digital invitations (Evite, Paperless Post, Google Forms): free to low cost, easy tracking, environmentally friendly."
+    },
+    {
+      "chunk_id": "rsvp_02",
+      "text": "RSVP Tracking System. Create a simple spreadsheet or list with columns: Guest name, Contact info, RSVP status (yes/no/pending), Guest count (if they're bringing someone), Dietary restrictions, Notes. Expected RSVP response rate: 60-70% respond by deadline naturally. For remaining 30-40%, send a friendly reminder 3-5 days before deadline. Final headcount: After RSVP deadline + 1-2 follow-up days, plan for 10-15% no-shows from confirmed guests AND 5-10% surprise additions (guests who didn't RSVP). Buffer: plan food for confirmed + 15% extra."
+    },
+    {
+      "chunk_id": "rsvp_03",
+      "text": "Managing Last-Minute Changes. Expected last-minute cancellations: 10-15% of confirmed guests will cancel within 48 hours for various reasons. This is normal — do not over-cook for maximum headcount. If more guests show up than expected: have simple add-ons ready — extra drinks, chips/dips, bread are easy to scale. For formal sit-down dinners: call/text unconfirmed guests 3 days before final prep to get accurate count. Track dietary restrictions on your shopping list, not just the RSVP list, so you remember to accommodate when purchasing food."
+    },
+    {
+      "chunk_id": "rsvp_04",
+      "text": "Guest List Management Tips. Mix guests thoughtfully — avoid seating together people who have known conflicts. For mixed-age events, plan activities that work across age ranges. VIP considerations: ensure the guest of honor's closest friends/family get priority invites and seating. For large events, create a name tag system to help guests who don't know each other. Parking: for home events, communicate parking situation (street parking, driveway). For events with 20+ guests, designate parking on a nearby street to avoid neighbor complaints."
+    },
+    {
+      "chunk_id": "rsvp_05",
+      "text": "Digital RSVP Tools for Household Events. Free options: Evite.com, Facebook Events, Google Forms linked in a text message. Paid premium options: Paperless Post ($1-3 per invite), Greenvelope. Phone/text-based RSVP for family: simple group text with a clear RSVP instruction works well. What data to collect digitally: name, attendance confirmation, plus-one name if applicable, dietary restrictions (text box or checkbox options: vegetarian, vegan, gluten-free, nut allergy, dairy-free, other). Follow up with a reminder email or text 1 week before the event as a courtesy notification."
+    }
+  ]
+}
