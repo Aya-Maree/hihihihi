@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
   Calendar, Sparkles, ArrowRight, CheckSquare, ShoppingCart, Clock,
-  Brain, Database, GitBranch, Layers
+  MessageCircle, BookOpen, ListChecks, Star
 } from 'lucide-react'
 import { createSession, getHealth } from '../api/client'
 import toast from 'react-hot-toast'
@@ -40,28 +40,28 @@ export default function Dashboard({ onSessionCreated }) {
 
   const features = [
     {
-      icon: Database,
+      icon: BookOpen,
       color: 'text-blue-600 bg-blue-50',
-      title: 'RAG Knowledge Base',
-      desc: '12 curated planning documents · sentence-transformers (all-MiniLM-L6-v2) · ChromaDB vector store · semantic retrieval with citations',
+      title: 'Smart Planning Tips',
+      desc: 'Your assistant pulls from a library of curated event planning guides to give you advice that actually works.',
     },
     {
-      icon: GitBranch,
+      icon: MessageCircle,
       color: 'text-purple-600 bg-purple-50',
-      title: '7-Step Planning Workflow',
-      desc: 'Intake → Clarification → Retrieval → Conflict Detection → Planning → Validation → Artifacts',
+      title: 'Conversational Planning',
+      desc: 'Just chat naturally — describe your event and answer a few questions. No complicated forms.',
     },
     {
-      icon: Brain,
+      icon: ListChecks,
       color: 'text-green-600 bg-green-50',
-      title: 'Persistent Memory',
-      desc: 'Full session state · chat history · event context object persisted across turns',
+      title: 'Remembers Everything',
+      desc: "Keeps track of all your event details as you chat, so you don't have to repeat yourself.",
     },
     {
-      icon: Layers,
+      icon: Star,
       color: 'text-orange-600 bg-orange-50',
-      title: 'Structured Artifacts',
-      desc: 'Task Checklist · Itemized Shopping List · Day-of Schedule — in JSON + Markdown',
+      title: 'Ready-to-Use Documents',
+      desc: 'Get a complete task checklist, shopping list, and day-of schedule — all ready to print or share.',
     },
   ]
 
@@ -72,13 +72,12 @@ export default function Dashboard({ onSessionCreated }) {
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 mb-3">
             <Sparkles className="w-5 h-5 text-yellow-300" />
-            <span className="text-sm text-purple-200">EventOps AI · SE4471B Course Project</span>
+            <span className="text-sm text-purple-200">Your personal event planning assistant</span>
           </div>
-          <h1 className="text-3xl font-bold mb-3">Household Event Planner</h1>
+          <h1 className="text-3xl font-bold mb-3">Plan Your Next Event</h1>
           <p className="text-purple-100 mb-6 leading-relaxed">
-            AI-powered planning for birthday parties, dinner parties, holiday gatherings, and more.
-            Generates complete task checklists, shopping lists, and day-of schedules — grounded in
-            a curated knowledge base with citations.
+            Tell us about your event and we'll guide you through every step — from the guest list
+            to the day-of schedule. Birthday parties, dinner parties, holiday gatherings, and more.
           </p>
 
           <div className="flex gap-3 items-end flex-wrap">
@@ -104,34 +103,14 @@ export default function Dashboard({ onSessionCreated }) {
         </div>
       </div>
 
-      {/* System status */}
-      {health && (
-        <div className="card p-4">
-          <h3 className="text-sm font-semibold text-gray-700 mb-3">System Status</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <StatusItem
-              label="Knowledge Base"
-              value={`${health.rag_documents} docs`}
-              ok={health.rag_documents > 0}
-            />
-            <StatusItem
-              label="Gemini AI"
-              value={health.google_api_key ? health.gemini_model : 'Demo Mode'}
-              ok={health.google_api_key}
-              warnText="Set GOOGLE_API_KEY in .env"
-            />
-            <StatusItem
-              label="Spoonacular"
-              value={health.spoonacular_api_key ? 'Connected' : 'Not configured'}
-              ok={health.spoonacular_api_key}
-              warnText="Set SPOONACULAR_API_KEY (optional)"
-            />
-            <StatusItem
-              label="Active Sessions"
-              value={health.active_sessions}
-              ok={true}
-            />
-          </div>
+      {/* Status strip — only show if something needs attention */}
+      {health && !health.google_api_key && (
+        <div className="bg-yellow-50 border border-yellow-200 rounded-xl px-4 py-3 flex items-center gap-2 text-sm text-yellow-800">
+          <Sparkles className="w-4 h-4 text-yellow-500 flex-shrink-0" />
+          <span>
+            The AI assistant is running in <strong>demo mode</strong>. Add a Google Gemini API key
+            for full responses.
+          </span>
         </div>
       )}
 
@@ -155,7 +134,7 @@ export default function Dashboard({ onSessionCreated }) {
 
       {/* Features */}
       <div>
-        <h2 className="text-lg font-semibold text-gray-900 mb-3">System Capabilities</h2>
+        <h2 className="text-lg font-semibold text-gray-900 mb-3">How It Works</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {features.map((f) => (
             <div key={f.title} className="card p-4 flex gap-3">
@@ -173,12 +152,12 @@ export default function Dashboard({ onSessionCreated }) {
 
       {/* Artifacts preview */}
       <div>
-        <h2 className="text-lg font-semibold text-gray-900 mb-3">Generated Artifacts</h2>
+        <h2 className="text-lg font-semibold text-gray-900 mb-3">What You'll Get</h2>
         <div className="grid grid-cols-3 gap-3">
           {[
-            { icon: CheckSquare, color: 'text-purple-600 bg-purple-50', title: 'Task Checklist', desc: 'Prioritized by timeline: 4+ weeks, 2-4 weeks, 1 week, day-before, day-of' },
-            { icon: ShoppingCart, color: 'text-blue-600 bg-blue-50', title: 'Shopping List', desc: 'Itemized with quantities, costs, categories, and budget tracking' },
-            { icon: Clock, color: 'text-green-600 bg-green-50', title: 'Day-of Schedule', desc: 'Time-blocked with setup, event, and cleanup sections' },
+            { icon: CheckSquare, color: 'text-purple-600 bg-purple-50', title: 'Task Checklist', desc: 'Everything you need to do, organised by how far in advance to do it' },
+            { icon: ShoppingCart, color: 'text-blue-600 bg-blue-50', title: 'Shopping List', desc: 'All items with quantities and estimated costs, grouped by category' },
+            { icon: Clock, color: 'text-green-600 bg-green-50', title: 'Day-of Schedule', desc: 'A full hour-by-hour timeline so the day runs smoothly' },
           ].map(({ icon: Icon, color, title, desc }) => (
             <div key={title} className="card p-4">
               <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-2 ${color}`}>
@@ -194,17 +173,3 @@ export default function Dashboard({ onSessionCreated }) {
   )
 }
 
-function StatusItem({ label, value, ok, warnText }) {
-  return (
-    <div className="text-center">
-      <p className="text-xs text-gray-500 mb-1">{label}</p>
-      <div className="flex items-center justify-center gap-1">
-        <span className={`w-2 h-2 rounded-full ${ok ? 'bg-green-400' : 'bg-yellow-400'}`} />
-        <span className="text-sm font-medium text-gray-800">{value}</span>
-      </div>
-      {!ok && warnText && (
-        <p className="text-xs text-yellow-600 mt-0.5">{warnText}</p>
-      )}
-    </div>
-  )
-}

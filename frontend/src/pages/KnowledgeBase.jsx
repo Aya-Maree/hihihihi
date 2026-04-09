@@ -51,16 +51,16 @@ export default function KnowledgeBase() {
       <div>
         <h1 className="text-xl font-bold text-gray-900 flex items-center gap-2">
           <BookOpen className="w-5 h-5 text-purple-600" />
-          Knowledge Base
+          Planning Guides
         </h1>
         <p className="text-sm text-gray-500 mt-1">
-          {documents.length} curated planning documents · Used for RAG retrieval with TF-IDF similarity search
+          {documents.length} guides covering everything from budgeting to day-of logistics
         </p>
       </div>
 
       {/* Search */}
       <div className="card p-4">
-        <h2 className="text-sm font-semibold text-gray-700 mb-2">Test Retrieval</h2>
+        <h2 className="text-sm font-semibold text-gray-700 mb-2">Search Planning Tips</h2>
         <form onSubmit={handleSearch} className="flex gap-2">
           <input
             value={query}
@@ -70,7 +70,7 @@ export default function KnowledgeBase() {
           />
           <button type="submit" disabled={searching} className="btn-primary flex items-center gap-1">
             <Search className="w-4 h-4" />
-            {searching ? 'Searching…' : 'Retrieve'}
+            {searching ? 'Searching…' : 'Search'}
           </button>
         </form>
 
@@ -78,7 +78,7 @@ export default function KnowledgeBase() {
           <div className="mt-4 space-y-3">
             <div className="flex items-center justify-between">
               <h3 className="text-sm font-medium text-gray-700">
-                Retrieved {results.total_retrieved} chunks for: "{results.query}"
+                Top tips for: "{results.query}"
               </h3>
               <button onClick={() => setResults(null)} className="text-xs text-gray-400 hover:text-gray-600">
                 Clear
@@ -86,14 +86,10 @@ export default function KnowledgeBase() {
             </div>
             {results.retrieved_chunks.map((chunk, i) => (
               <div key={i} className="bg-gray-50 border border-gray-200 rounded-lg p-3">
-                <div className="flex items-center justify-between mb-1">
-                  <span className="text-xs font-semibold text-purple-700">[{i + 1}] {chunk.doc_title}</span>
-                  <span className="text-xs text-gray-400">
-                    Score: {(chunk.relevance_score * 100).toFixed(0)}%
-                  </span>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-xs font-semibold text-purple-700">{chunk.doc_title}</span>
                 </div>
                 <p className="text-xs text-gray-700 leading-relaxed">{chunk.text}</p>
-                <p className="text-xs text-gray-400 mt-1">Source: {chunk.doc_id} · Chunk: {chunk.chunk_id}</p>
               </div>
             ))}
           </div>
@@ -129,7 +125,7 @@ export default function KnowledgeBase() {
 
               <div className="flex items-center gap-2 mt-2">
                 <Layers className="w-3 h-3 text-gray-400" />
-                <span className="text-xs text-gray-400">{doc.chunk_count} chunks</span>
+                <span className="text-xs text-gray-400">{doc.chunk_count} sections</span>
               </div>
 
               {expandedDoc === doc.id && doc.tags?.length > 0 && (

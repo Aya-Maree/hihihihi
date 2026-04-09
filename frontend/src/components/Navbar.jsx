@@ -3,14 +3,14 @@ import { Calendar, MessageSquare, FileText, BookOpen, Plus, Home } from 'lucide-
 import clsx from 'clsx'
 
 const WORKFLOW_LABELS = {
-  intake: 'Collecting Info',
-  clarification: 'Clarifying',
-  retrieval: 'Searching KB',
-  conflict_detection: 'Checking Conflicts',
-  planning: 'Planning',
-  validation: 'Reviewing',
-  artifact_generation: 'Generating',
-  complete: 'Complete',
+  intake: 'Getting Started',
+  clarification: 'Asking Questions',
+  retrieval: 'Gathering Ideas',
+  conflict_detection: 'Reviewing Details',
+  planning: 'Building Plan',
+  validation: 'Finalizing',
+  artifact_generation: 'Preparing Docs',
+  complete: 'Plan Ready!',
 }
 
 const WORKFLOW_COLORS = {
@@ -30,8 +30,8 @@ export default function Navbar({ sessionId, workflowState, artifactsReady, onNew
   const navLinks = [
     { to: '/', icon: Home, label: 'Home' },
     { to: '/plan', icon: MessageSquare, label: 'AI Planner' },
-    { to: '/artifacts', icon: FileText, label: 'Artifacts', badge: artifactsReady },
-    { to: '/knowledge-base', icon: BookOpen, label: 'Knowledge Base' },
+    { to: '/artifacts', icon: FileText, label: 'My Plan', badge: artifactsReady },
+    { to: '/knowledge-base', icon: BookOpen, label: 'Planning Guides' },
   ]
 
   return (
@@ -72,25 +72,20 @@ export default function Navbar({ sessionId, workflowState, artifactsReady, onNew
             ))}
           </div>
 
-          {/* Session status + New session */}
+          {/* Progress badge + Start Over */}
           <div className="flex items-center gap-2">
             {workflowState && workflowState !== 'intake' && (
               <span className={clsx('badge text-xs', WORKFLOW_COLORS[workflowState] || 'bg-gray-100 text-gray-600')}>
                 {WORKFLOW_LABELS[workflowState] || workflowState}
               </span>
             )}
-            {sessionId && (
-              <span className="text-xs text-gray-400 hidden lg:block font-mono">
-                {sessionId.slice(0, 8)}
-              </span>
-            )}
             <button
               onClick={onNewSession}
               className="flex items-center gap-1 text-xs text-gray-500 hover:text-purple-600 px-2 py-1.5 rounded-lg hover:bg-purple-50 transition-colors"
-              title="Start new planning session"
+              title="Start a new event plan"
             >
               <Plus className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">New Session</span>
+              <span className="hidden sm:inline">Start Over</span>
             </button>
           </div>
         </div>

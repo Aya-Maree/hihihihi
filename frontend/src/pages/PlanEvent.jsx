@@ -112,7 +112,7 @@ export default function PlanEvent({
 
       if (data.artifacts_ready) {
         onArtifactsReady?.(true)
-        toast.success('Artifacts are ready! Check the Artifacts tab.', { duration: 4000 })
+        toast.success('Your plan is ready! Check the My Plan tab.', { duration: 4000 })
       }
     } catch (err) {
       toast.error('Failed to get response. Check backend.')
@@ -210,7 +210,7 @@ export default function PlanEvent({
           {/* Generate artifacts button */}
           {(localWorkflowState === 'validation' || localWorkflowState === 'complete' || localWorkflowState === 'planning') && (
             <div className="card p-3 space-y-2">
-              <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Generate Plan</h3>
+              <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Get Your Plan</h3>
               <label className="flex items-center gap-2 text-xs text-gray-600 cursor-pointer">
                 <input
                   type="checkbox"
@@ -218,7 +218,7 @@ export default function PlanEvent({
                   onChange={(e) => setEnrichSpoonacular(e.target.checked)}
                   className="accent-purple-600"
                 />
-                Enrich with Spoonacular recipes
+                Include recipe suggestions
               </label>
               <button
                 onClick={handleGenerateArtifacts}
@@ -226,7 +226,7 @@ export default function PlanEvent({
                 className="btn-primary w-full text-xs flex items-center justify-center gap-1"
               >
                 <FileText className="w-3 h-3" />
-                {generatingArtifacts ? 'Generating…' : 'Generate All Artifacts'}
+                {generatingArtifacts ? 'Preparing…' : 'Get My Full Plan'}
               </button>
             </div>
           )}
@@ -244,10 +244,7 @@ export default function PlanEvent({
             >
               <PanelLeft className="w-4 h-4 text-gray-400" />
             </button>
-            <h2 className="font-semibold text-gray-900 text-sm">AI Event Planner</h2>
-            <span className="text-xs text-gray-400">
-              {sessionId ? `Session: ${sessionId.slice(0, 8)}` : 'No session'}
-            </span>
+            <h2 className="font-semibold text-gray-900 text-sm">Your Event Planner</h2>
           </div>
 
           <div className="flex items-center gap-2">

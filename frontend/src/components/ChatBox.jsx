@@ -151,7 +151,7 @@ function ChatMessage({ message }) {
           <div className="bg-orange-50 border border-orange-200 rounded-lg px-3 py-2 w-full">
             <div className="flex items-center gap-1 mb-1">
               <AlertTriangle className="w-3 h-3 text-orange-600" />
-              <span className="text-xs font-medium text-orange-700">Conflicts Detected</span>
+              <span className="text-xs font-medium text-orange-700">A few things to consider</span>
             </div>
             {message.conflicts.map((c, i) => (
               <p key={i} className="text-xs text-orange-700">{c}</p>
@@ -163,14 +163,14 @@ function ChatMessage({ message }) {
         {hasCitations && (
           <div className="flex items-center gap-1 flex-wrap">
             <BookOpen className="w-3 h-3 text-gray-400" />
-            <span className="text-xs text-gray-400">Sources:</span>
+            <span className="text-xs text-gray-400">Based on:</span>
             {message.citations.map((c, i) => (
               <span
                 key={i}
                 className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full"
                 title={c.doc_title}
               >
-                {c.doc_id?.replace(/_/g, ' ')}
+                {c.doc_title || c.doc_id?.replace(/_/g, ' ')}
               </span>
             ))}
           </div>
@@ -203,17 +203,17 @@ function getQuickReplies(workflowState) {
       "I'll simplify the menu",
     ],
     planning: [
-      "generate artifacts",
+      "I'm happy with everything, create my plan",
       "Tell me more about the budget breakdown",
       "What decorations do you suggest?",
     ],
     validation: [
-      "generate artifacts",
+      "I'm happy with everything, create my plan",
       "Adjust budget to $400",
       "What about dietary options?",
     ],
     complete: [
-      "regenerate artifacts",
+      "Update my plan with changes",
       "What's the best entertainment for this event?",
       "Can you suggest more budget savings?",
     ],

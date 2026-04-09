@@ -36,7 +36,7 @@ export default function Artifacts({ sessionId, onArtifactsReady }) {
       const res = await generateArtifacts(sessionId, enrichSpoonacular)
       setArtifacts(res.data.artifacts)
       onArtifactsReady?.(true)
-      toast.success('Artifacts generated!')
+      toast.success('Your plan is ready!')
     } catch {
       toast.error('Failed to generate artifacts')
     } finally {
@@ -83,9 +83,9 @@ export default function Artifacts({ sessionId, onArtifactsReady }) {
             <ArrowLeft className="w-4 h-4 text-gray-500" />
           </button>
           <div>
-            <h1 className="text-xl font-bold text-gray-900">Planning Artifacts</h1>
+            <h1 className="text-xl font-bold text-gray-900">My Event Plan</h1>
             <p className="text-sm text-gray-500">
-              Structured outputs from your planning session
+              Your checklist, shopping list, and day-of schedule
             </p>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function Artifacts({ sessionId, onArtifactsReady }) {
               onChange={(e) => setEnrichSpoonacular(e.target.checked)}
               className="accent-purple-600"
             />
-            + Spoonacular
+            Include recipes
           </label>
           <button
             onClick={handleGenerate}
@@ -106,7 +106,7 @@ export default function Artifacts({ sessionId, onArtifactsReady }) {
             className="btn-secondary text-xs flex items-center gap-1"
           >
             <RefreshCw className={`w-3.5 h-3.5 ${generating ? 'animate-spin' : ''}`} />
-            {generating ? 'Generating…' : 'Regenerate'}
+            {generating ? 'Updating…' : 'Refresh Plan'}
           </button>
           {artifacts && (
             <button
@@ -114,7 +114,7 @@ export default function Artifacts({ sessionId, onArtifactsReady }) {
               className="btn-primary text-xs flex items-center gap-1"
             >
               <Download className="w-3.5 h-3.5" />
-              Download All (JSON)
+              Download Plan
             </button>
           )}
         </div>
@@ -123,23 +123,23 @@ export default function Artifacts({ sessionId, onArtifactsReady }) {
       {loading ? (
         <div className="text-center py-16 text-gray-400">
           <div className="w-8 h-8 border-2 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-3" />
-          <p className="text-sm">Loading artifacts…</p>
+          <p className="text-sm">Loading your plan…</p>
         </div>
       ) : artifacts ? (
         <ArtifactViewer artifacts={artifacts} sessionId={sessionId} />
       ) : (
         <div className="card p-12 text-center">
           <FileJson className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-          <h3 className="text-lg font-semibold text-gray-700 mb-2">No artifacts yet</h3>
+          <h3 className="text-lg font-semibold text-gray-700 mb-2">Your plan isn't ready yet</h3>
           <p className="text-sm text-gray-400 mb-4">
-            Complete the planning conversation, then generate your documents.
+            Finish chatting with your planner, then tap the button to get your documents.
           </p>
           <div className="flex gap-3 justify-center">
             <button onClick={() => navigate('/plan')} className="btn-secondary">
               Continue Planning
             </button>
             <button onClick={handleGenerate} disabled={generating} className="btn-primary">
-              {generating ? 'Generating…' : 'Generate Artifacts Now'}
+              {generating ? 'Creating Your Plan…' : 'Get My Plan Now'}
             </button>
           </div>
         </div>

@@ -56,19 +56,19 @@ export default function EventContextPanel({ context }) {
     <div className="card p-4 space-y-3">
       <div className="flex items-center justify-between">
         <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
-          Event Context
+          Your Event
         </h3>
         {isComplete ? (
           <span className="flex items-center gap-1 text-xs text-green-600">
-            <CheckCircle className="w-3 h-3" /> Ready
+            <CheckCircle className="w-3 h-3" /> Looking good!
           </span>
         ) : (
-          <span className="text-xs text-gray-400">Collecting…</span>
+          <span className="text-xs text-gray-400">Building your plan…</span>
         )}
       </div>
 
       {fields.length === 0 ? (
-        <p className="text-xs text-gray-400 italic">No details collected yet.</p>
+        <p className="text-xs text-gray-400 italic">Start chatting and we'll fill this in as you go.</p>
       ) : (
         <div className="space-y-2">
           {fields.map(({ icon: Icon, label, value, color }, i) => (
@@ -90,7 +90,7 @@ export default function EventContextPanel({ context }) {
         <div className="mt-2 pt-2 border-t border-orange-100">
           <div className="flex items-center gap-1 mb-1">
             <AlertTriangle className="w-3.5 h-3.5 text-orange-500" />
-            <span className="text-xs font-medium text-orange-700">Conflicts</span>
+            <span className="text-xs font-medium text-orange-700">Heads up</span>
           </div>
           {context.detected_conflicts.map((c, i) => (
             <p key={i} className="text-xs text-orange-600 leading-tight">{c}</p>
@@ -102,7 +102,7 @@ export default function EventContextPanel({ context }) {
       {context.pending_tasks?.length > 0 && (
         <div className="pt-2 border-t border-gray-100">
           <span className="text-xs text-gray-500">
-            {context.pending_tasks.length} tasks pending
+            {context.pending_tasks.length} things still to sort out
           </span>
         </div>
       )}
