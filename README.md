@@ -48,7 +48,7 @@ Before you start, make sure you have:
 
 ```bash
 git clone <repo-url>
-cd hihihihi
+cd project-phase-1-group-2-1
 ```
 
 ---
@@ -182,40 +182,6 @@ AI:   ✅ Plan ready!
       🛒 Shopping List: 28 items, estimated $285.50
       📅 Day-of Schedule: 9 time blocks
 ```
-
----
-
-## Troubleshooting
-
-**"Failed to create session. Is the backend running?"**  
-→ The backend isn't running. Start it with `python main.py` from the `backend/` folder.
-
-**"Demo mode" showing even with an API key**  
-→ Check that your `.env` file has `GOOGLE_API_KEY=` set correctly (no spaces, no quotes around the key).  
-→ Make sure you're using `GEMINI_MODEL=gemini-2.0-flash` — older model names like `gemini-1.5-flash` may be unavailable.
-
-**"Failed to generate artifacts" after the backend restarts**  
-→ Sessions are stored in memory and are lost when the backend restarts. Start a new session — go back to the chat and begin again.
-
-**Backend crashes on startup with a proxy/network error**  
-→ The sentence-transformer model needs to download from HuggingFace on first run. Run once without offline flags. After that, use:  
-```bash
-TRANSFORMERS_OFFLINE=1 HF_HUB_OFFLINE=1 python main.py
-```
-
-**Port already in use**  
-```bash
-# Find and kill what's using port 8000:
-lsof -ti :8000 | xargs kill -9
-
-# Or run on a different port:
-APP_PORT=8001 python main.py
-```
-
-**npm install fails**  
-→ Make sure you're running it inside the `frontend/` folder, and that Node.js 18+ is installed.
-
----
 
 ## Project Structure
 
