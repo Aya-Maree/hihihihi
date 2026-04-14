@@ -1,272 +1,281 @@
-# Household Event Planner — EventOps AI Application
-**SE4471B Course Project | Group 2**
-
+# EventOps AI — Household Event Planner
+**SE4471B Course Project | Group 2**  
 Sara Daher · Aya Maree
 
 ---
 
-## Overview
+## What it does
 
-An AI-powered household event planning system that transforms unstructured event requirements into structured, actionable planning artifacts. Built with:
+EventOps AI is a conversational AI system that turns a plain-English description of an event into a complete, conflict-checked planning package — in about 2 minutes.
 
-- **Frontend**: React + Vite + Tailwind CSS (chat interface, artifact viewer, workflow progress)
-- **Backend**: Python FastAPI
-- **RAG**: JSON knowledge base (12 documents) + TF-IDF cosine similarity retrieval (no external vector DB)
-- **LLM**: Anthropic Claude API (fallback to template-based responses in demo mode)
-- **Memory**: In-memory session state with event context tracking across turns
-- **Workflow**: 7-step agentic planning logic (Intake → Clarification → Retrieval → Conflict Detection → Planning → Validation → Artifact Generation)
-- **External API (Tier 2)**: Spoonacular Food API for recipe-based ingredient enrichment
+You describe your event in chat ("Birthday party, 25 guests, April 25, $300, at home"), and the system:
+1. Extracts all event parameters automatically
+2. Retrieves relevant planning knowledge from a 23-document knowledge base
+3. Detects conflicts (tight budget, short timeline, dietary issues) before generating any plan
+4. Produces a **Task Checklist**, **Shopping List**, and **Day-of Schedule** — downloadable as PDF
 
 ---
 
-## System Architecture
+## Tech Stack
 
-```
-[React Frontend (Vite + Tailwind)]
-    ↓  (REST API)
-[FastAPI Backend (Python)]
-    ↓
-[Session Manager (Memory)]  ←→  [Event Context JSON]
-    ↓
-[Planning Workflow (7-step)]
-    ↓
-[RAG Pipeline]
-    ├── [Knowledge Base: 12 JSON docs]
-    └── [TF-IDF Retriever + Cosine Similarity]
-    ↓
-[LLM Service (Claude / Demo fallback)]
-    ↓
-[Artifact Generator]
-    ├── Task Checklist (JSON + Markdown)
-    ├── Shopping List (JSON + Markdown)
-    └── Day-of Schedule (JSON + Markdown)
-    ↓
-[Spoonacular API (Tier 2 enrichment)]
-```
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React 18 + Vite + Tailwind CSS |
+| Backend | Python FastAPI |
+| LLM | Google Gemini 2.0 Flash |
+| RAG | sentence-transformers (all-MiniLM-L6-v2) + ChromaDB |
+| Knowledge Base | 23 curated JSON documents |
+| External API | Spoonacular Food API (Tier 2) |
+| Session Memory | In-memory EventContext + ChatHistory |
 
 ---
 
-## Setup Instructions
+## Prerequisites
 
-### Prerequisites
-- Python 3.9+ 
-- Node.js 18+ and npm
+Before you start, make sure you have:
 
-### 1. Clone and set up the repository
+- **Python 3.9 or higher** — check with `python3 --version`
+- **Node.js 18 or higher** — check with `node --version`
+- **npm** — check with `npm --version`
+- A **Google Gemini API key** (free) — get one at https://aistudio.google.com/app/apikey
+- *(Optional)* A **Spoonacular API key** (free) — get one at https://spoonacular.com/food-api
+
+---
+
+## Setup — Step by Step
+
+### Step 1: Get the code
 
 ```bash
 git clone <repo-url>
-cd project-phase-1-group-2-1
+cd hihihihi
 ```
 
-### 2. Backend Setup
+---
+
+### Step 2: Backend setup
 
 ```bash
 cd backend
+```
 
-# Install Python dependencies
+**Create and activate a virtual environment:**
+
+```bash
+# Create venv
+python3 -m venv venv
+
+# Activate it — Mac/Linux:
+source venv/bin/activate
+
+# Activate it — Windows:
+venv\Scripts\activate
+```
+
+**Install dependencies:**
+
+```bash
 pip install -r requirements.txt
+```
 
-# Copy and configure environment variables
+> ⚠️ This will download `sentence-transformers` and other ML packages — it may take 2–3 minutes the first time.
+
+**Configure your API keys:**
+
+```bash
+# Mac/Linux:
+cp .env.example .env
+
+# Windows:
 copy .env.example .env
 ```
 
-Edit `.env` and add your API keys:
-```
-ANTHROPIC_API_KEY=your_claude_api_key_here
-SPOONACULAR_API_KEY=your_spoonacular_key_here  # optional for Tier 2
+Open `.env` and fill in your keys:
+
+```env
+# Required — get a free key at https://aistudio.google.com/app/apikey
+GOOGLE_API_KEY=your_gemini_api_key_here
+
+# Which Gemini model to use (this one is free)
+GEMINI_MODEL=gemini-2.0-flash
+
+# Optional — enables real recipe suggestions in shopping list
+SPOONACULAR_API_KEY=your_spoonacular_key_here
 ```
 
-> **Note**: The system works in **demo mode** without API keys — you'll get template-based responses. For full AI capabilities, add your Anthropic API key.
+> **No API key?** The app still works in demo mode — you'll get template-based responses instead of full AI. Everything else (RAG, workflow, artifacts) still functions.
 
 **Start the backend:**
+
 ```bash
+# First run — downloads the embedding model from HuggingFace (~90MB):
 python main.py
-# OR
-uvicorn main:app --reload --port 8000
+
+# All subsequent runs — use offline mode (faster, no network needed for the model):
+TRANSFORMERS_OFFLINE=1 HF_HUB_OFFLINE=1 python main.py
 ```
 
-The backend runs at `http://localhost:8000`. API docs at `http://localhost:8000/docs`.
+You should see:
+```
+✅ RAG Pipeline ready: 23 documents, 164 chunks
+✅ Gemini API: Configured
+✅ Spoonacular: Configured
+INFO: Uvicorn running on http://0.0.0.0:8000
+```
 
-### 3. Frontend Setup
+The backend runs at **http://localhost:8000**  
+Interactive API docs at **http://localhost:8000/docs**
+
+---
+
+### Step 3: Frontend setup
+
+Open a **new terminal** (keep the backend running), then:
 
 ```bash
 cd frontend
-
-# Install dependencies
 npm install
-
-# Start dev server
 npm run dev
 ```
 
-The frontend runs at `http://localhost:5173`.
-
----
-
-## Usage
-
-1. **Open** `http://localhost:5173` in your browser
-2. **Start** on the Dashboard and click "Start Planning"
-3. **Fill in** the event form (type, date, guests, budget, venue) OR chat directly
-4. **Follow** the 7-step workflow guided by the AI
-5. **Generate** your complete planning documents (Task Checklist, Shopping List, Day-of Schedule)
-6. **Download** artifacts as JSON or view as formatted Markdown
-
-### Example Interaction
-
+You should see:
 ```
-You: "I'm planning a birthday party for 25 guests on April 20th. 
-      Budget is $300, at home. We have 2 vegetarian guests and some children."
-
-AI: [Retrieves birthday_party_guide, dietary_guidelines, shopping_list_templates]
-    "I've found some potential conflicts: your budget of $300 for 25 guests is 
-     $12/person which is on the budget-tier range. Consider simplifying the menu..."
-
-You: "I'll increase the budget to $350 and focus on simple food"
-
-AI: [Detects no remaining conflicts, moves to planning]
-    "Great! Here's your comprehensive plan... [cites sources]"
-
-You: "generate artifacts"
-
-AI: "Your complete plan is ready! 
-     - Task Checklist: 20 tasks across 5 time horizons
-     - Shopping List: 28 items, estimated $285.50
-     - Day-of Schedule: 9 time blocks"
+VITE v5.x  ready in 300ms
+➜  Local: http://localhost:5173/
 ```
 
 ---
 
-## Core System Components
+### Step 4: Open the app
 
-### 1. RAG Pipeline (`backend/rag_pipeline.py`)
+Go to **http://localhost:5173** in your browser.
 
-- **Document Store**: Loads 12 JSON files from `backend/knowledge_base/`
-- **Retriever**: TF-IDF vectorization + cosine similarity (pure Python + scikit-learn, no external vector DB)
-- **Context Enrichment**: Query is enriched with event context (event type, guest count, dietary restrictions)
-- **Citations**: Every response cites the source documents used
+---
 
-**Knowledge Base Documents (12 files):**
-1. `birthday_party_guide.json` — Step-by-step birthday planning
-2. `dinner_party_guide.json` — Dinner party hosting
-3. `holiday_gathering_guide.json` — Holiday event planning
-4. `budget_planning_guide.json` — Budget allocation and savings
-5. `shopping_list_templates.json` — Quantity templates by guest count
-6. `dietary_guidelines.json` — Dietary restrictions and accommodations
-7. `accessibility_guide.json` — Accessibility considerations
-8. `day_of_schedule_samples.json` — Day-of timeline templates
-9. `vendor_decoration_ideas.json` — Vendors and DIY decorations
-10. `rsvp_guest_management.json` — RSVP and guest tracking
-11. `catering_guidelines.json` — Food quantities and catering
-12. `entertainment_ideas.json` — Entertainment options and costs
-13. `milestone_celebration_guide.json` — Graduation, baby showers, anniversaries
+## How to Use
 
-### 2. Multi-Step Workflow (`backend/workflow.py`)
+1. **Click "Start Planning"** on the dashboard
+2. **Describe your event** in the chat — e.g.:
+   > *"Birthday party, 20 guests, April 25 2026, $300 budget, at home. 2 vegetarians."*
+3. **Answer any follow-up questions** the AI asks (dietary restrictions, allergies, etc.)
+4. **Resolve any conflicts** the system flags (e.g. tight budget) before it generates the plan
+5. **Check "Include recipe suggestions"** if you want Spoonacular recipe data in your shopping list
+6. **Click "Get My Full Plan"** to generate your 3 planning documents
+7. **View, print, or download** your Task Checklist, Shopping List, and Day-of Schedule
 
-The system follows 7 conditional steps:
+> **Tip:** You can give the AI everything in one message — event type, date, guest count, budget, venue, and dietary restrictions all at once.
 
-| Step | What Happens |
-|------|-------------|
-| **1. Intake** | Collect event parameters (type, date, guests, budget, venue) |
-| **2. Clarification** | Identify missing/ambiguous info, ask targeted questions |
-| **3. Retrieval** | Build query from context, fetch top-k knowledge base chunks |
-| **4. Conflict Detection** | Use LLM + KB to detect budget/timeline/dietary conflicts |
-| **5. Planning** | Generate comprehensive narrative plan with citations |
-| **6. Validation** | Allow adjustments, answer questions, check constraints |
-| **7. Artifact Generation** | Generate all 3 structured artifacts |
+---
 
-**Conditional logic examples:**
-- If budget < $8/person → flag conflict before planning
-- If event date < 7 days away → warn about tight timeline
-- If dietary restrictions present → retrieve dietary_guidelines.json
-- If children attending → include children's activities in planning
+## Example Conversation
 
-### 3. Memory (`backend/memory.py`)
+```
+You:  "Birthday party, 25 guests, April 25 2026, $300, at home. 2 vegetarians and some kids."
 
-**EventContext** object tracks:
-```json
-{
-  "event_type": "birthday party",
-  "event_date": "2025-04-20",
-  "guest_count_estimated": 25,
-  "budget_total": 300.00,
-  "budget_allocated": 285.50,
-  "venue_type": "home",
-  "dietary_restrictions": ["vegetarian"],
-  "has_children": true,
-  "detected_conflicts": [],
-  "pending_tasks": [...],
-  "shopping_list": [...],
-  "schedule_blocks": [...]
-}
+AI:   Got it! Here's what I have: Birthday Party · 25 guests · April 25 2026 · $300 · home · vegetarian
+      ⚠️ Conflict: $300 for 25 guests is $12/person — tight. Increase budget or simplify menu?
+
+You:  "Increase budget to $350, keep food simple."
+
+AI:   ✅ Plan ready!
+      📋 Task Checklist: 20 tasks across 5 time horizons
+      🛒 Shopping List: 28 items, estimated $285.50
+      📅 Day-of Schedule: 9 time blocks
 ```
 
-**ChatHistory** stores full conversation with timestamps and citations.
-**Session** persists across all workflow steps and multiple turns.
+---
 
-### 4. Structured Artifacts
+## Troubleshooting
 
-**Task Checklist** — 5 time horizons, each with:
-- Task title + description, owner, estimated time, priority, status
+**"Failed to create session. Is the backend running?"**  
+→ The backend isn't running. Start it with `python main.py` from the `backend/` folder.
 
-**Shopping List** — 4 categories with:
-- Item name, quantity, unit, estimated cost, notes
-- Budget tracking (total vs. allocated vs. remaining)
+**"Demo mode" showing even with an API key**  
+→ Check that your `.env` file has `GOOGLE_API_KEY=` set correctly (no spaces, no quotes around the key).  
+→ Make sure you're using `GEMINI_MODEL=gemini-2.0-flash` — older model names like `gemini-1.5-flash` may be unavailable.
 
-**Day-of Schedule** — 3 sections with:
-- Time blocks with start time, duration, activity, responsible party, dependencies
+**"Failed to generate artifacts" after the backend restarts**  
+→ Sessions are stored in memory and are lost when the backend restarts. Start a new session — go back to the chat and begin again.
 
-All artifacts output as **JSON** (machine-readable) + **Markdown** (human-readable).
+**Backend crashes on startup with a proxy/network error**  
+→ The sentence-transformer model needs to download from HuggingFace on first run. Run once without offline flags. After that, use:  
+```bash
+TRANSFORMERS_OFFLINE=1 HF_HUB_OFFLINE=1 python main.py
+```
 
-### 5. Spoonacular Integration (Tier 2)
+**Port already in use**  
+```bash
+# Find and kill what's using port 8000:
+lsof -ti :8000 | xargs kill -9
 
-When `SPOONACULAR_API_KEY` is configured:
-- Search for event-appropriate recipes
-- Get scaled ingredient lists for the confirmed guest count
-- Enrich the shopping list with real recipe data
-- Suggest ingredient substitutions for dietary restrictions
+# Or run on a different port:
+APP_PORT=8001 python main.py
+```
+
+**npm install fails**  
+→ Make sure you're running it inside the `frontend/` folder, and that Node.js 18+ is installed.
 
 ---
 
-## API Endpoints
+## Project Structure
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/session/create` | Create planning session |
-| GET | `/api/session/{id}` | Get full session state |
-| GET | `/api/session/{id}/context` | Get event context |
-| POST | `/api/chat` | Send message (main chat + RAG) |
-| POST | `/api/plan/start` | Start workflow with form data |
-| POST | `/api/artifacts/generate` | Generate all 3 artifacts |
-| GET | `/api/artifacts/{id}` | Get artifacts |
-| GET | `/api/artifacts/{id}/download` | Download JSON package |
-| GET | `/api/artifacts/{id}/{type}/markdown` | Get Markdown rendering |
-| GET | `/api/rag/documents` | List knowledge base |
-| POST | `/api/rag/retrieve` | Test retrieval manually |
-| GET | `/api/spoonacular/recipes` | Search recipes (Tier 2) |
-
-Full interactive API docs: `http://localhost:8000/docs`
-
----
-
-## Target Implementation Tier
-
-**Tier 2 (Tool-Enabled System)** — Includes:
-- ✅ Tier 1: Working RAG pipeline, multi-step workflow, context tracking, structured artifacts
-- ✅ External API: Spoonacular Food API for recipe-based ingredient enrichment
-- ✅ React frontend (beyond Streamlit)
+```
+hihihihi/
+├── backend/
+│   ├── main.py               # FastAPI app + all endpoints
+│   ├── workflow.py           # 7-step agentic planning logic
+│   ├── rag_pipeline.py       # sentence-transformers + ChromaDB RAG
+│   ├── llm_service.py        # Gemini API integration + fallback
+│   ├── memory.py             # EventContext + ChatHistory + SessionManager
+│   ├── artifact_generator.py # Fallback artifact templates
+│   ├── spoonacular.py        # Spoonacular Food API (Tier 2)
+│   ├── knowledge_base/       # 23 curated JSON planning documents
+│   ├── requirements.txt
+│   └── .env.example
+├── frontend/
+│   ├── src/
+│   │   ├── pages/            # Dashboard, PlanEvent, Artifacts
+│   │   ├── components/       # ArtifactViewer, ChatBox, Navbar, etc.
+│   │   └── api/client.js     # All backend API calls
+│   └── package.json
+└── docs/
+    └── presentation.html     # Slide deck (open in any browser)
+```
 
 ---
 
-## Reliability and Testing
+## API Keys — Where to Get Them
 
-See `docs/Assignment2_Summary.md` for testing strategy and failure cases.
+| Key | Where to get it | Required? |
+|-----|----------------|-----------|
+| `GOOGLE_API_KEY` | https://aistudio.google.com/app/apikey | Yes — for full AI responses |
+| `SPOONACULAR_API_KEY` | https://spoonacular.com/food-api | No — enables recipe suggestions |
 
-Key testing scenarios:
-- Budget conflict detection (low budget for high guest count)
-- Dietary restriction handling (vegan, gluten-free, nut allergy)
-- Timeline pressure (events < 7 days away)
-- Multi-turn context persistence
-- RAG retrieval quality for different query types
-- Fallback behavior without API key (demo mode)
+Both are free tiers. The Gemini free tier allows ~1,500 requests/day.
+
+---
+
+## Architecture
+
+```
+[React Frontend — localhost:5173]
+    ↓  REST API calls
+[FastAPI Backend — localhost:8000]
+    ↓
+[Session Manager] ←→ [EventContext JSON]
+    ↓
+[7-Step Workflow Engine]
+    ↓
+[RAG Pipeline]
+    ├── [Knowledge Base: 23 JSON docs]
+    └── [sentence-transformers + ChromaDB → top-5 chunks]
+    ↓
+[Google Gemini 2.0 Flash — LLM]
+    ↓
+[Artifact Generator]
+    ├── Task Checklist  (JSON + Markdown + PDF)
+    ├── Shopping List   (JSON + Markdown + PDF)
+    └── Day-of Schedule (JSON + Markdown + PDF)
+    ↓
+[Spoonacular API — recipe enrichment, Tier 2]
+```
