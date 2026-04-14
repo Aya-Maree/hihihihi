@@ -412,7 +412,9 @@ class PlanningWorkflow:
             return self._handle_artifact_generation(session)
 
         # Handle adjustment requests
-        if "adjust" in user_message.lower() or "change" in user_message.lower():
+        adjust_keywords = ["adjust", "change", "update", "modify", "set", "reduce", "increase",
+                           "lower", "raise", "bump", "fewer", "more guests", "less guests"]
+        if any(kw in user_message.lower() for kw in adjust_keywords):
             updates = llm.extract_event_context_from_intake(user_message, ctx.to_dict())
             if updates:
                 session.update_context(updates)
@@ -552,7 +554,8 @@ class PlanningWorkflow:
         chunks = session.retrieved_docs
 
         # Check if user wants to regenerate artifacts
-        if any(word in user_message.lower() for word in ["regenerate", "update artifacts", "new plan", "redo"]):
+        if any(word in user_message.lower() for word in ["regenerate", "update artifacts", "new plan", "redo",
+                                                          "update plan", "refresh plan", "redo plan"]):
             session.set_workflow_step("artifact_generation")
             return self._handle_artifact_generation(session)
 

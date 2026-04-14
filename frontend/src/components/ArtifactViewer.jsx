@@ -438,6 +438,41 @@ function ShoppingListView({ artifact }) {
           ${(artifact.total_cost || 0).toFixed(2)}
         </span>
       </div>
+
+      {/* Spoonacular Recipe Suggestions */}
+      {artifact.spoonacular_enriched && artifact.spoonacular_recipes?.length > 0 && (
+        <div className="border-t border-purple-100 mt-2">
+          <div className="px-4 py-2 bg-purple-50 flex items-center gap-2">
+            <span className="text-xs font-semibold text-purple-700 uppercase tracking-wide">🍽️ Recipe Suggestions</span>
+            <span className="text-xs text-purple-500">(via Spoonacular)</span>
+          </div>
+          <div className="divide-y divide-gray-50">
+            {artifact.spoonacular_recipes.map((recipe, i) => (
+              <div key={i} className="px-4 py-3">
+                <div className="flex justify-between items-start mb-2">
+                  <div>
+                    <span className="text-sm font-semibold text-gray-800">{recipe.recipe_title}</span>
+                    <span className="text-xs text-gray-400 ml-2">· serves {recipe.servings}</span>
+                  </div>
+                  {recipe.source_url && (
+                    <a href={recipe.source_url} target="_blank" rel="noopener noreferrer"
+                       className="text-xs text-purple-600 hover:underline">View recipe →</a>
+                  )}
+                </div>
+                {recipe.ingredients?.length > 0 && (
+                  <div className="flex flex-wrap gap-1.5">
+                    {recipe.ingredients.map((ing, j) => (
+                      <span key={j} className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">
+                        {ing.amount} {ing.unit} {ing.name}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   )
 }

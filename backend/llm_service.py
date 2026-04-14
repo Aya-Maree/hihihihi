@@ -572,16 +572,56 @@ def _fallback_chat_response(
     citation_text = f"\n\n*[Sources: {', '.join(sources)}]*" if sources else ""
 
     if workflow_state == "intake":
-        return (
-            f"I'd love to help you plan {event_type}! To get started, I need:\n\n"
-            "1. **Event type** (birthday party, dinner party, holiday gathering...)\n"
-            "2. **Date** of the event\n"
-            "3. **Guest count** (estimated)\n"
-            "4. **Total budget** in dollars\n"
-            "5. **Venue** (at home, rented hall, outdoor)\n\n"
-            "You can also use the form on the left to fill in these details!\n\n"
-            "> 🔔 *Demo mode — set `GOOGLE_API_KEY` in `.env` for full Gemini AI responses.*"
-        )
+        # Build a summary of what we already know
+        known = []
+        if event_context.get("event_type"):
+            known.append(f"📌 **Event:** {event_context['event_type'].title()}")
+        if event_context.get("event_date"):
+            known.append(f"📅 **Date:** {event_context['event_date']}")
+        if event_context.get("guest_count_estimated") or event_context.get("guest_count_confirmed"):
+            g = event_context.get("guest_count_confirmed") or event_context.get("guest_count_estimated")
+            known.append(f"👥 **Guests:** {g}")
+        if event_context.get("budget_total"):
+            known.append(f"💰 **Budget:** ${event_context['budget_total']:.0f}")
+        if event_context.get("venue_type"):
+            known.append(f"🏠 **Venue:** {event_context['venue_type'].title()}")
+
+        # Build what we still need
+        still_need = []
+        if not event_context.get("event_type"):
+            still_need.append("Event type (birthday party, dinner party, holiday gathering...)")
+        if not event_context.get("event_date"):
+            still_need.append("Date of the event (e.g. April 25 2026 or 2026-04-25)")
+        if not event_context.get("guest_count_estimated") and not event_context.get("guest_count_confirmed"):
+            still_need.append("Guest count (e.g. 20 guests)")
+        if not event_context.get("budget_total"):
+            still_need.append("Total budget in dollars (e.g. $300)")
+        if not event_context.get("venue_type"):
+            still_need.append("Venue (at home, rented hall, or outdoor)")
+
+        if known and still_need:
+            collected_block = "\n".join(known)
+            missing_block = "\n".join(f"{i+1}. {q}" for i, q in enumerate(still_need))
+            return (
+                f"Got it! Here's what I have so far:\n\n{collected_block}\n\n"
+                f"Just need a few more details:\n\n{missing_block}\n\n"
+                "*You can give me all of this in one message!*"
+            )
+        elif known and not still_need:
+            return (
+                f"Great, I have everything I need:\n\n" + "\n".join(known) +
+                "\n\nLet me check your plan for any conflicts before building it..."
+            )
+        else:
+            return (
+                f"I'd love to help you plan your event! To get started, please tell me:\n\n"
+                "1. **Event type** (birthday party, dinner party, holiday gathering...)\n"
+                "2. **Date** of the event (e.g. April 25 2026)\n"
+                "3. **Guest count** (e.g. 20 guests)\n"
+                "4. **Total budget** in dollars (e.g. $300)\n"
+                "5. **Venue** (at home, rented hall, or outdoor)\n\n"
+                "*You can give me all of this in one message — e.g. 'Birthday party, April 25 2026, 20 guests, $300, at home'*"
+            )
 
     msg = user_message.lower()
     if any(w in msg for w in ["budget", "cost", "money", "price", "spend"]):
@@ -638,13 +678,66 @@ def _fallback_context_extraction(user_message: str) -> Dict:
             updates["event_type"] = etype
             break
 
-    guest_match = re.search(r'(\d+)\s*(?:guests?|people|persons?|attendees?)', msg)
-    if guest_match:
-        updates["guest_count_estimated"] = int(guest_match.group(1))
+    # Date extraction — ISO (2026-04-25), written (April 25 2026), short (Apr 25)
+    import datetime as _dt
+    date_match = (
+        re.search(r'(\d{4}-\d{2}-\d{2})', user_message)
+        or re.search(r'(\d{1,2}[/-]\d{1,2}[/-]\d{2,4})', user_message)
+    )
+    if date_match:
+        raw = date_match.group(1)
+        for fmt in ("%Y-%m-%d", "%m/%d/%Y", "%d/%m/%Y", "%m-%d-%Y"):
+            try:
+                updates["event_date"] = _dt.datetime.strptime(raw, fmt).strftime("%Y-%m-%d")
+                break
+            except ValueError:
+                pass
+    else:
+        # Written date: "April 25", "April 25 2026", "25th April"
+        months = {"january":1,"february":2,"march":3,"april":4,"may":5,"june":6,
+                  "july":7,"august":8,"september":9,"october":10,"november":11,"december":12,
+                  "jan":1,"feb":2,"mar":3,"apr":4,"jun":6,"jul":7,"aug":8,
+                  "sep":9,"oct":10,"nov":11,"dec":12}
+        written = re.search(
+            r'(\d{1,2})(?:st|nd|rd|th)?\s+(' + '|'.join(months.keys()) + r')(?:\s+(\d{4}))?'
+            r'|(' + '|'.join(months.keys()) + r')\s+(\d{1,2})(?:st|nd|rd|th)?(?:\s+(\d{4}))?',
+            msg
+        )
+        if written:
+            g = written.groups()
+            if g[0]:  # "25 April 2026"
+                day, mon_str, year = int(g[0]), g[1], int(g[2]) if g[2] else _dt.date.today().year
+            else:     # "April 25 2026"
+                mon_str, day, year = g[3], int(g[4]), int(g[5]) if g[5] else _dt.date.today().year
+            month = months.get(mon_str)
+            if month:
+                try:
+                    updates["event_date"] = _dt.date(year, month, day).strftime("%Y-%m-%d")
+                except ValueError:
+                    pass
 
-    budget_match = re.search(r'\$\s*(\d+(?:\.\d{2})?)', msg)
+    # Match "15 guests", "guests to 15", "to 15 guests", "number of guests to 15", etc.
+    guest_match = (
+        re.search(r'(\d+)\s*(?:guests?|people|persons?|attendees?)', msg)
+        or re.search(r'(?:guests?|people|persons?|attendees?)\s*(?:to|=|:)?\s*(\d+)', msg)
+        or re.search(r'(?:reduce|adjust|change|update|set|increase|lower|raise|bump)\s+(?:\w+\s+){0,4}(?:guests?|people|count)\s+(?:to|by|=)?\s*(\d+)', msg)
+        or re.search(r'(?:to|down to|up to)\s+(\d+)\s*(?:guests?|people|persons?|attendees?)', msg)
+    )
+    if guest_match:
+        # The number may be in group 1 or group 2 depending on which pattern matched
+        num = next((g for g in guest_match.groups() if g is not None), None)
+        if num:
+            updates["guest_count_estimated"] = int(num)
+
+    budget_match = (
+        re.search(r'\$\s*(\d+(?:\.\d{2})?)', msg)
+        or re.search(r'(?:budget|spend|cost)\s+(?:of|to|is|=)?\s*\$?\s*(\d+(?:\.\d{2})?)', msg)
+        or re.search(r'(?:increase|raise|bump|set|change|adjust)\s+(?:\w+\s+){0,3}budget\s+(?:to|by)?\s*\$?\s*(\d+)', msg)
+    )
     if budget_match:
-        updates["budget_total"] = float(budget_match.group(1))
+        num = next((g for g in budget_match.groups() if g is not None), None)
+        if num:
+            updates["budget_total"] = float(num)
 
     for venue in ["home", "backyard", "outdoor", "rented hall", "restaurant", "park", "garden"]:
         if venue in msg:
