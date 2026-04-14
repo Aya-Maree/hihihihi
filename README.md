@@ -1,7 +1,7 @@
 # Household Event Planner — EventOps AI Application
 **SE4471B Course Project | Group 2**
 
-Sara Daher · Aya Maree · Shahed Bitar
+Sara Daher · Aya Maree
 
 ---
 

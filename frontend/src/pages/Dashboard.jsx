@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
   Calendar, Sparkles, ArrowRight, CheckSquare, ShoppingCart, Clock,
-  MessageCircle, BookOpen, ListChecks, Star
+  MessageCircle, BookOpen, ListChecks, Star, Globe
 } from 'lucide-react'
 import { createSession, getHealth } from '../api/client'
 import toast from 'react-hot-toast'
@@ -62,6 +62,13 @@ export default function Dashboard({ onSessionCreated }) {
       color: 'text-orange-600 bg-orange-50',
       title: 'Ready-to-Use Documents',
       desc: 'Get a complete task checklist, shopping list, and day-of schedule — all ready to print or share.',
+    },
+    {
+      icon: Globe,
+      color: 'text-teal-600 bg-teal-50',
+      title: 'Find Local Vendors',
+      desc: 'Search the web for rentals, caterers, decorators, and entertainers near you — all in one place.',
+      link: '/vendor-search',
     },
   ]
 
@@ -136,17 +143,33 @@ export default function Dashboard({ onSessionCreated }) {
       <div>
         <h2 className="text-lg font-semibold text-gray-900 mb-3">How It Works</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {features.map((f) => (
-            <div key={f.title} className="card p-4 flex gap-3">
-              <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${f.color}`}>
-                <f.icon className="w-5 h-5" />
+          {features.map((f) => {
+            const inner = (
+              <>
+                <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${f.color}`}>
+                  <f.icon className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="font-medium text-sm text-gray-900">{f.title}</p>
+                  <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">{f.desc}</p>
+                  {f.link && <span className="text-xs text-teal-600 font-medium mt-1 block">Open →</span>}
+                </div>
+              </>
+            )
+            return f.link ? (
+              <button
+                key={f.title}
+                onClick={() => navigate(f.link)}
+                className="card p-4 flex gap-3 text-left hover:shadow-md hover:border-teal-200 transition-all"
+              >
+                {inner}
+              </button>
+            ) : (
+              <div key={f.title} className="card p-4 flex gap-3">
+                {inner}
               </div>
-              <div>
-                <p className="font-medium text-sm text-gray-900">{f.title}</p>
-                <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">{f.desc}</p>
-              </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
 

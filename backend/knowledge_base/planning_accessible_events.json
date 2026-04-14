@@ -1,0 +1,33 @@
+{
+  "id": "planning_accessible_events",
+  "title": "Planning Accessible Events: So Everyone Feels Welcome",
+  "category": "accessibility",
+  "description": "Practical low-cost and no-cost guide for making community events inclusive and accessible for guests with disabilities, covering venue, food, room setup, presentations, service animals, and volunteers",
+  "tags": ["accessibility", "disability", "inclusive events", "wheelchair", "venue", "food service", "signage", "service animals", "volunteers", "seating", "lighting", "acoustics"],
+  "chunks": [
+    {
+      "chunk_id": "pae_01",
+      "text": "Accessible Venue Planning. The key to making events inclusive is addressing barriers at the planning stage before the event takes place. Whenever possible, visit the potential venue in person and walk through it with people with different disabilities in mind. Key venue accessibility factors: accessible parking — know where it is and communicate it to guests; accessible transportation — confirm whether the venue is near accessible transit routes and identify passenger drop-off areas; outdoor and indoor surfaces — ensure paths of travel are firm, stable, and free of barriers at least one metre wide for wheelchair users; check for curb cuts, level surfaces, and absence of loose mats or thick pile carpeting."
+    },
+    {
+      "chunk_id": "pae_02",
+      "text": "Doors, Washrooms, Lighting, and Acoustics Accessibility. Doors: if automatic doors are not available, prop them open or station volunteers to assist. Washrooms: check that accessible washrooms have floor area beyond the door swing for wheelchairs or walkers, grab bars, and reachable sinks, soap, and paper towels. Lighting: adjustable lighting is important — good lighting helps people who are Deaf or hard of hearing read lips or communicate using sign language. For daytime events, control direct natural light which can cause shadows and glare for people with low vision. Acoustics: environments with loud echoes create barriers for people who are hard of hearing — choose spaces with minimal echo when possible."
+    },
+    {
+      "chunk_id": "pae_03",
+      "text": "Accessible Invitations, Promotion, and Food Service. Invitations: provide contact information so guests with disabilities can inquire about accessibility features or request accommodations. Use a variety of communication methods — telephone, email, and print — to ensure all guests can receive and respond to information. Use at least 12-point sans-serif fonts (such as Arial or Verdana) for all print materials. Food and Refreshments: for buffet-style events, place food, drinks, and utensils within easy reach of a person using a wheelchair. Provide bendable straws and cups with handles — people with limited hand use have difficulty grasping standard cups. Ask volunteers to offer assistance or provide seated service to guests with disabilities."
+    },
+    {
+      "chunk_id": "pae_04",
+      "text": "Accessible Room Setup. Signs: use common words and simple, short sentences for easy readability. Floor space: make aisles and space around tables at least one metre wide for wheelchairs and walkers; cover electrical cables crossing aisles with cable covers. Registration or ticket tables: provide chairs for people using canes or crutches who cannot stand in line for long periods, and offer volunteers to hold their place. Ensure enough space for wheelchairs or scooters to approach and maneuver. Seating: provide spaces without chairs at tables for wheelchair users; where bar-height tables are used, provide lower dining-height tables. Offer a variety of chairs with and without armrests. Reserve seating for people with disabilities and consider their specific needs (e.g., lip-readers need front seats). Provide seating at events where guests will mostly be standing."
+    },
+    {
+      "chunk_id": "pae_05",
+      "text": "Accessible Presentations and Service Animals. Speeches and Presentations: share these tips with speakers — use a microphone, speak slowly, describe images projected on screen. Be aware that people using specialized transportation services may need to leave on time even if the program runs long. Service Animals: service animals are not pets — they assist people with disabilities and are welcome in all public areas where food is served (not where food is prepared). Provide a relief area for service animals and inform owners of its location. Service animals can get thirsty — having a water bowl on hand creates a welcoming environment. Volunteers: contact local high schools for community service volunteers. Assign a volunteer specifically to troubleshoot accessibility barriers on event day. Remind volunteers to ask guests, 'How may I help you?' rather than making assumptions."
+    },
+    {
+      "chunk_id": "pae_06",
+      "text": "Accessible Events Quick Checklist. Venue: accessible parking and drop-off area; near public transportation; outdoor and indoor pathways free of barriers; easy-to-open doors; accessible washrooms; adjustable lighting; good acoustics with minimal echo. Invitations and Promotion: accessibility contact information included; variety of communication methods used; minimum 12-point fonts for print materials. Food and Refreshments: food, drinks, utensils in easy reach of wheelchair users; bendable straws and handled cups available; buffet assistance offered. Room Set-up: clear readable signs; clear floor space; cables secured; chairs and volunteer stand-ins at registration; reserved seating. Speeches: speakers given accessibility tips. Service Animals: relief area designated with water bowl. Volunteers: accessibility troubleshooter assigned; all volunteers reminded to ask how to help."
+    }
+  ]
+}

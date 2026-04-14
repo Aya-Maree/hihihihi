@@ -5,6 +5,136 @@ import clsx from 'clsx'
 import { getArtifactMarkdown } from '../api/client'
 import toast from 'react-hot-toast'
 
+const ARTIFACT_LABELS = {
+  task_checklist: 'Task Checklist',
+  shopping_list: 'Shopping List',
+  day_of_schedule: 'Day-of Schedule',
+}
+
+function markdownToHtml(md) {
+  if (!md) return ''
+  return md
+    // headings
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+    // bold / italic
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    // blockquote
+    .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
+    // horizontal rule
+    .replace(/^---$/gm, '<hr/>')
+    // table rows — convert markdown table to <table>
+    .replace(/^\|(.+)\|$/gm, (_, row) => {
+      const cells = row.split('|').map(c => c.trim())
+      // separator row (---|---) → skip
+      if (cells.every(c => /^[-: ]+$/.test(c))) return ''
+      const tag = cells.some(c => c.includes('**')) ? 'th' : 'td'
+      return `<tr>${cells.map(c => `<${tag}>${c.replace(/\*\*/g, '')}</${tag}>`).join('')}</tr>`
+    })
+    // wrap consecutive <tr> lines in a <table>
+    .replace(/((?:<tr>.*<\/tr>\n?)+)/g, '<table>$1</table>')
+    // unordered list items
+    .replace(/^[-*] (.+)$/gm, '<li>$1</li>')
+    .replace(/((?:<li>.*<\/li>\n?)+)/g, '<ul>$1</ul>')
+    // line breaks to paragraphs
+    .split(/\n{2,}/)
+    .map(block => {
+      const trimmed = block.trim()
+      if (!trimmed) return ''
+      if (/^<(h[1-3]|ul|table|blockquote|hr)/.test(trimmed)) return trimmed
+      return `<p>${trimmed.replace(/\n/g, '<br/>')}</p>`
+    })
+    .join('\n')
+}
+
+function printArtifactPDF(markdownText, artifactType, eventTitle) {
+  const html = markdownToHtml(markdownText)
+  const label = ARTIFACT_LABELS[artifactType] || artifactType
+  const win = window.open('', '_blank')
+  if (!win) { return }
+  win.document.write(`<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>${label} — ${eventTitle || 'Event Plan'}</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 11pt;
+      line-height: 1.6;
+      color: #1a1a2e;
+      background: #fff;
+      padding: 32px 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 { font-size: 20pt; color: #3b0764; border-bottom: 2px solid #7c3aed; padding-bottom: 8px; margin-bottom: 16px; }
+    h2 { font-size: 14pt; color: #5b21b6; margin-top: 22px; margin-bottom: 8px; }
+    h3 { font-size: 12pt; color: #6d28d9; margin-top: 16px; margin-bottom: 6px; }
+    p  { margin-bottom: 8px; }
+    em { color: #4b5563; font-style: italic; }
+    strong { font-weight: 600; }
+    ul { padding-left: 20px; margin-bottom: 10px; }
+    li { margin-bottom: 4px; }
+    blockquote {
+      border-left: 3px solid #7c3aed;
+      padding: 6px 12px;
+      color: #6b7280;
+      font-style: italic;
+      margin: 10px 0;
+      background: #f5f3ff;
+      border-radius: 0 4px 4px 0;
+    }
+    hr { border: none; border-top: 1px solid #e5e7eb; margin: 16px 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.5pt;
+      margin-bottom: 14px;
+    }
+    th {
+      background: #7c3aed;
+      color: #fff;
+      text-align: left;
+      padding: 6px 10px;
+      font-weight: 600;
+    }
+    td {
+      padding: 5px 10px;
+      border-bottom: 1px solid #e5e7eb;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #f9f7ff; }
+    .footer {
+      margin-top: 40px;
+      padding-top: 10px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 8.5pt;
+      color: #9ca3af;
+      display: flex;
+      justify-content: space-between;
+    }
+    @media print {
+      body { padding: 16px 20px; }
+      @page { margin: 15mm 15mm; }
+    }
+  </style>
+</head>
+<body>
+  ${html}
+  <div class="footer">
+    <span>EventOps AI — Household Event Planner</span>
+    <span>Generated ${new Date().toLocaleDateString()}</span>
+  </div>
+  <script>window.onload = () => { window.print(); }<\/script>
+</body>
+</html>`)
+  win.document.close()
+}
+
 const TABS = [
   { id: 'task_checklist', label: 'Task Checklist', icon: CheckSquare, color: 'text-purple-600' },
   { id: 'shopping_list', label: 'Shopping List', icon: ShoppingCart, color: 'text-blue-600' },
@@ -50,17 +180,25 @@ export default function ArtifactViewer({ artifacts, sessionId }) {
     if (viewMode === 'markdown') loadMarkdown(tab)
   }
 
-  const handleDownload = () => {
+  const handleDownload = async () => {
     const artifact = artifacts[activeTab]
     if (!artifact) return
-    const blob = new Blob([JSON.stringify(artifact, null, 2)], { type: 'application/json' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = `${activeTab}_${sessionId?.slice(0, 8)}.json`
-    a.click()
-    URL.revokeObjectURL(url)
-    toast.success('Downloaded!')
+
+    setLoading(true)
+    try {
+      let md = markdownCache[activeTab]
+      if (!md) {
+        const res = await getArtifactMarkdown(sessionId, activeTab)
+        md = res.data
+        setMarkdownCache((prev) => ({ ...prev, [activeTab]: md }))
+      }
+      printArtifactPDF(md, activeTab, artifact.event_title)
+      toast.success('Print dialog opened — choose "Save as PDF"')
+    } catch {
+      toast.error('Failed to generate PDF')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const artifact = artifacts[activeTab]
@@ -108,9 +246,13 @@ export default function ArtifactViewer({ artifacts, sessionId }) {
               Markdown
             </button>
           </div>
-          <button onClick={handleDownload} className="btn-secondary text-xs flex items-center gap-1">
+          <button
+            onClick={handleDownload}
+            disabled={loading}
+            className="btn-secondary text-xs flex items-center gap-1 disabled:opacity-50"
+          >
             <Download className="w-3.5 h-3.5" />
-            JSON
+            {loading ? 'Loading…' : 'PDF'}
           </button>
         </div>
       </div>

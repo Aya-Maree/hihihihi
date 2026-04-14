@@ -59,4 +59,8 @@ export const getRecipes = (eventType, servings, dietary) =>
 
 export const getHealth = () => api.get('/health')
 
+// Web Search
+export const webSearch = (query, maxResults = 4) =>
+  api.get('/web-search', { params: { q: query, max_results: maxResults } })
+
 export default api

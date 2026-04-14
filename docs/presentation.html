@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>EventOps AI — SE4471B Presentation</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; height: 100%; overflow: hidden; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0f0a1e; }
+
+  #deck { width: 100vw; height: 100vh; position: relative; }
+  .slide {
+    position: absolute; inset: 0;
+    display: none; flex-direction: column; justify-content: center; align-items: center;
+    padding: 48px 80px;
+    opacity: 0; transition: opacity 0.4s ease;
+  }
+  .slide.active { display: flex; }
+  .slide.visible { opacity: 1; }
+
+  .bg-title    { background: linear-gradient(135deg, #1e0a3c 0%, #3b0764 50%, #1e1b4b 100%); }
+  .bg-dark     { background: linear-gradient(160deg, #0f0a1e 0%, #1e1b4b 100%); }
+  .bg-purple   { background: linear-gradient(160deg, #1e0a3c 0%, #2d1060 100%); }
+  .bg-gradient { background: linear-gradient(160deg, #0f0a1e 0%, #1e0a3c 60%, #0c1a3c 100%); }
+  .bg-teal     { background: linear-gradient(160deg, #0a1e1e 0%, #0a2d2d 60%, #0c1a3c 100%); }
+
+  .eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+    color: #a78bfa; margin-bottom: 10px;
+  }
+  h1 { font-size: 54px; font-weight: 800; color: #fff; line-height: 1.1; text-align: center; }
+  h1 span { color: #c084fc; }
+  h2 { font-size: 34px; font-weight: 700; color: #fff; margin-bottom: 22px; line-height: 1.15; }
+  h2 span { color: #c084fc; }
+  .subtitle { font-size: 18px; color: #a78bfa; margin-top: 14px; text-align: center; }
+  .authors  { font-size: 15px; color: #7c3aed; margin-top: 10px; }
+
+  /* Rubric badge */
+  .rubric-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(124,58,237,0.18); border: 1px solid rgba(124,58,237,0.5);
+    border-radius: 999px; padding: 5px 16px;
+    font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: #c084fc; margin-bottom: 14px;
+  }
+  .rubric-badge .num {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    border-radius: 50%; width: 20px; height: 20px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: #fff; font-weight: 800;
+  }
+
+  .cards { display: grid; gap: 16px; width: 100%; }
+  .cards-2 { grid-template-columns: 1fr 1fr; }
+  .cards-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .cards-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(167,139,250,0.2);
+    border-radius: 14px; padding: 20px 18px;
+    backdrop-filter: blur(8px);
+  }
+  .card-icon { font-size: 26px; margin-bottom: 8px; }
+  .card h3 { font-size: 14px; font-weight: 700; color: #e9d5ff; margin-bottom: 5px; }
+  .card p  { font-size: 12px; color: #9ca3af; line-height: 1.55; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; width: 100%; align-items: start; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; width: 100%; align-items: start; }
+
+  .list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .list li {
+    display: flex; align-items: flex-start; gap: 11px;
+    font-size: 13px; color: #d1d5db; line-height: 1.5;
+  }
+  .list li .dot {
+    width: 7px; height: 7px; border-radius: 50%; background: #7c3aed;
+    flex-shrink: 0; margin-top: 5px;
+  }
+  .list li strong { color: #e9d5ff; }
+
+  .steps { display: flex; flex-direction: column; gap: 9px; width: 100%; }
+  .step {
+    display: flex; align-items: center; gap: 12px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(124,58,237,0.25);
+    border-radius: 10px; padding: 11px 16px;
+  }
+  .step-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 800; color: #fff; flex-shrink: 0;
+  }
+  .step-text { font-size: 12.5px; color: #d1d5db; }
+  .step-text strong { color: #e9d5ff; }
+
+  .tag {
+    display: inline-block; padding: 4px 12px; border-radius: 999px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+    background: rgba(124,58,237,0.25); color: #c084fc;
+    border: 1px solid rgba(124,58,237,0.35);
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+
+  .arch {
+    background: rgba(0,0,0,0.35); border: 1px solid rgba(124,58,237,0.3);
+    border-radius: 14px; padding: 20px 24px; font-family: 'Courier New', monospace;
+    font-size: 12px; color: #a78bfa; line-height: 1.85; width: 100%;
+  }
+  .arch .hl { color: #c084fc; font-weight: 700; }
+  .arch .dim { color: #6b7280; }
+
+  .highlight-box {
+    background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(168,85,247,0.1));
+    border: 1px solid rgba(167,139,250,0.3);
+    border-radius: 14px; padding: 18px 22px; width: 100%;
+  }
+  .highlight-box p { font-size: 13.5px; color: #d1d5db; line-height: 1.65; }
+
+  .stats { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+  .stat {
+    background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.3);
+    border-radius: 12px; padding: 14px 22px; text-align: center; min-width: 105px;
+  }
+  .stat-value { font-size: 26px; font-weight: 800; color: #c084fc; }
+  .stat-label { font-size: 11px; color: #9ca3af; margin-top: 3px; }
+
+  #nav {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+    display: flex; align-items: center; gap: 14px; z-index: 100;
+    background: rgba(15,10,30,0.85); backdrop-filter: blur(12px);
+    border: 1px solid rgba(124,58,237,0.3); border-radius: 999px;
+    padding: 10px 20px;
+  }
+  #nav button {
+    background: none; border: none; cursor: pointer;
+    color: #a78bfa; font-size: 18px; line-height: 1;
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  #nav button:hover { background: rgba(124,58,237,0.25); }
+  #nav button:disabled { opacity: 0.3; cursor: default; }
+  #counter { font-size: 12px; color: #7c3aed; min-width: 52px; text-align: center; font-weight: 600; }
+
+  #dots { display: flex; gap: 6px; }
+  .dot-nav {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: rgba(124,58,237,0.3); cursor: pointer; transition: background 0.25s, transform 0.25s;
+  }
+  .dot-nav.active { background: #7c3aed; transform: scale(1.3); }
+
+  #hint {
+    position: fixed; bottom: 76px; right: 32px;
+    font-size: 10px; color: #4b5563;
+    opacity: 0; animation: fadeHint 3s ease-out 1s forwards;
+  }
+  @keyframes fadeHint { 0%{opacity:0} 20%{opacity:1} 80%{opacity:1} 100%{opacity:0} }
+
+  .slide-label {
+    position: absolute; top: 18px; right: 26px;
+    font-size: 10px; font-weight: 700; color: rgba(124,58,237,0.4); letter-spacing: 2px;
+  }
+  .divider { width: 60px; height: 3px; background: linear-gradient(90deg,#7c3aed,#a855f7); border-radius: 2px; margin: 12px auto 18px; }
+  .section-top { width: 100%; margin-bottom: 20px; }
+
+  /* Rubric overview grid */
+  .criteria-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%; margin-top: 4px; }
+  .criteria-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(167,139,250,0.2);
+    border-radius: 14px; padding: 18px 20px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .criteria-num {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    border-radius: 10px; width: 34px; height: 34px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 800; color: #fff;
+  }
+  .criteria-text h3 { font-size: 14px; font-weight: 700; color: #e9d5ff; margin-bottom: 4px; }
+  .criteria-text p { font-size: 12px; color: #9ca3af; line-height: 1.5; }
+
+  /* Chat bubbles */
+  .chat-bubble-user {
+    background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.3);
+    border-radius: 12px; padding: 12px 16px;
+  }
+  .chat-bubble-ai {
+    background: rgba(15,10,30,0.6); border: 1px solid rgba(167,139,250,0.2);
+    border-radius: 12px; padding: 12px 16px;
+  }
+  .chat-label { font-size: 10px; font-weight: 700; margin-bottom: 5px; }
+  .chat-text { font-size: 12.5px; color: #d1d5db; line-height: 1.55; }
+  .chat-cite { font-size: 10.5px; color: #6b7280; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<div id="deck">
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       SLIDE 1 — Title
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="slide bg-title active">
+    <div class="eyebrow">SE4471B · Group 2</div>
+    <h1>EventOps <span>AI</span></h1>
+    <div class="divider"></div>
+    <p class="subtitle">An AI-powered household event planning system<br/>that transforms ideas into structured, actionable plans</p>
+    <p class="authors" style="margin-top:28px;">Sara Daher &nbsp;·&nbsp; Aya Maree</p>
+    <div class="tags" style="justify-content:center; margin-top:18px;">
+      <span class="tag">RAG Pipeline</span>
+      <span class="tag">Google Gemini</span>
+      <span class="tag">FastAPI</span>
+      <span class="tag">React</span>
+      <span class="tag">Spoonacular API</span>
+    </div>
+    <div class="criteria-grid" style="margin-top:28px; max-width:780px;">
+      <div class="criteria-card">
+        <div class="criteria-num">1</div>
+        <div class="criteria-text">
+          <h3>Value &amp; Usefulness</h3>
+          <p>Real problem, practical solution — saves hours of manual planning</p>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <div class="criteria-num">2</div>
+        <div class="criteria-text">
+          <h3>Creative Scenario &amp; Outputs</h3>
+          <p>Intelligent conflict detection &amp; 3 structured planning documents</p>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <div class="criteria-num">3</div>
+        <div class="criteria-text">
+          <h3>Technical Depth</h3>
+          <p>Full-stack RAG system, 7-step agentic workflow, Tier 2 API</p>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <div class="criteria-num">4</div>
+        <div class="criteria-text">
+          <h3>Overall Effectiveness</h3>
+          <p>End-to-end conversation → complete, downloadable plan</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       SLIDE 2 — Value: The Problem
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="slide bg-dark">
+    <div class="slide-label">CRITERION 1 · VALUE &amp; USEFULNESS</div>
+    <div class="rubric-badge"><span class="num">1</span> Value &amp; Usefulness</div>
+    <div class="section-top">
+      <h2>Event planning is <span>genuinely hard</span></h2>
+    </div>
+    <div class="cards cards-3">
+      <div class="card">
+        <div class="card-icon">🗂️</div>
+        <h3>Fragmented Workflow</h3>
+        <p>Hosts juggle checklists, shopping lists, timelines, and budgets across multiple disconnected tools — no single source of truth.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⏰</div>
+        <h3>Hours of Manual Research</h3>
+        <p>Estimating quantities, scaling recipes, allocating budget per person, and building a day-of schedule for 20+ guests can take hours.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚠️</div>
+        <h3>Costly Oversights</h3>
+        <p>Dietary restrictions, tight timelines, accessibility needs, and vendor lead times are easy to miss without a structured, guided system.</p>
+      </div>
+    </div>
+    <div class="highlight-box" style="margin-top:20px;">
+      <p>💡 <strong style="color:#e9d5ff;">EventOps AI solves this</strong> by acting as a conversational planning partner — gathering your event details, retrieving expert knowledge, catching problems before they happen, and handing you a complete, ready-to-use planning package.</p>
+    </div>
+    <div class="stats" style="margin-top:18px;">
+      <div class="stat"><div class="stat-value">5+</div><div class="stat-label">Event Types Supported</div></div>
+      <div class="stat"><div class="stat-value">3</div><div class="stat-label">Downloadable Documents</div></div>
+      <div class="stat"><div class="stat-value">∞</div><div class="stat-label">Guest Counts</div></div>
+      <div class="stat"><div class="stat-value">~2 min</div><div class="stat-label">From Chat to Full Plan</div></div>
+    </div>
+  </div>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       SLIDE 3 — Creativity: Scenario & Workflow
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="slide bg-purple">
+    <div class="slide-label">CRITERION 2 · CREATIVITY</div>
+    <div class="rubric-badge"><span class="num">2</span> Creative Scenario &amp; Outputs</div>
+    <div class="section-top">
+      <h2>A guided, <span>context-aware</span> planning conversation</h2>
+    </div>
+    <div class="two-col">
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div class="chat-bubble-user">
+          <div class="chat-label" style="color:#7c3aed;">👤 USER</div>
+          <div class="chat-text">"Birthday party, 25 guests, April 20th, $300 budget at home — 2 vegetarians and some kids."</div>
+        </div>
+        <div class="chat-bubble-ai">
+          <div class="chat-label" style="color:#a78bfa;">🤖 AI — Conflict Detection (Step 4)</div>
+          <div class="chat-text">⚠️ $300 ÷ 25 guests = $12/person — tight. Recommend simplifying menu or increasing budget before I generate the plan.</div>
+          <div class="chat-cite">[Sources: budget_planning_guide · catering_guidelines]</div>
+        </div>
+        <div class="chat-bubble-user">
+          <div class="chat-label" style="color:#7c3aed;">👤 USER</div>
+          <div class="chat-text">"OK, bump it to $350 and keep it simple."</div>
+        </div>
+        <div class="chat-bubble-ai">
+          <div class="chat-label" style="color:#a78bfa;">🤖 AI — Artifacts Ready (Step 7)</div>
+          <div class="chat-text">✅ Your complete plan: 20 tasks · 28 shopping items · $285.50 estimated · 9 schedule blocks. Ready to download!</div>
+        </div>
+      </div>
+      <div>
+        <h3 style="color:#c084fc; font-size:14px; font-weight:700; margin-bottom:12px;">What makes this creative:</h3>
+        <ul class="list">
+          <li><span class="dot"></span><span><strong>Natural language intake</strong> — no rigid forms; the AI extracts structured data from free text</span></li>
+          <li><span class="dot"></span><span><strong>Conflict detection before planning</strong> — the system refuses to generate a plan with unresolved issues, just like a real consultant</span></li>
+          <li><span class="dot"></span><span><strong>Context carries across turns</strong> — dietary restrictions, budget updates, and guest count changes are all remembered</span></li>
+          <li><span class="dot"></span><span><strong>Conditional branching</strong> — dietary flags → dietary KB · children attending → add kids' activities · &lt;7 days → urgency alert</span></li>
+          <li><span class="dot"></span><span><strong>Cited responses</strong> — every AI answer names the source document, making outputs auditable and trustworthy</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       SLIDE 4 — Creativity: Outputs
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="slide bg-gradient">
+    <div class="slide-label">CRITERION 2 · OUTPUTS</div>
+    <div class="rubric-badge"><span class="num">2</span> Creative Scenario &amp; Outputs</div>
+    <div class="section-top">
+      <h2>3 structured <span>planning documents</span>, generated in one command</h2>
+    </div>
+    <div class="three-col">
+      <div class="card" style="border-color:rgba(167,139,250,0.4);">
+        <div class="card-icon">📋</div>
+        <h3 style="color:#c084fc;">Task Checklist</h3>
+        <ul class="list" style="margin-top:8px;">
+          <li><span class="dot"></span><span>5 time horizons: 4+ weeks → day-of</span></li>
+          <li><span class="dot"></span><span>Each task: title, owner, estimated time, priority, status</span></li>
+          <li><span class="dot"></span><span>~20 tasks for a typical household event</span></li>
+          <li><span class="dot"></span><span>Interactive checkboxes in the UI</span></li>
+        </ul>
+      </div>
+      <div class="card" style="border-color:rgba(167,139,250,0.4);">
+        <div class="card-icon">🛒</div>
+        <h3 style="color:#c084fc;">Shopping List</h3>
+        <ul class="list" style="margin-top:8px;">
+          <li><span class="dot"></span><span>4 categories: Food · Beverages · Decorations · Tableware</span></li>
+          <li><span class="dot"></span><span>Quantity, unit, and estimated cost per item</span></li>
+          <li><span class="dot"></span><span>Live budget tracking: total vs. allocated vs. remaining</span></li>
+          <li><span class="dot"></span><span>⚠️ Over-budget warning auto-displayed</span></li>
+        </ul>
+      </div>
+      <div class="card" style="border-color:rgba(167,139,250,0.4);">
+        <div class="card-icon">📅</div>
+        <h3 style="color:#c084fc;">Day-of Schedule</h3>
+        <ul class="list" style="margin-top:8px;">
+          <li><span class="dot"></span><span>3 phases: Setup · Event · Cleanup</span></li>
+          <li><span class="dot"></span><span>Start time, duration, activity, responsible party</span></li>
+          <li><span class="dot"></span><span>Dependencies between blocks enforced</span></li>
+          <li><span class="dot"></span><span>Auto-calculated from event start time</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="stats" style="margin-top:20px;">
+      <div class="stat"><div class="stat-value">JSON</div><div class="stat-label">Machine Readable</div></div>
+      <div class="stat"><div class="stat-value">Markdown</div><div class="stat-label">Human Readable</div></div>
+      <div class="stat"><div class="stat-value">PDF</div><div class="stat-label">Print / Export</div></div>
+      <div class="stat"><div class="stat-value">+Spoonacular</div><div class="stat-label">Real Recipe Data</div></div>
+    </div>
+  </div>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       SLIDE 5 — Technical Depth: Architecture
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="slide bg-dark">
+    <div class="slide-label">CRITERION 3 · TECHNICAL DEPTH</div>
+    <div class="rubric-badge"><span class="num">3</span> Technical Depth &amp; Execution Quality</div>
+    <div class="section-top">
+      <h2>Full-stack <span>RAG system</span> with agentic workflow</h2>
+    </div>
+    <div class="two-col">
+      <div class="arch">
+        <span class="hl">[React + Vite + Tailwind]</span>
+        <span class="dim"> — Chat UI · Artifact Viewer · Workflow Progress</span><br/>
+        <span class="dim">&nbsp;&nbsp;↓ REST API</span><br/>
+        <span class="hl">[FastAPI Backend]</span>
+        <span class="dim"> — 12+ endpoints</span><br/>
+        <span class="dim">&nbsp;&nbsp;↓</span><br/>
+        <span class="hl">[Session Memory]</span> ←→ <span class="hl">[EventContext JSON]</span><br/>
+        <span class="dim">&nbsp;&nbsp;↓</span><br/>
+        <span class="hl">[7-Step Agentic Workflow]</span><br/>
+        <span class="dim">&nbsp;&nbsp;↓</span><br/>
+        <span class="hl">[RAG Pipeline]</span><br/>
+        <span class="dim">&nbsp;&nbsp;├── 23 JSON KB docs</span><br/>
+        <span class="dim">&nbsp;&nbsp;└── sentence-transformers + ChromaDB</span><br/>
+        <span class="dim">&nbsp;&nbsp;↓</span><br/>
+        <span class="hl">[Google Gemini 2.0 Flash]</span>
+        <span class="dim"> — LLM</span><br/>
+        <span class="dim">&nbsp;&nbsp;↓</span><br/>
+        <span class="hl">[Artifact Generator]</span>
+        <span class="dim"> — Checklist · Shopping · Schedule</span><br/>
+        <span class="dim">&nbsp;&nbsp;↓</span><br/>
+        <span class="hl">[Spoonacular API]</span>
+        <span class="dim"> — Tier 2 recipe enrichment</span>
+      </div>
+      <div>
+        <h3 style="color:#c084fc; font-size:14px; font-weight:700; margin-bottom:12px;">7-Step Conditional Workflow</h3>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Intake</strong> — Extract event type, date, guests, budget, venue</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Clarification</strong> — Ask targeted follow-up questions for gaps</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Retrieval</strong> — RAG query enriched with full event context</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text"><strong>Conflict Detection</strong> — Budget, timeline, dietary flags</div></div>
+          <div class="step"><div class="step-num">5</div><div class="step-text"><strong>Planning</strong> — Cited narrative plan with quantities &amp; costs</div></div>
+          <div class="step"><div class="step-num">6</div><div class="step-text"><strong>Validation</strong> — User adjustments; follow-up Q&amp;A with RAG</div></div>
+          <div class="step"><div class="step-num">7</div><div class="step-text"><strong>Artifacts</strong> — Generate all 3 documents via Gemini + KB</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       SLIDE 6 — Technical Depth: Stack & RAG
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="slide bg-purple">
+    <div class="slide-label">CRITERION 3 · STACK &amp; RAG</div>
+    <div class="rubric-badge"><span class="num">3</span> Technical Depth &amp; Execution Quality</div>
+    <div class="section-top">
+      <h2>Tier 2 <span>tool-enabled system</span></h2>
+    </div>
+    <div class="cards cards-2" style="margin-bottom:16px;">
+      <div class="card">
+        <div class="card-icon">🧠</div>
+        <h3>RAG Pipeline</h3>
+        <ul class="list" style="margin-top:6px;">
+          <li><span class="dot"></span><span><strong>23 curated KB documents</strong> — birthday, catering, dietary, accessibility, RSVP, schedule templates, vendor ideas</span></li>
+          <li><span class="dot"></span><span><strong>sentence-transformers</strong> (all-MiniLM-L6-v2) + ChromaDB in-memory vector store</span></li>
+          <li><span class="dot"></span><span><strong>Top-5 chunk retrieval</strong> with cosine similarity</span></li>
+          <li><span class="dot"></span><span><strong>Query enrichment</strong> — event type, guest count, dietary needs injected before retrieval</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚙️</div>
+        <h3>Full-Stack Engineering</h3>
+        <ul class="list" style="margin-top:6px;">
+          <li><span class="dot"></span><span><strong>React 18 + Vite + Tailwind</strong> — chat, artifact viewer, workflow progress tracker, 3-view renderer</span></li>
+          <li><span class="dot"></span><span><strong>Python FastAPI</strong> — 12+ REST endpoints, interactive /docs</span></li>
+          <li><span class="dot"></span><span><strong>In-memory session state</strong> — EventContext JSON persists across all 7 steps and multi-turn chat</span></li>
+          <li><span class="dot"></span><span><strong>PDF export</strong> via browser print API — no extra library</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔌</div>
+        <h3>Tier 2 — Spoonacular API</h3>
+        <ul class="list" style="margin-top:6px;">
+          <li><span class="dot"></span><span>Search real recipes by event type and dietary needs</span></li>
+          <li><span class="dot"></span><span>Ingredient quantities scaled to confirmed guest count</span></li>
+          <li><span class="dot"></span><span>Dietary substitution suggestions (vegan, gluten-free, nut-free)</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛡️</div>
+        <h3>Robustness</h3>
+        <ul class="list" style="margin-top:6px;">
+          <li><span class="dot"></span><span><strong>Demo mode</strong> — works without API keys via template-based fallback</span></li>
+          <li><span class="dot"></span><span>Tested for budget conflicts, dietary edge cases, tight timelines (&lt;7 days)</span></li>
+          <li><span class="dot"></span><span>Multi-turn context persistence verified across session lifecycle</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tags" style="justify-content:center;">
+      <span class="tag">React 18</span><span class="tag">FastAPI</span><span class="tag">Gemini 2.0 Flash</span>
+      <span class="tag">ChromaDB</span><span class="tag">sentence-transformers</span><span class="tag">Spoonacular API</span><span class="tag">Tailwind CSS</span>
+    </div>
+  </div>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       SLIDE 7 — Overall Effectiveness
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="slide bg-teal">
+    <div class="slide-label">CRITERION 4 · OVERALL EFFECTIVENESS</div>
+    <div class="rubric-badge"><span class="num">4</span> Overall Effectiveness of the Final System</div>
+    <div class="section-top">
+      <h2>Does it <span>actually work?</span> — Yes.</h2>
+    </div>
+    <div class="two-col">
+      <div>
+        <h3 style="color:#c084fc; font-size:14px; font-weight:700; margin-bottom:12px;">End-to-end user journey:</h3>
+        <div class="steps">
+          <div class="step"><div class="step-num">✓</div><div class="step-text">User describes event in plain English → system extracts all parameters</div></div>
+          <div class="step"><div class="step-num">✓</div><div class="step-text">AI asks targeted follow-up questions — no dead ends</div></div>
+          <div class="step"><div class="step-num">✓</div><div class="step-text">Conflicts flagged and resolved before plan generation</div></div>
+          <div class="step"><div class="step-num">✓</div><div class="step-text">Complete cited plan delivered with real KB sources</div></div>
+          <div class="step"><div class="step-num">✓</div><div class="step-text">3 structured documents generated and downloaded as PDF</div></div>
+          <div class="step"><div class="step-num">✓</div><div class="step-text">Context preserved if user changes budget, guests, or date mid-conversation</div></div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div class="highlight-box">
+          <p><strong style="color:#e9d5ff;">What a real user gets:</strong> In ~2 minutes of conversation, EventOps AI produces a Task Checklist (~20 tasks across 5 time horizons), a Shopping List (~28 items with budget tracking), and a Day-of Schedule (9 blocks with dependencies) — all grounded in a 23-document knowledge base and exportable as PDF.</p>
+        </div>
+        <div class="highlight-box">
+          <p><strong style="color:#e9d5ff;">Why it goes beyond a basic chatbot:</strong> The system enforces a structured 7-step planning process, detects real conflicts before output, cites every source, and produces machine-readable JSON + human-readable Markdown + printable PDF — not just conversational text.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       SLIDE 8 — Conclusion
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="slide bg-title">
+    <div class="slide-label">SUMMARY</div>
+    <div class="eyebrow">Wrapping up</div>
+    <h2 style="text-align:center;">EventOps <span>AI</span> — what we built</h2>
+    <div class="divider"></div>
+    <div class="stats" style="margin-top:0;">
+      <div class="stat"><div class="stat-value">7</div><div class="stat-label">Workflow Steps</div></div>
+      <div class="stat"><div class="stat-value">23</div><div class="stat-label">KB Documents</div></div>
+      <div class="stat"><div class="stat-value">3</div><div class="stat-label">Output Artifacts</div></div>
+      <div class="stat"><div class="stat-value">Tier 2</div><div class="stat-label">Implementation</div></div>
+      <div class="stat"><div class="stat-value">~2 min</div><div class="stat-label">Full Plan Time</div></div>
+    </div>
+    <div class="criteria-grid" style="margin-top:22px; max-width:820px;">
+      <div class="criteria-card">
+        <div class="criteria-num">1</div>
+        <div class="criteria-text">
+          <h3>Value &amp; Usefulness</h3>
+          <p>Replaces hours of fragmented manual planning with a 2-minute guided AI conversation</p>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <div class="criteria-num">2</div>
+        <div class="criteria-text">
+          <h3>Creative Scenario &amp; Outputs</h3>
+          <p>Conflict detection, context-aware branching, and 3 multi-format exportable documents</p>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <div class="criteria-num">3</div>
+        <div class="criteria-text">
+          <h3>Technical Depth</h3>
+          <p>Full-stack RAG + Gemini + ChromaDB + FastAPI + React + Spoonacular Tier 2 API</p>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <div class="criteria-num">4</div>
+        <div class="criteria-text">
+          <h3>Overall Effectiveness</h3>
+          <p>Verified end-to-end: natural language → conflict check → cited plan → downloadable PDF</p>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:15px; color:#7c3aed; margin-top:24px; font-weight:600;">Sara Daher &nbsp;·&nbsp; Aya Maree &nbsp;·&nbsp; SE4471B Group 2</p>
+  </div>
+
+</div>
+
+<!-- ━━ Navigation ━━ -->
+<div id="nav">
+  <button id="btn-prev" onclick="go(-1)" title="Previous (←)">&#8592;</button>
+  <div id="dots"></div>
+  <span id="counter">1 / 8</span>
+  <button id="btn-next" onclick="go(1)" title="Next (→)">&#8594;</button>
+</div>
+<div id="hint">← → arrow keys to navigate</div>
+
+<!-- ━━ Timer ━━ -->
+<div id="timer" style="
+  position:fixed; top:18px; left:50%; transform:translateX(-50%);
+  background:rgba(15,10,30,0.8); border:1px solid rgba(124,58,237,0.3);
+  border-radius:999px; padding:6px 18px; font-size:12px; color:#7c3aed; font-weight:700;
+  display:flex; gap:10px; align-items:center; z-index:100;
+">
+  <span id="timer-display">5:00</span>
+  <button onclick="toggleTimer()" id="timer-btn" style="background:rgba(124,58,237,0.2);border:1px solid rgba(124,58,237,0.4);border-radius:999px;color:#c084fc;font-size:10px;padding:2px 10px;cursor:pointer;font-weight:700;">Start</button>
+  <button onclick="resetTimer()" style="background:none;border:none;color:#6b7280;font-size:10px;cursor:pointer;">Reset</button>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide')
+  const total  = slides.length
+  let cur = 0
+
+  const dotsEl    = document.getElementById('dots')
+  const counterEl = document.getElementById('counter')
+  const btnPrev   = document.getElementById('btn-prev')
+  const btnNext   = document.getElementById('btn-next')
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('div')
+    d.className = 'dot-nav' + (i === 0 ? ' active' : '')
+    d.onclick = () => goTo(i)
+    dotsEl.appendChild(d)
+  })
+
+  function goTo(n) {
+    const prev = cur
+    cur = Math.max(0, Math.min(total - 1, n))
+
+    if (prev !== cur) {
+      slides[prev].classList.remove('visible')
+      setTimeout(() => slides[prev].classList.remove('active'), 400)
+    }
+
+    slides[cur].classList.add('active')
+    requestAnimationFrame(() => requestAnimationFrame(() => slides[cur].classList.add('visible')))
+    counterEl.textContent = `${cur + 1} / ${total}`
+    btnPrev.disabled = cur === 0
+    btnNext.disabled = cur === total - 1
+    document.querySelectorAll('.dot-nav').forEach((d, i) =>
+      d.classList.toggle('active', i === cur))
+  }
+
+  function go(dir) { goTo(cur + dir) }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); go(1) }
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')                    { e.preventDefault(); go(-1) }
+    if (e.key === 'Home') goTo(0)
+    if (e.key === 'End')  goTo(total - 1)
+  })
+
+  // ── Countdown Timer ──
+  let totalSecs = 300
+  let remaining = 300
+  let running   = false
+  let interval  = null
+
+  const display = document.getElementById('timer-display')
+  const timerBtn = document.getElementById('timer-btn')
+
+  function fmt(s) {
+    const m = Math.floor(s / 60)
+    const sec = s % 60
+    return `${m}:${String(sec).padStart(2,'0')}`
+  }
+
+  function tick() {
+    if (remaining <= 0) {
+      clearInterval(interval)
+      running = false
+      timerBtn.textContent = 'Start'
+      display.style.color = '#ef4444'
+      display.textContent = '0:00'
+      return
+    }
+    remaining--
+    display.textContent = fmt(remaining)
+    const pct = remaining / totalSecs
+    display.style.color = pct > 0.4 ? '#7c3aed' : pct > 0.2 ? '#f59e0b' : '#ef4444'
+  }
+
+  function toggleTimer() {
+    if (running) {
+      clearInterval(interval)
+      running = false
+      timerBtn.textContent = 'Resume'
+    } else {
+      interval = setInterval(tick, 1000)
+      running = true
+      timerBtn.textContent = 'Pause'
+    }
+  }
+
+  function resetTimer() {
+    clearInterval(interval)
+    running = false
+    remaining = totalSecs
+    display.textContent = fmt(remaining)
+    display.style.color = '#7c3aed'
+    timerBtn.textContent = 'Start'
+  }
+
+  goTo(0)
+</script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
-import { Send, Bot, User, BookOpen, AlertTriangle, Loader2 } from 'lucide-react'
+import { Send, Bot, User, BookOpen, AlertTriangle, Loader2, Globe } from 'lucide-react'
 import clsx from 'clsx'
 
 export default function ChatBox({ messages, onSend, loading, workflowState }) {
@@ -162,17 +162,47 @@ function ChatMessage({ message }) {
         {/* Citations */}
         {hasCitations && (
           <div className="flex items-center gap-1 flex-wrap">
-            <BookOpen className="w-3 h-3 text-gray-400" />
-            <span className="text-xs text-gray-400">Based on:</span>
-            {message.citations.map((c, i) => (
-              <span
-                key={i}
-                className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full"
-                title={c.doc_title}
-              >
-                {c.doc_title || c.doc_id?.replace(/_/g, ' ')}
-              </span>
-            ))}
+            {/* Local KB citations */}
+            {message.citations.filter(c => c.source_type !== 'web').length > 0 && (
+              <>
+                <BookOpen className="w-3 h-3 text-gray-400" />
+                <span className="text-xs text-gray-400">KB:</span>
+                {message.citations.filter(c => c.source_type !== 'web').map((c, i) => (
+                  <span
+                    key={i}
+                    className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full"
+                    title={c.doc_title}
+                  >
+                    {c.doc_title || c.doc_id?.replace(/_/g, ' ')}
+                  </span>
+                ))}
+              </>
+            )}
+            {/* Web citations */}
+            {message.citations.filter(c => c.source_type === 'web').length > 0 && (
+              <>
+                <Globe className="w-3 h-3 text-blue-400 ml-1" />
+                <span className="text-xs text-blue-400">Web:</span>
+                {message.citations.filter(c => c.source_type === 'web').map((c, i) => (
+                  c.url ? (
+                    <a
+                      key={i}
+                      href={c.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full border border-blue-200 hover:bg-blue-100 transition-colors"
+                      title={c.url}
+                    >
+                      {c.doc_title?.length > 30 ? c.doc_title.slice(0, 30) + '…' : c.doc_title}
+                    </a>
+                  ) : (
+                    <span key={i} className="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full border border-blue-200">
+                      {c.doc_title}
+                    </span>
+                  )
+                ))}
+              </>
+            )}
           </div>
         )}
 

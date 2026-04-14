@@ -244,7 +244,11 @@ async def chat(req: ChatRequest):
     manager = get_session_manager()
     session = manager.get(req.session_id)
     if not session:
-        raise HTTPException(status_code=404, detail="Session not found. Please create a session first.")
+        # Session expired (e.g. backend restarted) — auto-create a fresh one
+        # so the user doesn't have to manually refresh or click "New Session"
+        from memory import PlanningSession
+        session = PlanningSession(session_id=req.session_id)
+        manager.save(session)
 
     workflow = get_workflow()
     result = workflow.process_message(session, req.message)
@@ -293,7 +297,9 @@ async def start_planning(req: PlanStartRequest):
     manager = get_session_manager()
     session = manager.get(req.session_id)
     if not session:
-        raise HTTPException(status_code=404, detail="Session not found")
+        from memory import PlanningSession
+        session = PlanningSession(session_id=req.session_id)
+        manager.save(session)
 
     # Apply all provided fields to event context
     updates = {}
@@ -550,6 +556,25 @@ async def get_substitutions(ingredient: str):
     """Get substitution suggestions for an ingredient."""
     subs = await spoon.get_ingredient_substitutions(ingredient)
     return {"ingredient": ingredient, "substitutions": subs}
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Web Search
+# ─────────────────────────────────────────────────────────────────────────────
+
+@app.get("/api/web-search")
+async def web_search_endpoint(q: str, max_results: int = 4):
+    """
+    Perform a live DuckDuckGo web search and return results in chunk format.
+    No API key required. Used to supplement local RAG with real-time data.
+    """
+    from web_search import web_search as do_search
+    results = do_search(q, max_results=max_results)
+    return {
+        "query": q,
+        "results": results,
+        "count": len(results),
+    }
 
 
 # ─────────────────────────────────────────────────────────────────────────────

@@ -13,30 +13,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Gemini client helper
+# Gemini client helper (google-genai SDK)
 # ─────────────────────────────────────────────────────────────────────────────
-
-def _get_gemini_model(system_instruction: str):
-    """Return a configured Gemini GenerativeModel with the given system prompt."""
-    if not GOOGLE_API_KEY:
-        return None
-    try:
-        import google.generativeai as genai
-        genai.configure(api_key=GOOGLE_API_KEY)
-        return genai.GenerativeModel(
-            model_name=GEMINI_MODEL,
-            system_instruction=system_instruction,
-        )
-    except ImportError:
-        print("google-generativeai not installed. Run: pip install google-generativeai")
-        return None
-    except Exception as e:
-        print(f"Gemini init error: {e}")
-        return None
-
 
 def _call_gemini(
     messages: List[Dict],
@@ -44,39 +25,43 @@ def _call_gemini(
     max_tokens: int = 2048,
 ) -> Optional[str]:
     """
-    Call Gemini with a list of {role, content} messages and a system prompt.
-    Converts our internal history format to Gemini's {role, parts} format.
-    Returns response text, or None if unavailable (triggers fallback).
+    Call Gemini using the google-genai SDK.
+    Accepts a list of {role, content} messages and a system prompt.
+    Returns response text, or None if unavailable (triggers template fallback).
     """
-    model = _get_gemini_model(system_prompt)
-    if model is None:
+    if not GOOGLE_API_KEY:
         return None
-
     try:
-        # Convert message history to Gemini format
-        # Gemini uses "user" and "model" (not "assistant")
-        gemini_history = []
-        for msg in messages[:-1]:  # all but the last (current) message
-            gemini_role = "model" if msg["role"] == "assistant" else "user"
-            gemini_history.append({
-                "role": gemini_role,
-                "parts": [msg["content"]],
-            })
+        from google import genai
+        from google.genai import types
 
-        # Get the last user message as the current turn
+        client = genai.Client(api_key=GOOGLE_API_KEY)
+
+        # Build chat history (all messages except the last/current one)
+        history = []
+        for msg in messages[:-1]:
+            role = "model" if msg["role"] == "assistant" else "user"
+            history.append(
+                types.Content(role=role, parts=[types.Part(text=msg["content"])])
+            )
+
         current_message = messages[-1]["content"] if messages else ""
 
-        # Start a chat session with the history
-        chat = model.start_chat(history=gemini_history)
-
-        response = chat.send_message(
-            current_message,
-            generation_config={
-                "max_output_tokens": max_tokens,
-                "temperature": 0.7,
-            },
+        chat = client.chats.create(
+            model=GEMINI_MODEL,
+            config=types.GenerateContentConfig(
+                system_instruction=system_prompt,
+                max_output_tokens=max_tokens,
+                temperature=0.7,
+            ),
+            history=history,
         )
+
+        response = chat.send_message(current_message)
         return response.text
+    except ImportError:
+        print("google-genai not installed. Run: pip install google-genai")
+        return None
     except Exception as e:
         print(f"Gemini API error: {e}")
         return None
@@ -359,14 +344,26 @@ Critical requirements:
 def _build_rag_context(chunks: List[Dict]) -> str:
     if not chunks:
         return "KNOWLEDGE BASE CONTEXT: No documents retrieved for this query."
+
+    local_chunks = [c for c in chunks if c.get("source_type") != "web"]
+    web_chunks = [c for c in chunks if c.get("source_type") == "web"]
+
     lines = ["KNOWLEDGE BASE CONTEXT (ground your response in these sources):"]
-    for i, chunk in enumerate(chunks, 1):
+    for i, chunk in enumerate(local_chunks, 1):
         score_pct = int(chunk.get("relevance_score", 0) * 100)
         lines.append(
             f"\n[{i}. Source: {chunk.get('doc_title', 'Unknown')} | "
             f"doc_id: {chunk.get('doc_id', '?')} | similarity: {score_pct}%]"
         )
         lines.append(chunk.get("text", ""))
+
+    if web_chunks:
+        lines.append("\nWEB SEARCH RESULTS (live supplementary data — cite URL when referencing):")
+        for i, chunk in enumerate(web_chunks, 1):
+            url = chunk.get("url", "")
+            lines.append(f"\n[Web {i}: {chunk.get('doc_title', 'Web Result')} | URL: {url}]")
+            lines.append(chunk.get("text", ""))
+
     return "\n".join(lines)
 
 
@@ -426,7 +423,7 @@ def _parse_chat_response(response_text: str, retrieved_chunks: List[Dict]) -> Di
     else:
         display_text = response_text
 
-    # Build citation list from retrieved chunks
+    # Build citation list from retrieved chunks (local KB + web)
     citations = []
     seen = set()
     for chunk in retrieved_chunks:
@@ -436,6 +433,8 @@ def _parse_chat_response(response_text: str, retrieved_chunks: List[Dict]) -> Di
                 "doc_id": chunk["doc_id"],
                 "doc_title": chunk["doc_title"],
                 "relevance_score": chunk.get("relevance_score", 0),
+                "url": chunk.get("url", ""),
+                "source_type": chunk.get("source_type", "kb"),
             })
 
     return {

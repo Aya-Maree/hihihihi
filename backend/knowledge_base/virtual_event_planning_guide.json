@@ -1,0 +1,41 @@
+{
+  "id": "virtual_event_planning_guide",
+  "title": "Virtual Event Planning Guide",
+  "category": "event_planning",
+  "description": "Step-by-step guide for planning and executing successful virtual events with 20–100 attendees, covering platform selection, promotion, registration, test runs, and post-event wrap-up",
+  "tags": ["virtual event", "online event", "zoom", "platform", "registration", "promotion", "speakers", "agenda", "remote", "webinar", "budget"],
+  "chunks": [
+    {
+      "chunk_id": "vep_01",
+      "text": "Designing Your Virtual Event. Start by clarifying purpose and scope: What is the goal of the event? Who is the target audience? How many attendees do you expect? How will your event provide value to attendees? What is the best format and length? Fill in the blank: 'This event will be successful if ______.' Make sure your event date and time does not conflict with other events — check your campus or organizational calendar. Consider whether attendees are coming from various time zones when deciding on an event time. These foundational questions inform all subsequent logistical decisions."
+    },
+    {
+      "chunk_id": "vep_02",
+      "text": "Confirming Speakers and Agenda. Determine who will talk and in what order. Decide who will host the event, deliver housekeeping details, introduce speakers, and thank them. Create an Event Brief that outlines the agenda and distribute it to everyone involved in planning. Use a Virtual Event Planning Checklist and Budget Template to organize all event details and next steps. For requesting senior leadership as speakers, submit a formal President's Event Request Form or General Event Brief Template to the executive's assistant. Contact an Alumni Relations Coordinator if you need alumni speakers for a particular topic or industry."
+    },
+    {
+      "chunk_id": "vep_03",
+      "text": "Selecting a Virtual Platform. Consider the following when choosing a platform: What platform best suits your expected attendance size? Do attendees need to interact with the speaker or host? Do attendees need to see or interact with each other? Will you use screen share, polling, chat, or file uploads? Do you want to record the event to share afterward? Zoom and GotoWebinar both offer built-in registration forms. Qualtrics is another recommended registration platform. If recording, add a disclaimer to the registration form: 'This event will be recorded and may be sent to parties who may or may not have registered for this event.'"
+    },
+    {
+      "chunk_id": "vep_04",
+      "text": "Registration and Attendance Expectations. To increase event security, ask guests to register in advance with their name and email, and only send the event link to registered attendees. Important benchmark: the average attrition rate for a publicly promoted virtual event is 45% — generally expect about 65% of those who register in advance to actually attend. Plan headcount and platform capacity accordingly. Monitor your registration page and send the event link to all who registered. Send an event reminder with the link either 1 hour or 1 day before to all registered attendees."
+    },
+    {
+      "chunk_id": "vep_05",
+      "text": "Promoting Your Virtual Event. Create your invitation message and distribute it via email and social media. Key information to include: date and time, event title and speakers, event description, location/platform, registration form link, event graphic/poster, and event contact information. Always re-read the invitation before sending and check for spelling errors or factual mistakes in the date or time. Frame your event description so it is clear what attendees will learn or take away. Online events rely heavily on content — keep your attendee in mind when creating messaging. Submit to event calendars and JIRA-style request forms to be featured on social media."
+    },
+    {
+      "chunk_id": "vep_06",
+      "text": "Final Confirmation and Test Run. Confirm your speakers and create any slideshows, polls, or welcome slides needed. Event collateral to prepare: welcome slide (displayed at the start as guests enter), housekeeping details slide, speaking notes, and full slideshow. Schedule a test run at least 30 minutes long with presenters and stakeholders a few days prior to the event. Review the technology together, discuss roles and tasks, and finalize content to ensure the event runs as smoothly as possible. Speakers may also need merchandise or thank-you gifts arranged in advance."
+    },
+    {
+      "chunk_id": "vep_07",
+      "text": "Producing and Wrapping Up Your Virtual Event. On event day: log in 30 minutes early to test internet connection, greet guests, and set up your presentation. After the event: reconcile your budget and pay any remaining invoices. Email attendees thanking them for participating, and include information about upcoming programming and ways they can get involved. Complete an internal debrief with your planning team using an Event Debrief Template — celebrate successes and identify areas for improvement. Send a follow-up survey to attendees to collect feedback on their experience. This debrief cycle improves future virtual events significantly."
+    },
+    {
+      "chunk_id": "vep_08",
+      "text": "Virtual Event Experience Design — Questions to Consider. Attendee perspective: Who is the attendee? What do they usually want, and how has that changed given current circumstances? What is valuable to them? Are there opportunities to address their needs through creative solutions? Process and communication: How do people hear about the event? What is the registration process? Is the experience smooth from registration to post-event? Are there any missing communication touchpoints? How is the brand and messaging expressed? How are relationships with attendees maintained after the event? How is feedback collected and implemented?"
+    }
+  ]
+}

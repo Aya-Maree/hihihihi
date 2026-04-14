@@ -2,8 +2,8 @@
   "id": "birthday_party_guide",
   "title": "Birthday Party Planning Guide",
   "category": "event_planning",
-  "description": "Comprehensive step-by-step guide for planning birthday parties of all sizes",
-  "tags": ["birthday", "party", "planning", "checklist", "timeline"],
+  "description": "Comprehensive step-by-step guide for planning birthday parties of all sizes and ages",
+  "tags": ["birthday", "party", "planning", "checklist", "timeline", "kids", "adults", "themes"],
   "chunks": [
     {
       "chunk_id": "birthday_01",
@@ -23,7 +23,7 @@
     },
     {
       "chunk_id": "birthday_05",
-      "text": "Birthday Party: Day Of Schedule. 2-3 hours before: Final food preparation, inflate balloons, final decoration touches. 1 hour before: Set up food and drinks stations, prepare ice, set out tableware. 30 minutes before: Final walkthrough, yourself ready. At start time: Welcome guests, offer drinks. During party: Serve food within first 30-45 minutes of guest arrival. Games/activities in middle portion. Cake cutting 30-45 minutes before end. Gift opening (optional) after cake. 30 minutes before end: Begin cleanup of food items."
+      "text": "Birthday Party: Day Of Schedule. 2-3 hours before: Final food preparation, inflate balloons, final decoration touches. 1 hour before: Set up food and drinks stations, prepare ice, set out tableware. 30 minutes before: Final walkthrough, get yourself ready. At start time: Welcome guests, offer drinks. During party: Serve food within first 30-45 minutes of guest arrival. Games/activities in middle portion. Cake cutting 30-45 minutes before end. Gift opening (optional) after cake. 30 minutes before end: Begin cleanup of food items."
     },
     {
       "chunk_id": "birthday_06",
@@ -32,6 +32,34 @@
     {
       "chunk_id": "birthday_07",
       "text": "Birthday Party Common Mistakes to Avoid. Not accounting for setup and cleanup time in the schedule — add 1-2 hours before and after the party. Underestimating food quantities — plan for 20% more than expected. Forgetting ice — plan for 1-1.5 lbs of ice per guest for drinks. Not having a wet weather backup for outdoor parties. Forgetting candles and a lighter for the birthday cake. Not assigning a designated photographer or creating a photo sharing group. Overscheduling activities leaving no free time for socializing."
+    },
+    {
+      "chunk_id": "birthday_08",
+      "text": "Toddler and Under-5 Birthday Party Specifics (Ages 1-4). Keep the party to 1.5-2 hours maximum — toddlers tire quickly. Best time: 10am-12pm or 2-4pm (after nap). Guest count: 5-12 guests is ideal; more is overwhelming for small children. Activities: bubbles station, sensory bin, simple crafts with big pieces, free play with toys. Food: simple finger foods, fruit, mini sandwiches, juice boxes. Avoid: complex games with rules, long cake ceremonies, too many structured transitions. Smash cake for first birthdays: individual small cake for the birthday child to destroy (it's a keepsake moment). Parents typically stay for the full party at this age — plan adult food and drinks too. Loot bags: keep simple — a book, stickers, small toy ($3-6 value)."
+    },
+    {
+      "chunk_id": "birthday_09",
+      "text": "Children's Birthday Party (Ages 5-10) Complete Planning Guide. Duration: 2-2.5 hours. Optimal guest count: 1 guest per year of age is a common rule (a 7-year-old → 7 guests) but 10-15 is perfectly manageable. Theme selection: let the birthday child choose — popular options include Minecraft/gaming, dinosaurs, superheroes, LEGO, mermaids, unicorns, sports. Activity structure: one organized activity (craft or game: 20-30 min), free play (20 min), food (20-25 min including cake), gift opening or second activity (15-20 min). Food: pizza or finger foods work best — kids eat lightly when excited. Individual mini cupcakes are easier than cutting a full cake for many children. Loot bags budget: $3-8 per child — bubbles, mini Play-Doh, small activity book, candy. Safety note: allergen check is critical at this age — ask every parent about allergies."
+    },
+    {
+      "chunk_id": "birthday_10",
+      "text": "Teen Birthday Party (Ages 13-17) Planning Guide. Teens want to feel in control — involve them in every decision. Duration: 3-4 hours, usually evening (6-10pm). Guest count: 10-20 close friends is ideal. Top formats: movie night with snacks, escape room experience (at home or venue), baking/cooking competition, gaming tournament (video games or board games), photoshoot/TikTok themed party, outdoor bonfire (if possible). Food preferences: pizza, tacos, charcuterie, loaded fries, bubble tea bar. They strongly dislike 'little kid' party games. Music is critical — let them control the playlist. Photo ops matter: set up a cute spot with good lighting — they will post it. Avoid: baby shower-style games, anything too structured or supervised."
+    },
+    {
+      "chunk_id": "birthday_11",
+      "text": "Adult Milestone Birthday Party Guide (30, 40, 50+). Milestone birthdays deserve extra thought and typically have larger budgets ($400-1000+). Surprise party logistics: need a trusted co-conspirator, venue must be ready before guest of honor arrives, have someone to 'bring' them. Themes by decade: 30th — 'Dirty Thirty' glam theme, rose gold decor; 40th — 'Over the Hill' humor theme OR sophisticated cocktail party; 50th — 'Golden Jubilee', gold accents, decade-era music. Photo memory wall: collect photos from their life and display — always emotional and a great centerpiece. Speeches/toasts: plan 2-3 short toasts (1-2 minutes each). Guest book or message cards: have guests write a memory or wish — a beautiful keepsake. Video montage: collect short videos from friends/family in advance and play on a TV (iMovie or Canva can make these easily). Consider: hiring a photographer for milestone birthdays — the memories are worth $150-300."
+    },
+    {
+      "chunk_id": "birthday_12",
+      "text": "Budget-Friendly Birthday Party Ideas Under $100. For 10-15 guests: potluck-style where guests bring a dish each (host provides drinks and cake). DIY cake from box mix + store frosting: $15-20 vs. $50-200 bakery. Outdoor park party: many public parks have free picnic areas — tables, space, no venue cost. Dollar store decoration haul: $20-30 for balloons, streamers, plates, cups, napkins. Free entertainment: scavenger hunt in the backyard (prep time only), nature exploration, playlist on a Bluetooth speaker. Invite fewer people: 8-10 close friends at $10/person budget is perfectly doable with homemade food and simple decorations. Homemade pizza bar: guests add their own toppings ($25-40 for 10 people). Total achievable $75 party: park venue (free), homemade cake ($15), dollar store decor ($25), homemade pizza ($35)."
+    },
+    {
+      "chunk_id": "birthday_13",
+      "text": "Birthday Party Favor and Gift Table Ideas. Party favors are optional but appreciated — budget $3-8 per guest. DIY favor ideas: homemade cookies in a cellophane bag with ribbon, small succulent plants ($2-4 each), personalized photo magnets (printed at home, $0.50 each), mini jam jars, scented candles (for adults). Themed favors: match the party theme — superhero party → superhero masks ($1-2 each), garden party → seed packets ($0.50 each). Gift table setup: use a separate table away from the food area, have a card box or basket, write a thank-you note list as gifts are opened. Gift opening during vs. after: for children's parties under 10 guests, opening during is fun; for larger parties, opening privately after is smoother and more thoughtful. Registry etiquette: for adults, it is now widely accepted to include a 'no gifts' note or gift registry link in the invitation."
+    },
+    {
+      "chunk_id": "birthday_14",
+      "text": "Birthday Cake Buying and Planning Guide. Custom bakery cake: $50-200+ depending on size, design, and location. Order 1-2 weeks in advance. Feeds: a 9-inch round double layer serves 12-16; a quarter sheet cake serves 24-30. Grocery store bakery cake: $25-45 for a half-sheet (serves 20-25) or $15-25 for a round — excellent value, available same-day in most stores. DIY cake from box mix: $15-25 total including frosting and decorations — easy for beginners. Cupcakes vs. whole cake: cupcakes are easier to serve (no cutting), look impressive when tiered, and allow mix of flavors. Mini cupcakes (bite-size): great for children — less mess, everyone gets one. Dietary alternatives: vegan cakes available at most grocery stores now; gluten-free cake mix ($4-6) for dietary guests. Candles: number candles or sparkler candles add drama — buy early since popular numbers sell out before party season. Always have a lighter or long match — they are always forgotten."
     }
   ]
 }

@@ -2,12 +2,12 @@
   "id": "catering_guidelines",
   "title": "Catering and Food Quantity Guidelines",
   "category": "catering",
-  "description": "Per-person food quantities, buffet vs. plated service guidelines, and catering tips",
-  "tags": ["catering", "food", "quantities", "buffet", "plated", "portions", "serving"],
+  "description": "Per-person food quantities, buffet vs. plated service, menu planning, and catering tips for household events",
+  "tags": ["catering", "food", "quantities", "buffet", "plated", "portions", "serving", "menu", "recipes"],
   "chunks": [
     {
       "chunk_id": "catering_01",
-      "text": "Per-Person Quantity Guide for Household Events. Buffet-style (guests serve themselves): protein 6-8 oz per person, increase quantities by 20% vs. plated service. Sit-down plated service: protein 5-7 oz per person. Appetizers before dinner: 3-5 pieces per person. Cocktail party (appetizers only, 2 hours): 8-12 pieces per person. Soup: 6-8 oz per person as first course, 10-12 oz as main. Salad: 2-3 oz dressed greens per person. Bread: 1-2 rolls or 2 slices per person."
+      "text": "Per-Person Quantity Guide for Household Events. Buffet-style (guests serve themselves): protein 6-8 oz per person, increase quantities by 20% vs. plated service. Sit-down plated service: protein 5-7 oz per person. Appetizers before dinner: 3-5 pieces per person. Cocktail party (appetizers only, 2 hours): 8-12 pieces per person. Soup: 6-8 oz per person as first course, 10-12 oz as main. Salad: 2-3 oz dressed greens per person. Bread: 1-2 rolls or 2 slices per person. Always make 15-20% more than calculated — running out of food is worse than having leftovers."
     },
     {
       "chunk_id": "catering_02",
@@ -24,6 +24,38 @@
     {
       "chunk_id": "catering_05",
       "text": "Special Catering Considerations for Household Events. Self-catering vs. hired catering decision: For under 30 guests, self-catering is generally manageable with good planning. For 30-50+ guests, consider partial catering (hire someone for the main dish, DIY the sides). Menu complexity rule: reduce active cooking items on day-of — aim for no more than 2-3 dishes that need active attention. Make-ahead percentage: ideally 70% of menu should be completable before guests arrive. Day-of tasks: reheating, final assembly, fresh salad dressing, and serving should be the focus."
+    },
+    {
+      "chunk_id": "catering_06",
+      "text": "Easy Crowd-Pleasing Menu Ideas for 20 Guests (Budget $100-150). Option A — Taco Bar: 3 lbs ground beef or chicken ($15), 2 packs taco shells + tortillas ($8), shredded cheese, sour cream, salsa, guacamole ($25), lettuce, tomato, onion ($10), beans ($5) — total ~$63, feeds 20 with satisfaction. Option B — Pasta Buffet: 4 lbs pasta ($8), 2 jars marinara + 1 jar alfredo ($12), 2 lbs Italian sausage ($12), garlic bread (2 loaves $6), caesar salad kit x2 ($12) — total ~$50, feeds 20. Option C — BBQ at Home: 5 lbs burger patties ($20), 40 buns ($8), hot dogs ($10), coleslaw kit ($5), corn on the cob x20 ($10), chips and dips ($12) — total ~$65, feeds 20. These formats are self-serve, require minimal day-of cooking, and are universally crowd-pleasing."
+    },
+    {
+      "chunk_id": "catering_07",
+      "text": "Appetizer and Snack Quantities for Events. Charcuterie board for 20 guests: 1.5 lbs cheese (3-4 varieties), 1 lb cured meats, 1 lb crackers, 2 cups olives/pickles, 2 cups nuts, 1 cup jam/honey, seasonal fruit and vegetables — total cost $50-90. Veggie and dip platter: 2 lbs cut vegetables (carrots, celery, cucumber, peppers), 2 cups hummus, 1 cup ranch dip — serves 20 as one of multiple appetizers. Cheese and crackers for cocktail hour: plan 2 oz cheese per person + 5-8 crackers. Bruschetta (20 servings): 1 baguette ($3), 4 tomatoes, fresh basil, olive oil, garlic — $8-12 total. Meatballs as appetizer (20 guests, 4 per person): 80 meatballs — use 3 lbs ground meat, serve with toothpicks and dipping sauce ($15-20)."
+    },
+    {
+      "chunk_id": "catering_08",
+      "text": "Finger Food and Appetizer Party Menu (No Sit-Down Dinner). For a cocktail/appetizer-only party (2-3 hours), plan 8-12 bites per person. Recommended mix: 2 hot appetizers, 2 cold appetizers, 1 dip/board, 1 sweet bite. Sample menu for 20 guests: Mini sliders (20 pieces, $20-25), chicken skewers (20 pieces, $15-20), caprese skewers (20 pieces, $10-12), guacamole and chips ($8-12), vegetable spring rolls (20 pieces, $10-15), dessert bites like brownies or cookies (30-40 pieces, $10-15). Total: $73-99 for a full appetizer party for 20. Rule of thumb: if no main meal is served, increase quantities 50% from what you would serve as appetizers before dinner."
+    },
+    {
+      "chunk_id": "catering_09",
+      "text": "Make-Ahead Food Strategy to Reduce Day-Of Stress. Best make-ahead dishes (2-3 days ahead): lasagna, chili, pulled pork, potato salad (without mayo-based dressing), marinated meats, soups, dips. Day-before prep: slice vegetables, prepare salad components (undressed), bake cookies/brownies, assemble charcuterie ingredients, marinate proteins. Morning-of prep: mix dressings, assemble salads, defrost anything frozen, prepare beverages. 1 hour before: reheat casseroles and soups, grill or finish proteins, set out room-temperature items (cheeses, charcuterie). Avoid making on day-of: complex dishes with multiple steps, anything that requires lots of active attention. Key principle: the host should be greeting guests, not stuck in the kitchen."
+    },
+    {
+      "chunk_id": "catering_10",
+      "text": "Dessert Planning for Parties. Cake serving sizes: 1 round 8-inch cake serves 12-16; 1 quarter sheet serves 24-30; 1 half sheet serves 40-48. Cupcakes: plan 1.5 cupcakes per person (adults often take a second). Cookie/brownie tray: plan 3-4 pieces per person. Dessert bar (3+ options): plan 2 servings total per person across all options. Budget-friendly dessert options: store-bought cookie assortment ($12-20), brownies from box mix ($5-8), Costco cake ($20-25 for a large sheet). Dairy-free dessert option: fruit salad, sorbet, or dairy-free chocolate mousse — have one option available for those with dairy restrictions. Plating tip: mini desserts (bite-size brownies, mini cheesecakes, dessert cups) look more elegant and allow guests to try multiple things."
+    },
+    {
+      "chunk_id": "catering_11",
+      "text": "Dietary-Inclusive Catering Approach. Build your menu around inclusive dishes to minimize the need for special accommodations. Naturally inclusive options: grilled chicken (gluten-free, dairy-free), roasted vegetables (vegan, gluten-free), rice dishes (gluten-free), salads with dressing on the side. Labeling system: use small tent cards or toothpick flags to mark 'GF' (gluten-free), 'V' (vegetarian), 'VG' (vegan), 'DF' (dairy-free), and 'Contains Nuts'. Cross-contamination protocol: serve dietary-restricted dishes first, use clean utensils, keep separate from other dishes. At least one main dish and one dessert should accommodate your most common dietary restrictions (vegetarian is most common at ~8-10% of guests). Ask about nut allergies in your RSVP — even one severe nut allergy changes what you can serve."
+    },
+    {
+      "chunk_id": "catering_12",
+      "text": "Food Quantity Reference Table for Common Party Sizes. For 10 guests: 3-4 lbs protein, 2 lbs salad greens, 2 side dishes (one large each). For 20 guests: 6-8 lbs protein, 4 lbs salad greens, 3 side dishes. For 30 guests: 10-12 lbs protein, 6 lbs salad greens, 4 side dishes. Pasta quantities: 1 lb dry pasta = 4 servings as main course, 6 servings as a side. Rice: 1 cup dry rice = 3 servings. Bread: 1 loaf serves 8-10 as a side. Cake for dessert: assume 60% of guests will want dessert for first serving, 40% may have seconds. Beverage refills: guests average 2-3 refills during a 3-hour event, so have 3-4x cup count available."
+    },
+    {
+      "chunk_id": "catering_13",
+      "text": "Hired Catering vs. DIY Decision Guide. DIY is better when: budget is under $20/person, you have 2-3 helpers, menu is simple (buffet, BBQ, pasta), you enjoy cooking, event is under 30 guests. Hire caterer when: guest count is 40+, you want to focus on guests not cooking, the event is formal/milestone, you lack equipment (chafing dishes, large pots), or the cuisine is complex. Partial catering option (best of both): hire someone for the main protein dish ($10-15/person) and DIY the sides, salads, and desserts — saves 40-60% vs. full catering while reducing your workload significantly. Questions to ask a caterer: minimum order count, setup and breakdown included, serving staff, allergy accommodations, deposit and cancellation policy. Red flags: no written contract, no food handling certification, no references."
     }
   ]
 }

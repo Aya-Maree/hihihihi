@@ -11,6 +11,7 @@ based on event context, conflicts detected, and user inputs.
 from typing import Dict, List, Tuple, Optional
 from memory import PlanningSession, EventContext
 from rag_pipeline import get_rag_pipeline
+from web_search import web_search, should_web_search
 import llm_service as llm
 import artifact_generator as ag
 from datetime import datetime
@@ -64,6 +65,14 @@ class PlanningWorkflow:
 
     def __init__(self):
         self.rag = get_rag_pipeline()
+
+    def _maybe_add_web_results(self, query: str, local_chunks: List[Dict]) -> List[Dict]:
+        """Supplement local KB chunks with web search results if warranted."""
+        if should_web_search(query, local_chunks):
+            web_results = web_search(query)
+            if web_results:
+                return local_chunks + web_results
+        return local_chunks
 
     def process_message(self, session: PlanningSession, user_message: str) -> WorkflowResult:
         """
@@ -130,29 +139,64 @@ class PlanningWorkflow:
             result.context_updated = True
             return result
 
-        # Determine what's still missing
+        # RAG retrieval based on whatever context we have so far, so even
+        # early responses are grounded in the knowledge base
+        query_parts = [ctx.event_type or "event planning"]
+        if ctx.venue_type:
+            query_parts.append(ctx.venue_type)
+        if ctx.dietary_restrictions:
+            query_parts.append("dietary " + " ".join(ctx.dietary_restrictions))
+        if ctx.guest_count_estimated or ctx.guest_count_confirmed:
+            guests = ctx.guest_count_estimated or ctx.guest_count_confirmed
+            query_parts.append(f"{guests} guests")
+        if ctx.has_children:
+            query_parts.append("children activities")
+        if ctx.has_elderly:
+            query_parts.append("elderly accessibility")
+        # Also include any keywords from the user's current message
+        query_parts.append(user_message[:120])
+
+        query = " ".join(query_parts)
+        chunks = self.rag.retrieve(query, top_k=4, event_context=ctx.to_dict())
+        session.retrieved_docs = chunks
+        citations = self.rag.get_citations(chunks)
+
+        # Generate clarification questions for the missing fields
         questions = llm.generate_clarification_questions(ctx.to_dict(), [f"Missing: {m}" for m in missing])
 
-        event_type = ctx.event_type or "your event"
-        message = (
-            f"I'm excited to help you plan {event_type}! "
-            f"I have some information, but I need a few more details to create your personalized plan.\n\n"
+        # Use chat_with_context so the KB grounds the response, while the
+        # system prompt instructs it to also ask for the missing fields
+        missing_prompt = (
+            f"\n\nBefore you can build the full plan, you still need these details from the user: "
+            f"{', '.join(missing)}. "
+            f"Answer any specific questions the user just asked using the knowledge base above, "
+            f"then ask for the missing information in a friendly, numbered list."
         )
-        if missing:
-            message += f"**Still needed:** {', '.join(missing)}\n\n"
-        if questions:
-            message += "**Please answer these questions:**\n"
+
+        chat_result = llm.chat_with_context(
+            user_message=user_message + missing_prompt,
+            chat_history=session.chat_history.get_for_llm()[-6:],
+            event_context=ctx.to_dict(),
+            retrieved_chunks=chunks,
+            workflow_state="intake",
+        )
+
+        message = chat_result["response"]
+        # Append questions as a fallback footer if LLM didn't surface them
+        if questions and not any(q[:30].lower() in message.lower() for q in questions):
+            message += "\n\n**To build your plan I still need:**\n"
             for i, q in enumerate(questions, 1):
                 message += f"{i}. {q}\n"
 
-        message += "\n*You can provide all this information in one message or answer step by step.*"
+        message += "\n\n*You can provide all this information in one message or answer step by step.*"
 
         return WorkflowResult(
             step="intake",
             message=message,
+            citations=citations,
             requires_input=True,
             questions=questions,
-            context_updated=bool(llm.extract_event_context_from_intake(user_message, {})),
+            context_updated=bool(chat_result.get("context_updates")),
             next_step="clarification",
         )
 
@@ -167,6 +211,13 @@ class PlanningWorkflow:
         if not is_complete:
             return self._handle_intake(session, user_message)
 
+        # If the user is responding to previously detected conflicts, go straight to
+        # planning — do NOT re-run retrieval→conflict_detection or they'll loop forever
+        # on unresolvable conflicts (e.g. a date that is already close).
+        if ctx.detected_conflicts:
+            session.set_workflow_step("planning")
+            return self._handle_planning(session, user_message)
+
         # Check for dietary/accessibility gaps
         clarification_needed = []
         if not ctx.dietary_restrictions and not any(
@@ -178,12 +229,30 @@ class PlanningWorkflow:
             )
 
         if session.clarification_questions and clarification_needed:
+            # Use the already-retrieved docs (or do a fresh retrieval) so the
+            # clarification message is grounded in the knowledge base
+            chunks = session.retrieved_docs
+            if not chunks:
+                query = (ctx.event_type or "event planning") + " dietary restrictions accessibility"
+                chunks = self.rag.retrieve(query, top_k=4, event_context=ctx.to_dict())
+                session.retrieved_docs = chunks
+            citations = self.rag.get_citations(chunks)
+
+            chat_result = llm.chat_with_context(
+                user_message=(
+                    "Almost there! One more quick question before building the plan: "
+                    + " ".join(clarification_needed)
+                ),
+                chat_history=session.chat_history.get_for_llm()[-6:],
+                event_context=ctx.to_dict(),
+                retrieved_chunks=chunks,
+                workflow_state="clarification",
+            )
+
             return WorkflowResult(
                 step="clarification",
-                message=(
-                    "Almost there! One more quick question before I build your plan:\n\n"
-                    + "\n".join(f"- {q}" for q in clarification_needed)
-                ),
+                message=chat_result["response"],
+                citations=citations,
                 requires_input=True,
                 questions=clarification_needed,
                 next_step="retrieval",
@@ -354,12 +423,16 @@ class PlanningWorkflow:
             session.set_workflow_step("planning")
             return self._handle_planning(session, user_message)
 
-        # General chat during validation — answer using RAG
+        # General chat during validation — answer using RAG + web search
         query = user_message
         specific_chunks = self.rag.retrieve(query, top_k=4, event_context=ctx.to_dict())
+        specific_chunks = self._maybe_add_web_results(query, specific_chunks)
         if specific_chunks:
             chunks = specific_chunks
-        citations = self.rag.get_citations(chunks)
+        citations = self.rag.get_citations(chunks) + [
+            c for c in chunks if c.get("source_type") == "web"
+            and c.get("doc_id") not in {x.get("doc_id") for x in self.rag.get_citations(chunks)}
+        ]
 
         chat_result = llm.chat_with_context(
             user_message=user_message,
@@ -483,12 +556,15 @@ class PlanningWorkflow:
             session.set_workflow_step("artifact_generation")
             return self._handle_artifact_generation(session)
 
-        # Retrieve relevant chunks for the specific question
+        # Retrieve relevant chunks for the specific question, supplement with web if needed
         specific_chunks = self.rag.retrieve(user_message, top_k=4, event_context=ctx.to_dict())
+        specific_chunks = self._maybe_add_web_results(user_message, specific_chunks)
         if specific_chunks:
             chunks = specific_chunks
 
-        citations = self.rag.get_citations(chunks)
+        kb_citations = self.rag.get_citations([c for c in chunks if c.get("source_type") != "web"])
+        web_citations = [c for c in chunks if c.get("source_type") == "web"]
+        citations = kb_citations + web_citations
 
         chat_result = llm.chat_with_context(
             user_message=user_message,

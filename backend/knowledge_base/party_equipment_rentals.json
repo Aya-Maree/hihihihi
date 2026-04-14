@@ -1,0 +1,37 @@
+{
+  "id": "party_equipment_rentals",
+  "title": "Party Equipment Rentals Guide",
+  "category": "rentals",
+  "description": "Complete guide to renting bouncy castles, tents, tables, chairs, AV equipment, and other party gear — including pricing, booking tips, and where to find rental companies",
+  "tags": ["rentals", "bouncy castle", "inflatable", "tent", "tables", "chairs", "AV", "equipment", "hire"],
+  "chunks": [
+    {
+      "chunk_id": "rentals_01",
+      "text": "Bouncy Castle and Inflatable Rentals. Bouncy castles (also called jump houses or inflatables) are one of the most popular children's party rental items. Typical pricing: standard bouncy castle $150-300 for a half-day (4-5 hours), $200-400 for a full day. Combo units with slide: $250-450/day. Water slide inflatables (summer): $300-500/day. Pricing usually includes delivery, setup, and pickup. What to look for when booking: TSSA (Technical Standards and Safety Authority in Ontario) or equivalent certification, insurance coverage, and a damage deposit policy. Most rental companies require a flat, grassy area of at least 15x15 feet with a nearby power outlet. Book 2-4 weeks in advance for summer weekends — they sell out quickly."
+    },
+    {
+      "chunk_id": "rentals_02",
+      "text": "How to Find Bouncy Castle and Inflatable Rentals Near You. Search strategies: Google 'bouncy castle rental [your city]' or 'inflatable rental near me'. Facebook Marketplace and local Facebook groups often list affordable independent operators. Party rental directories: AislePlanner, The Bash (formerly GigSalad), Bark.com list vetted vendors. Local party supply stores (Party City, etc.) sometimes offer rental services or referrals. Questions to ask when booking: Is delivery and setup included? What happens in case of rain or bad weather? Do you have liability insurance? What is the age/weight limit? Is a deposit required? Most reputable companies carry at least $1M in liability insurance — always ask."
+    },
+    {
+      "chunk_id": "rentals_03",
+      "text": "Tent and Canopy Rentals for Outdoor Events. Party tents provide rain and sun protection. Pricing ranges: 10x10 popup canopy (DIY purchase): $50-100. 20x20 tent rental: $250-500/day. 20x40 tent rental: $500-900/day (seats ~80-100 guests). Frame tents vs. pole tents: frame tents need no center poles (better for parties), pole tents are more affordable but require center space. Tent accessories: sidewall panels $50-100/set, string lights inside tent $75-150, heating/cooling fans $50-100/day each. Setup and teardown is usually included in rental price. Book tents 4-8 weeks ahead in peak season (May-September). Safety: ensure tent is properly staked or weighted; requires 3-4 anchor points per section."
+    },
+    {
+      "chunk_id": "rentals_04",
+      "text": "Tables and Chairs Rental Guide. Standard rental pricing: 6-foot folding banquet table $10-15/day, round tables (seats 8-10) $12-18/day, folding chairs $1.50-3/day, chiavari/fancy chairs $4-8/day. How many to rent: budget 1 table per 8-10 guests for dining, extra tables for food/drinks station. Table linen rentals: $8-15 per tablecloth. For 20 guests you typically need: 3 dining tables + 1-2 serving tables, 22-24 chairs (a few extras for latecomers). Rental companies often have package deals — ask about full setup packages. Delivery: most companies charge $50-150 for delivery within their service zone. DIY alternative: borrow from neighbors/community centre, or buy inexpensive folding tables from Costco/Walmart and resell after."
+    },
+    {
+      "chunk_id": "rentals_05",
+      "text": "AV and Audio Equipment Rentals. PA system (microphone + speakers for speeches): $100-200/day. Bluetooth speaker rentals: $30-60/day (many prefer to buy a $50-100 unit instead). Projector and screen rental: $100-200/day (useful for slideshows, movie nights). Karaoke machine rental: $75-150/day (includes microphones and song library). Photo booth kiosk rental: $500-900 for 4 hours with attendant and unlimited prints. Selfie station (unmanned, props only): $150-300/4 hours. Screen/projector for outdoor movie night: $200-400 for setup. AV tip: test all equipment the day before the event and have backup Bluetooth speakers in case of technical issues."
+    },
+    {
+      "chunk_id": "rentals_06",
+      "text": "Other Popular Party Rental Items. Catering equipment: chafing dish sets $15-25/day each, beverage dispensers $10-20/day, popcorn machine $50-100/day, cotton candy machine $60-120/day, slushie machine $80-150/day. Fun extras: dunk tank $200-400/day, mechanical bull $400-600/4 hours (adult parties), carnival game booths $75-150 each per day. Furniture rentals: lounge furniture sets (couches, ottomans) $200-500/event, cocktail tables $15-25/day, bar cart/bar setup $50-100/day. Lighting: uplighting $20-30 per light/day, string light canopy $100-200, dance floor (portable) $200-400/day. Booking tip: rental companies often discount 15-20% for bundled orders — ask for a package quote."
+    },
+    {
+      "chunk_id": "rentals_07",
+      "text": "Rental Booking Checklist and Best Practices. Timeline: Book entertainment inflatables 3-4 weeks ahead; tents and large equipment 6-8 weeks ahead in summer. Confirmation: Always get written confirmation of date, time, setup/pickup window, and included items. Insurance: ask if they carry general liability — reputable companies will say yes immediately. Space check: measure your outdoor area before booking inflatables or tents. Electrical: inflatables need a dedicated 20-amp circuit; do not share with other high-draw appliances. Cancellation policy: understand their weather/cancellation terms before paying deposit (usually 50% deposit to hold date). Day-of contact: get a direct phone number for the delivery driver. Have a cleared path from street to setup area so delivery goes smoothly."
+    }
+  ]
+}

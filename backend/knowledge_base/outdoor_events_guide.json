@@ -1,0 +1,33 @@
+{
+  "id": "outdoor_events_guide",
+  "title": "Outdoor and Backyard Event Planning Guide",
+  "category": "outdoor",
+  "description": "Complete guide for planning outdoor and backyard parties — weather backup plans, lighting, seating, pest control, and setup logistics",
+  "tags": ["outdoor", "backyard", "garden", "BBQ", "weather", "tents", "lighting", "lawn", "patio"],
+  "chunks": [
+    {
+      "chunk_id": "outdoor_01",
+      "text": "Outdoor Party Planning Essentials. Outdoor events require 3 extra planning categories that indoor events don't: weather contingency, pest management, and lighting. Space planning: allow 8-10 square feet per guest for standing/mingling, 12-15 square feet per guest for seated dining. For 20 guests dining: you need at least 250-300 sq ft of usable space. Grass quality: check lawn for uneven spots, holes, or slippery areas — trim 2-3 days before. Pathway lighting: mark any steps or level changes with battery-powered stake lights ($15-25 for a set). Parking: consider neighbor parking impact and communicate with guests in advance. Extension cord (heavy-duty, outdoor-rated): get at least 50 feet; tape down with weatherproof duct tape to prevent tripping."
+    },
+    {
+      "chunk_id": "outdoor_02",
+      "text": "Weather Backup Planning for Outdoor Events. Always have a Plan B — even a 20% chance of rain requires a backup. Options: rent a tent ($250-500 for 20x20), reserve an indoor backup location (community hall, church hall), or designate an indoor overflow area in your home. Decision timeline: monitor the forecast 5 days out; finalize the backup plan 48 hours before. Rain contingency checklist: enough indoor space for all guests, covered food area, extension cords in safe positions, a way to notify guests quickly (group text, Facebook event). Heat planning (above 85°F/30°C): rent fans ($30-60/day each), provide shade (umbrellas, pop-up canopies), increase water/beverage quantities by 30%, plan for shorter outdoor time and move indoors for main meal."
+    },
+    {
+      "chunk_id": "outdoor_03",
+      "text": "Outdoor Lighting Guide for Evening Events. String lights (fairy lights): the most popular outdoor lighting option. 48-foot commercial string lights with Edison bulbs: $25-40 per strand, cover about 48 linear feet. A backyard pergola or tree-to-tree setup typically needs 3-5 strands. Stake path lights: $15-30 for a 10-pack, solar-powered. Tiki torches: $5-15 each, burn 8-10 hours on one fill. Candle lanterns: $10-30 each, place every 4-5 feet on tables. LED candles (battery-powered): $3-8 each, much safer than real candles outdoors. Citronella candles double as pest deterrents. Colorful LED uplighting: $20-30 per light, rented at $15-25/day from rental companies. Safety: ensure all outdoor extension cords are rated for outdoor use (check for 'W-A' on cord jacket)."
+    },
+    {
+      "chunk_id": "outdoor_04",
+      "text": "Outdoor Pest Management. Mosquitoes: citronella candles reduce mosquitoes by 20-50% within immediate vicinity. Effective options: a citronella torch every 6-8 feet along perimeter, clip-on mosquito repellent fans for seating areas ($12-20 each), Thermacell patio shield ($30-40) covers about 15x15 ft area. Insects on food: cover all food with mesh food tents ($10-20 for a set of 6) or serve food just before eating rather than leaving it out. Wasps and bees: avoid floral perfumes and fragrances at outdoor events in warm months; keep sweet drinks covered; have a wasp trap placed 15+ feet away from the seating area. Flies: screen tents over food buffets, keep garbage cans covered and away from food area. Sun protection: provide a shaded seating area for elderly guests and young children."
+    },
+    {
+      "chunk_id": "outdoor_05",
+      "text": "Backyard BBQ and Grill Planning. Grill capacity: a standard 22-inch kettle grill can cook 8-10 burgers at a time. For 20 guests: expect 3-4 rounds of cooking (45-60 minutes of active grill time). Propane: a standard 20-lb propane tank lasts 18-20 hours at medium heat; for a 2-hour BBQ you'll use roughly 10% of a tank. Charcoal: use a charcoal chimney starter (faster and more even than lighter fluid). Food quantities per person at a BBQ: 1.5 burgers or 2 hot dogs, 1 ear of corn, 1 cup coleslaw, ¼ of a watermelon per 6-8 people. Timing: grill proteins last; prep and plate all cold sides first so they're ready when hot food comes off. Food safety outdoors: never leave meat at room temperature more than 1 hour in warm weather; use a meat thermometer (hamburgers safe at 160°F/71°C internal)."
+    },
+    {
+      "chunk_id": "outdoor_06",
+      "text": "Outdoor Seating and Comfort Setup. Seating options for backyard: folding tables + chairs (most common, rented or purchased), picnic blankets for casual/lawn areas ($10-20 each), Adirondack chairs for lounging, hay bales for rustic events (rented from farm supply stores $5-10 each). Sun shade: market umbrella covers 7-8 feet diameter, appropriate for 1 table of 6-8 guests ($40-120 to purchase, $15-25/day to rent). Pop-up gazebo (10x10): $60-150 to purchase, $40-60/day to rent — provides shade and light rain protection. Flooring: outdoor rugs ($20-60) or interlocking deck tiles ($2-4 per tile) prevent muddy or wet-grass issues. Comfort extras: outdoor fans ($30-60 each, or rent), bug spray station with spray and wipes, sunscreen station for daytime events."
+    }
+  ]
+}

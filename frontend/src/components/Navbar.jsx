@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Calendar, MessageSquare, FileText, BookOpen, Plus, Home } from 'lucide-react'
+import { Calendar, MessageSquare, FileText, BookOpen, Plus, Home, Globe } from 'lucide-react'
 import clsx from 'clsx'
 
 const WORKFLOW_LABELS = {
@@ -31,6 +31,7 @@ export default function Navbar({ sessionId, workflowState, artifactsReady, onNew
     { to: '/', icon: Home, label: 'Home' },
     { to: '/plan', icon: MessageSquare, label: 'AI Planner' },
     { to: '/artifacts', icon: FileText, label: 'My Plan', badge: artifactsReady },
+    { to: '/vendor-search', icon: Globe, label: 'Find Vendors' },
     { to: '/knowledge-base', icon: BookOpen, label: 'Planning Guides' },
   ]
 

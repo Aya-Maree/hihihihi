@@ -310,13 +310,15 @@ class RAGPipeline:
         seen = set()
         citations = []
         for chunk in chunks:
-            if chunk["doc_id"] not in seen:
+            if chunk.get("doc_id") not in seen:
                 seen.add(chunk["doc_id"])
                 citations.append({
                     "doc_id": chunk["doc_id"],
-                    "doc_title": chunk["doc_title"],
-                    "doc_category": chunk["doc_category"],
+                    "doc_title": chunk.get("doc_title", ""),
+                    "doc_category": chunk.get("doc_category", ""),
                     "relevance_score": chunk.get("relevance_score", 0),
+                    "url": chunk.get("url", ""),
+                    "source_type": chunk.get("source_type", "kb"),
                 })
         return citations
 

@@ -1,0 +1,37 @@
+{
+  "id": "gmc_catering_guide",
+  "title": "Globe and Mail Centre Preferred Catering Guide",
+  "category": "catering",
+  "description": "Directory of preferred and recommended caterers at the Globe and Mail Centre venue in Toronto, including caterer profiles, specialties, and contact information for event catering inquiries",
+  "tags": ["catering", "caterers", "Toronto", "venue", "corporate events", "weddings", "private events", "kosher", "South Asian", "Chinese", "gourmet", "sustainable", "custom menus"],
+  "chunks": [
+    {
+      "chunk_id": "gmc_cat_01",
+      "text": "Catering Fee Structure at the Globe and Mail Centre. The venue recommends a selection of caterers at different fee tiers. A 15% landmark fee applies to food and staffing services from a Preferred Caterer. An 18% landmark fee applies to food and staffing from a Recommended Caterer. A 30% landmark fee applies to any other caterer not on the preferred/recommended list. When selecting a caterer, always contact your Event Manager for more information on the approvals process. Choosing a preferred caterer significantly reduces the landmark surcharge and streamlines coordination with venue staff."
+    },
+    {
+      "chunk_id": "gmc_cat_02",
+      "text": "The Food Dudes — Preferred Caterer (Toronto). Founded in 2007 by Executive Chef Adrian Niman after training at the Michelin-starred Reads Hotel in Mallorca, Spain. The Food Dudes have grown into Toronto's most recognized innovative catering and food service company. Specialties: fresh and local ingredients, sophisticated original fare, flexible budgeting plans, custom menus, food trucks, fundraisers, and signature food-driven event experiences. Contact: Lindsay Klein, CEO — events@thefooddudes.com, 647.340.3833. Noted for creating custom, occasion-specific menus and delivering memorable culinary experiences for events of all styles and sizes."
+    },
+    {
+      "chunk_id": "gmc_cat_03",
+      "text": "McEwan Catering — Preferred Caterer (Toronto). The catering arm of Chef Mark McEwan's culinary group. Specialties: innovative private parties, corporate functions, and glamorous weddings. Offers passed appetizers, food stations, and specialty menus curated to client taste. Chef-led team focused on freshest ingredients. Can accommodate events from intimate soirées to large-scale celebrations. Contact: Ann Stolte-Butler, Director of Catering — ann@mcewanfoods.com, 416.444.6262 ext 243. Known for versatile elegant design and the ability to handle both unique private parties and large corporate functions."
+    },
+    {
+      "chunk_id": "gmc_cat_04",
+      "text": "Presidential Gourmet — Preferred Caterer (Toronto). Premier Toronto caterer since 1986. Philosophy: sustainable methods, locally sourced products, bespoke event execution. Known for logistical expertise and flawless event execution, allowing clients to be guests at their own event. Specialties: social events, corporate events, and specialty occasions. Strong environmental philosophy with a focus on local sourcing. Contact: Rick Rowe, President/CEO — rick@presidentialgourmet.ca, 416-834-2250. Over three decades of outstanding service and hundreds of client relationships built on unparalleled food quality."
+    },
+    {
+      "chunk_id": "gmc_cat_05",
+      "text": "Daniel et Daniel — Recommended Caterer (Toronto). Roots in French Haute Cuisine — food quality and service reflect French culinary standards. Focuses on locally sourced, seasonal, whole foods. Menus designed with care to match client and event consultant visions. Philosophy: best product and service at best available price, maintained through strong supplier relationships. Specialties: fresh, seasonal, local menus; elegant dining experiences. Contact: Meredith Vaux — theglobeandmail@danieletdaniel.ca, 416-968-9275 ext 46. Eatertainment Catering & Events (also Recommended) is one of Canada's largest special event and catering companies — contact: Alyssa Seli, aseli@eatertainment.com, 416.964.1162."
+    },
+    {
+      "chunk_id": "gmc_cat_06",
+      "text": "PeterandPauls Event Catering — Recommended Caterer (Toronto). Family-values-driven full event solution provider offering unique and customizable menus, event staff, coordination, décor, rentals, and exceptional cuisine — a 360-degree approach to event solutions. Corporate inquiries and private event inquiries: Nicole Zeiner — Nicolez@bypnp.com / catering@bypnp.com, 905-751-9059. The Host Catering — Preferred South Asian Caterer. Specializes in traditional recipes with new techniques and innovative presentation. 30 years in the making. Contact: Shelly Behl — shelly@welcometohost.com, 905.882.4678."
+    },
+    {
+      "chunk_id": "gmc_cat_07",
+      "text": "Specialty Catering Options at the Globe and Mail Centre. PR Creative Caterers — Preferred Kosher Caterer. Full-service kosher catering and special events company with 30 combined years of experience in food services and hospitality. Philosophy: top-of-the-line food quality, exquisite presentation, impeccable service using the freshest ingredients. Can custom-design menus for specific requirements with innovative culinary techniques. Contact: Joe Elmaleh — joe@prcreativecaterers.com, 416.787.9889 ext 250. Rovey Chinese Catering — Preferred Chinese Caterer. Specializes in Chinese banquet catering for 120–1,800 guests including weddings, concerts, corporate functions, and gala dinners. Only caterer capable of preparing the entire Chinese menu on-site. Contact: Harvey Tam — harvey@rovey.ca, 416.817.8976."
+    }
+  ]
+}

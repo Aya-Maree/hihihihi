@@ -1,0 +1,33 @@
+{
+  "id": "beverages_planning_guide",
+  "title": "Beverages Planning Guide",
+  "category": "beverages",
+  "description": "Complete guide to planning drinks for events — quantities, alcoholic and non-alcoholic options, signature drinks, bar setup, and cost estimates",
+  "tags": ["beverages", "drinks", "bar", "alcohol", "non-alcoholic", "mocktails", "juice", "water", "punch"],
+  "chunks": [
+    {
+      "chunk_id": "beverages_01",
+      "text": "Beverage Quantity Planning Per Person. Non-alcoholic events: plan for 2-3 drinks per person per hour for the first 2 hours, then 1-2 per hour after. Total: for a 3-hour event, budget 6-8 drinks per person. Water: always have at least 2 glasses per person available regardless of other drinks. Alcoholic events: standard rule is 1 drink per person per hour. A 'drink' = 12 oz beer, 5 oz wine, or 1.5 oz spirits. For a 3-hour event with 20 guests: budget 60 drinks total. Add 20% extra buffer for heavy drinkers and spills. Punch bowl: 1 gallon of punch serves approximately 16 x 8oz cups (standard serving)."
+    },
+    {
+      "chunk_id": "beverages_02",
+      "text": "Non-Alcoholic Beverage Options for Household Events. Basics: water (still and sparkling), lemonade, iced tea, juice boxes (for children). Crowd-pleasers: fruit punch, sparkling water with fruit garnish, infused water (cucumber-mint, lemon-berry). Festive options: sparkling lemonade, flavored sodas, ginger beer. Mocktails (non-alcoholic cocktails): virgin mojito (lime, mint, soda water, sugar), sparkling cranberry punch (cranberry juice, ginger ale, lime), fruity sangria (grape juice, fruit juices, sliced fruit). Cost estimate for 20 guests (non-alcoholic only): $30-60 for a good variety. Tip: pre-batch a large punch bowl (fills one 2-gallon dispenser) — it's easier than individual serving and looks impressive."
+    },
+    {
+      "chunk_id": "beverages_03",
+      "text": "Alcohol Quantity and Budget Guide. Beer: for a beer-friendly crowd, plan 2-3 beers per person for a 3-hour event. A 24-pack of beer serves 8-12 guests adequately. Wine: 1 bottle of wine = 5 glasses. For a 2-hour dinner party with 10 guests, buy 4-5 bottles (2 white, 2 red, 1 rosé). Spirits: 1 litre of spirits makes approximately 22 standard drinks. Budget estimates for 20 guests: Beer-only bar: $60-100. Wine-only: $80-150. Full bar (beer + wine + 2 spirits): $150-250. Pre-batched cocktails: much more cost-effective than individual cocktails — a 2-litre batch of sangria costs $15-25 and serves 10-12. Buy alcohol day before — unopened bottles can be returned at most stores."
+    },
+    {
+      "chunk_id": "beverages_04",
+      "text": "Signature Drink Ideas by Event Type. Birthday party: 'Birthday Punch' (pink lemonade, raspberry sherbet, ginger ale — non-alcoholic); alcoholic version adds vodka or champagne. Children's party: Fizzy fruit punch (fruit punch + ginger ale + sherbet scoop), 'rainbow layered drink' (grenadine, orange juice, blue Gatorade layered). Dinner party: red wine sangria with seasonal fruit, or a themed cocktail matching the cuisine. Holiday gathering: mulled wine (winter), spiked apple cider, eggnog bar. Summer BBQ: lemonade bar with flavored syrups ($0.50-1/person for flavors), beer on ice, hard seltzers. Elegant events: champagne/prosecco toasts ($10-15/bottle for prosecco vs. $25-50 for champagne)."
+    },
+    {
+      "chunk_id": "beverages_05",
+      "text": "Beverage Station Setup and Equipment. Self-serve station essentials: beverage dispensers or pitchers, ice bucket with tongs, stack of cups (clear plastic or reusable), napkins, garnishes (lemon/lime slices, mint sprigs). Ice calculation: 1-1.5 lbs of ice per guest for a full event (drinks + chilling). For 20 guests: buy two 10-lb bags of ice (~$4-6 each). Beverage dispenser (3-gallon): $15-25 to purchase or $10-20 to rent — holds one batch of punch or infused water. Cup count: buy 1.5-2x the number of guests (people set cups down and forget them). Cooler for beer/wine: a 50-quart cooler holds 50 cans or 5-6 bottles of wine with ice. Keep non-alcoholic options prominently visible alongside alcoholic ones — many guests prefer them."
+    },
+    {
+      "chunk_id": "beverages_06",
+      "text": "Inclusive Beverage Planning (Allergies, Pregnancy, Sobriety). Always provide appealing non-alcoholic options — not just water. For guests who don't drink: offer sparkling water with garnish, mocktails that look and feel festive (so they don't feel left out). Pregnant guests: avoid non-pasteurized juices, soft cheeses in drinks; sparkling drinks in a wine glass feel celebratory. Allergy considerations: some flavored drinks contain nuts or nut extracts — read labels. Sulphite sensitivity: some guests react to wine (sulphites) — have sulphite-free wine option or offer beer/spirits instead. Caffeine-free: have at least one caffeine-free option (herbal iced tea, fruit juice) for children and sensitive guests. Label all drink dispensers clearly with ingredients."
+    }
+  ]
+}

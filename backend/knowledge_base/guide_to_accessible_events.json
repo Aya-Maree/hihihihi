@@ -1,0 +1,41 @@
+{
+  "id": "guide_to_accessible_events",
+  "title": "Guide to Accessible Events (Ontario, 2024)",
+  "category": "accessibility",
+  "description": "Comprehensive Ontario government guide for planning and running accessible indoor and outdoor events, covering venue requirements, communications, staff training, feedback gathering, and legal accessibility obligations under the AODA",
+  "tags": ["accessibility", "AODA", "Ontario", "disability", "inclusive events", "wheelchair", "parking", "signage", "paths of travel", "service animals", "ASL", "volunteers", "seating", "lighting", "quiet spaces", "emergency planning"],
+  "chunks": [
+    {
+      "chunk_id": "gtae_01",
+      "text": "Accessibility Planning Fundamentals. 28% of Ontarians have a disability — more than a quarter of the population. By 2036, that number is projected to exceed 5.3 million. Plan your event so people with disabilities feel welcome, whether it is an indoor or outdoor festival, fair, wedding, or block party. One of the best ways to ensure accessibility is considered is to make it the responsibility of designated event staff or volunteers, or to create an accessibility committee. Your municipality may have an Accessibility Advisory Committee — consider consulting with them in the planning phase. Organizations with one or more employees have legal obligations under the Accessibility for Ontarians with Disabilities Act (AODA)."
+    },
+    {
+      "chunk_id": "gtae_02",
+      "text": "Accessible Parking and Transit. Accessible parking spaces should be placed as close as possible to: accessible venue entries and exits, lifts and ramps for people using mobility devices, and pay stations. Designate a clearly marked passenger drop-off area close to the event entrance. Consider providing shuttle service from remote parking lots for large events. For transit: post schedules of accessible buses, trains, and shuttles; indicate whether buses on the route are accessible; note whether bus stop shelter is provided; indicate the location of accessible subway elevators. Provide accessible transportation information wherever you post general transportation information, including in registration materials."
+    },
+    {
+      "chunk_id": "gtae_03",
+      "text": "Signage, Paths of Travel, and Accessibility Information Areas. Signage: use large, easy-to-read sans-serif fonts with good color contrast (e.g., black on white). Use common words and short sentences. Place signs at multiple heights so they can be seen through crowds. Signs should work in all lighting conditions and indicate accessibility features along paths of travel. Paths of travel: plan accessible routes linking all attractions and essential services with at least one-metre-wide, firm, even, slip-resistant paths without steps or barriers. For outdoor events with uneven surfaces (sand, grass), buy or rent temporary outdoor flooring. Accessibility Information Areas: place a dedicated accessibility information booth near the entrance at wheelchair-accessible height, with large-print and high-contrast brochures."
+    },
+    {
+      "chunk_id": "gtae_04",
+      "text": "Accessible Seating, Lighting, and Acoustics. Seating: create or reserve areas with enough room for mobility devices, with a view of the stage from a seated position. Consider renting a ramp for stage access for mobility device users. Provide spaces without chairs at tables for wheelchair users. Where bar-height tables are used, provide lower dining-height tables. Offer a variety of chairs with and without armrests. Reserve seating for people with various disabilities (e.g., lip-readers need front placement). Provide seating at events where guests will mostly be standing. Consider providing charging stations for power wheelchairs and medical devices. Lighting: good lighting helps Deaf or hard-of-hearing guests lip-read or use sign language; control direct natural light to prevent glare for low-vision guests. Acoustics: test and adjust sound systems to minimize echo in high-ceiling rooms."
+    },
+    {
+      "chunk_id": "gtae_05",
+      "text": "Accessible Food Service, Washrooms, and Rest Areas. Food service: design food areas so someone using a mobility device can easily navigate them. Ensure food service booths allow wheelchair access. Provide large-print menus for low-vision guests. At buffets: place food, drinks, and utensils in easy reach of wheelchair users; provide bendable straws and cups with handles; ask volunteers to offer assistance. Ensure at least 20% of tables are accessible for those with mobility aids. Washrooms: provide accessible washrooms or temporary toilets at ground level, away from crowds and sound systems. Rest areas: for events longer than a couple of hours with large crowds, designate a quiet space for people with mental health issues, sensory issues, fatigue issues, and nursing mothers. Provide weather protection (tents, canopies) for outdoor events."
+    },
+    {
+      "chunk_id": "gtae_06",
+      "text": "Support Persons, Service Animals, and Emergency Planning. Support persons: a support person must be allowed to go wherever the person they support goes. Post admission prices for support persons wherever you post general admission information; consider reducing or waiving the fee. Service animals: service animals can accompany their owners to all public areas of the event. Designate a relief area for service animals at outdoor events; post signs and brief volunteers on its location. Provide water for service animals. Emergency and safety information: provide evacuation plans, maps, and brochures in accessible formats. Before the event, review emergency materials to ensure they can be read, seen, heard, and understood by someone with a disability. Include people with disabilities in your emergency procedures."
+    },
+    {
+      "chunk_id": "gtae_07",
+      "text": "Accessible Communications and Promotions. Once accessibility features are confirmed, communicate them to guests: include accessibility info on your website, in local news features, on social media, and in print materials. Promote the event's accessibility features in the same places you promote the event itself. Include information about accessible toilets, viewing areas, accessible performances, ASL interpretation, and accessible parking. For ASL interpretation: book qualified interpreters through the Ontario Association of Sign Language Interpreters, Canadian Hearing Services, or Toronto Sign Language Interpreter Service. If a person with a disability requests communication supports, work with them individually to determine how to meet their needs. Speakers and presenters should: speak clearly, stay on time, ensure a clear view of their face and mouth, use the microphone at all times, and describe projected images."
+    },
+    {
+      "chunk_id": "gtae_08",
+      "text": "Training Volunteers and Gathering Feedback. Staff and volunteer training: train all staff and volunteers on how to communicate with people with different types of disabilities, the event's accessibility features, and evacuation procedures for people with disabilities. Even volunteer-only organizations benefit from this training. Key language guidance: say 'people with disabilities' not 'disabled people'; reference specific disabilities when appropriate; avoid language like 'suffers with' or 'victim of'; never make assumptions about what a person can or cannot do — simply ask, 'How may I help you?' Feedback: before the event — consult with attendees about desired accessibility features. During the event — collect feedback through multiple channels. After the event — consider suggestions for next year. A simple question such as 'Were your accessibility needs met? If not, what can we do better?' is highly effective."
+    }
+  ]
+}

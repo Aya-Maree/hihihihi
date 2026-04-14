@@ -1,0 +1,45 @@
+{
+  "id": "gsa_event_planning_handbook",
+  "title": "GSA Event Planning Handbook",
+  "category": "event_planning",
+  "description": "Comprehensive 6-step event planning guide covering getting started, planning, risk management, promotions, execution, and evaluation for graduate student events",
+  "tags": ["event planning", "risk management", "promotions", "budget", "volunteers", "evaluation", "venue", "approval", "waivers", "alcohol", "contingency fund"],
+  "chunks": [
+    {
+      "chunk_id": "gsa_ep_01",
+      "text": "Event Planning — 6-Step Overview. Step 1: Getting Started — Determine the goals and objectives for the event. Answer 'who, what, when, where, why, and how.' Research similar past events to learn best practices and surface partnership opportunities. Form a team and research venues, transportation, entertainment, and food and beverage options. Collaboration with other groups is a great way to increase participation and optimize limited resources. Step 2: Planning — Seek formal written approval from the event coordinator before proceeding. Set a date and time. Prepare an agenda and roll-out schedule, and do not forget to account for set-up and clean-up time in your timeline."
+    },
+    {
+      "chunk_id": "gsa_ep_02",
+      "text": "Event Budget Planning. Draft a budget covering all anticipated revenue (ticket sales, sponsorships) and all anticipated expenses (venue charges, transportation, decorations, insurance, printing, linen rentals, paper products, parking). Get quotes from multiple venues to ensure competitive pricing. Always include a 10% contingency fund to cover unanticipated expenses. Prepare a funding proposal if necessary. Contact the chosen venue to finalize room set-up, food, décor, and itinerary. Sign venue contract and pay upfront costs. Recruit volunteers and assign tasks. Update the venue on the number of attendees regularly as RSVPs come in."
+    },
+    {
+      "chunk_id": "gsa_ep_03",
+      "text": "Venue Contract Tips. Read the contract carefully and ask questions over email so correspondence is documented — keep all emails on file until the event concludes. Know the cancellation policy, when you must provide final attendee numbers, and when the final food order is due. Ask whether you can add to the food order the day of the event in case more people show up than planned — especially relevant if selling tickets at the door. This buffer prevents running short on food. Always confirm whether the venue can accommodate last-minute headcount increases."
+    },
+    {
+      "chunk_id": "gsa_ep_04",
+      "text": "Risk Management for Events. The Event Organizer must obtain formal written approval prior to the event to be covered by insurance. Depending on event size, a full Risk Management Plan may be required. Waivers must be filled out by all participants, including the Event Organizer. Request waiver forms at least 2 weeks before the event. Important caveat: waivers reduce liability but do not prevent claimants from filing a lawsuit. Insurance covers bodily injury and property damage but does NOT apply to persons participating in physical training, sports, or athletic activities. The venue may need to name the organizing body as additional insured."
+    },
+    {
+      "chunk_id": "gsa_ep_05",
+      "text": "Promotions and Ticket Sales. Define your target audience, identify key messages, and brainstorm outreach strategies. Suggested promotional approaches: posters, online ticket sales, email newsletters, word-of-mouth, social media, and incentives such as prizes or giveaways. Tips: Dedicate at least 2–3 weeks to promotion; for larger events, 4+ weeks is recommended. Use free tools: Canva.com for poster/graphic design and EventBrite for ticket sales. Submit event info to campus newsletters and event calendars for broader reach. Frame event descriptions so it is clear to the reader what value they will receive from attending."
+    },
+    {
+      "chunk_id": "gsa_ep_06",
+      "text": "Event Execution Checklist. Check the weather forecast beforehand and prepare contingencies. Arrive early for set-up. Walk through the site for potential hazards. Set up and test all equipment — the most common problem during events is technical issues (internet connection, cabling, sound system). Conduct check-in and collect signed waivers. Solve issues as they arise. After the event, take down and clean up. Record feedback and comments from participants. Make sure volunteers know their roles and have tasks assigned before the event starts to avoid confusion during execution."
+    },
+    {
+      "chunk_id": "gsa_ep_07",
+      "text": "Post-Event Evaluation. Submit an After-Action Report after each event — failure to do so may result in rejection of future event submissions. The report data is kept confidential and used for annual reporting and improvement. To improve future events: conduct a post-event survey, record feedback and finalize costs/revenue, collect recommendations, and save all vendor and participant contacts. Tracking food consumption data (how much was consumed, which items were most popular) is especially useful for planning food orders at future events more accurately."
+    },
+    {
+      "chunk_id": "gsa_ep_08",
+      "text": "Alcohol at Events. For any event including alcohol consumption not hosted in a private residence — on-campus: all alcohol service must be arranged through the university's preferred food service provider. Off-campus: the Event Organizer must purchase a Special Events License. Party Alcohol Liability (PAL) insurance is available for purchase for single or a series of events. The Event Organizer is personally liable for incidents at events where alcohol is provided without PAL insurance. Field Trips: ensure all participants complete waivers before boarding buses. The organizing body is not responsible for carpooling — ensure carpooling drivers are properly insured."
+    },
+    {
+      "chunk_id": "gsa_ep_09",
+      "text": "Sponsorships, Partnerships, and Funding. Sponsorships can help subsidize event costs. All potential sponsorship/partnership opportunities must be approved by the organizing body before approaching sponsors or partners. Possible funding types: Quality Money grants, Event Grants, Academic Project Support Grants. For equipment: free portable speaker and projector rentals may be available — include in the Event Submission Form. Conference and event management staff are resourceful and often have contacts for external rental services; meet with their coordinator to discuss your event needs and they will help make the event happen."
+    }
+  ]
+}

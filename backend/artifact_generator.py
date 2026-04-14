@@ -446,7 +446,7 @@ def _fallback_schedule(ctx: Dict) -> Dict:
     event_type = ctx.get("event_type", "event")
     event_date = ctx.get("event_date", "TBD")
     event_time = ctx.get("event_time", "15:00")
-    duration = ctx.get("event_duration_hours", 3)
+    duration = ctx.get("event_duration_hours") or 3
     guests = ctx.get("guest_count_estimated") or ctx.get("guest_count_confirmed", 20)
     has_children = ctx.get("has_children", False)
 

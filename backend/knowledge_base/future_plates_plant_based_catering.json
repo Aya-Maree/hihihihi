@@ -1,0 +1,45 @@
+{
+  "id": "future_plates_plant_based_catering",
+  "title": "Future Plates: Plant-Based Catering Guide for Large-Scale Events",
+  "category": "catering",
+  "description": "Guide by ProVeg International on implementing sustainable, plant-based catering at large-scale events through substitution, reduction, menu design, nudging, and training, with recipes and real-world case studies",
+  "tags": ["plant-based", "sustainable catering", "vegan", "vegetarian", "large events", "environmental", "menu design", "dietary inclusion", "substitution", "food sustainability", "recipes", "UN events", "COP"],
+  "chunks": [
+    {
+      "chunk_id": "fp_01",
+      "text": "Why Serve More Plant-Based Food at Events? The global food system is responsible for about one-third of global greenhouse gas emissions, with animal-based foods responsible for up to 20% of global emissions alone. Animal-based foods use 80% of global agricultural land but provide only 37% of protein and 18% of calories. Beef emits 50 times more greenhouse gases per gram of protein than pulses such as beans and lentils. For large-scale events, shifting toward plant-based menus is one of the simplest, most impactful ways to reduce the event's environmental footprint. Plant-based ingredients — vegetables, legumes, and fruits — are also often more affordable than meat-based dishes, leading to real cost savings."
+    },
+    {
+      "chunk_id": "fp_02",
+      "text": "Benefits of Plant-Based Catering for Guests. Plant-based foods are delicious and provide novelty: the emerging plant-based food sector is a rich source of innovation offering new flavors, products, and culinary traditions. Health benefits: a balanced plant-based diet helps prevent type 2 diabetes, cardiovascular disease, and some cancers. Plant-based diets have no dietary cholesterol and provide vitamins, minerals, fiber, and secondary plant compounds. Fiber helps manage hunger and satiety, supports gut health, and helps maintain healthy weight. For large-scale international events with diverse attendees, plant-based meals (free from dairy, eggs, fish, and meat) provide a more inclusive option that accommodates religious, cultural, vegan, and vegetarian dietary requirements simultaneously."
+    },
+    {
+      "chunk_id": "fp_03",
+      "text": "Substitution Strategy for Plant-Based Catering. Substitution means swapping animal-based ingredients for plant-based alternatives — for example, using tofu instead of chicken breast, or oat milk instead of cow's milk. Start with sauces, dressings, and desserts — these substitutions are often simple and don't affect taste or texture. Effective techniques: create new condiments (sauces or dips) to complement plant-based dishes; showcase the most visually appealing ingredients; improve the flavor and texture of plant-based dishes. Case study: IKEA replaced animal-based ingredients in key dishes with plant-based alternatives (e.g., plant-based meatballs and gravy), which expanded their product range without compromising flavor or price — and saw a continuously positive trend of customers choosing plant-based food."
+    },
+    {
+      "chunk_id": "fp_04",
+      "text": "Reduction Strategy for Plant-Based Catering. Reduction means decreasing the proportion of animal-based products (meat, fish, dairy, eggs) in recipes while simultaneously increasing vegetables, legumes, nuts, and seeds. This approach suits customers who want to consume animal products more consciously without eliminating them. Techniques: blend plant-based ingredients into ground-meat dishes (e.g., kidney beans or oat flakes in patties); reduce portion sizes of meat dishes; increase the proportion of plant-based dishes relative to meat-based dishes; make all side dishes plant-based. World Bank case study: by blending mushrooms into beef burgers, decreasing meat portion sizes, and establishing Plant Power Days (fully plant-based menus), they reduced food procurement emissions significantly without impacting employee satisfaction."
+    },
+    {
+      "chunk_id": "fp_05",
+      "text": "Menu Design and Nudging for Plant-Based Choices. Menu design tips: Use small, neutral icons (leaf, flower, carrot, small 'v') to mark plant-based meals without being conspicuous. Use indulgent, taste-focused language instead of prefixing dishes with 'meat-free' or 'vegetarian.' Feature appealing images of plant-based dishes and use color-coding or sustainability symbols. Nudging strategies: list plant-based options first in each section; include plant-based meat alternatives in the meat section; use pricing strategies such as meal deals on plant-based mains. Setting plant-based as the default option is the most powerful nudge — studies show 75.6% of customers chose the plant-based option when it was the default versus 24.4% when meat was the default. Carbon footprint labels and informational posters also help guests make informed choices, as seen at COP26 where nearly 40–60% of purchased options were plant-based or vegetarian."
+    },
+    {
+      "chunk_id": "fp_06",
+      "text": "Inclusion and Modern Serving Techniques. Instead of centering a plate on meat with two sides, use modern serving techniques such as buffet, building-block stations, and bowls to accommodate every need. Plant-based meals naturally meet Halal, Kosher, vegan, vegetarian, and common allergen-free requirements — making a single meal option inclusive for a wide range of attendees. Case study: the World Economic Forum in Davos uses buffet-style meal stations where attendees choose between different grains, proteins, and vegetables — many of which are plant-based. This reduces food waste (guests choose their own portions), reduces environmental footprint, and increases overall satisfaction. At minimum, 20% of tables at eating areas should be accessible for those using mobility devices."
+    },
+    {
+      "chunk_id": "fp_07",
+      "text": "Large-Scale Event Case Studies. COP28 (Dubai): two-thirds of catering was plant-based, including a fully plant-based food park with vendors from around the world, celebrity chef cooking demonstrations, and 'foodprint' labels showing the carbon and water footprint of each item. Paris Olympics 2024: Sodexo Live! served up to 40,000 meals per day targeting 60% vegetarian; nutritional values and environmental impact were displayed for each dish; visitors were encouraged to try plant-based food via large-scale banners. New York City: between 2019–2023, achieved a 29% decrease in total food-related emissions by reducing animal-based product purchases; NYC Health and Hospitals' plant-based default chef's recommendation resulted in 2 million plant-based meals served with 98% patient satisfaction. Trellis Group: saved over 25,000 kg of CO2 through plant-based menu swaps while maintaining 75% vegan or vegetarian meals."
+    },
+    {
+      "chunk_id": "fp_08",
+      "text": "Plant-Based Recipes for Large-Scale Events (10 servings each). Starters: Celeriac-apple salad with vegan mayo dressing and grapes; Jackfruit tuna salad with white beans, radishes, pickles, and dill; Beetroot and mint hummus with tahini, lemon, garlic, and olive oil. Main Courses: French bean casserole with plant-based sausages, white wine, thyme, and bay leaf; Chickpea curry with mustard seeds, curry powder, tomatoes, sesame seeds, and coriander; Mushroom risotto with Arborio rice, vegetable broth, white wine, green peas, and sun-dried tomatoes; Plant-based shepherd's pie with lentils or plant minced meat, canned tomatoes, red wine, and mashed potato topping; Paella with bell peppers, green beans, peas, saffron, and cinnamon. Desserts: Chia chocolate pudding with strawberry ragout; Fruit salad with soya yogurt; Candied ginger pears with ground almonds and kudzu sauce. All recipes are scalable for larger groups."
+    },
+    {
+      "chunk_id": "fp_09",
+      "text": "Training Your Catering Team on Plant-Based Cooking. Dedicated plant-based training helps the catering team — including chefs and service staff — gain confidence in plant-based cooking skills and techniques, learn about the nutritional and environmental benefits of plant-based food, and use familiar favorites as the basis for creating delicious plant-based meals. Case study: a UK multi-academy trust serving 5,000 children partnered with ProVeg's School Plates program and implemented evidence-based strategies including behavior nudges, improved dish positioning, positive menu descriptions, and better plant-based options. Result: 26.5% reduction in carbon emissions, 24% increase in plant-based menu items, 40% of meals now plant-based, 20% increase in meal uptake, and 20% cost savings."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "perkins_catering_guide",
+  "title": "Perkins Management Standard Catering Guide",
+  "category": "catering",
+  "description": "Comprehensive catering procedures, staffing ratios, menu selections (breakfast, lunch, dinner, desserts, hors d'oeuvres), pricing policies, and service standards for institutional and private events",
+  "tags": ["catering", "menu", "staffing", "hors d'oeuvres", "breakfast", "lunch", "dinner", "dessert", "buffet", "pricing", "food safety", "wait staff", "china", "linen"],
+  "chunks": [
+    {
+      "chunk_id": "perkins_cat_01",
+      "text": "Catering Procedures — Room Reservations and Set-Up. All reservations for event locations and set-ups are the client's responsibility and should be made before scheduling catering. Catering services can then assist in drafting a floor plan. The organization or person booking the event must ensure the location is accessible for set-up and delivery; inaccessibility may incur additional redelivery/set-up fees. When scheduling catering, provide: date and time of the event, location, name of the organization and contact person, estimated guest count, and type of service required. Give as much advance notice as possible so all aspects can be solidified."
+    },
+    {
+      "chunk_id": "perkins_cat_02",
+      "text": "Catering Guarantees, Payment, and Cancellation Policies. Require a 50% deposit upon scheduling with the balance paid in full 24 hours prior to the event. Campus groups must provide a signed and approved service request 72 hours prior to event. Outside groups must submit payment in full 72 hours before the event via Cashier's Check or Money Order. Cancellations are only recognized with a signed cancellation of the function sheet 24 hours before the event. Events cancelled the day-of incur all expenses (wait staff, floral, rental equipment) plus a cancellation fee of $75.00 or 33% of total merchandise order, whichever is greater. Prices are per person unless noted; 8% sales tax applies. Buffet meals require a minimum guest count of 25."
+    },
+    {
+      "chunk_id": "perkins_cat_03",
+      "text": "Required Wait Staff Ratios. Staffing is scheduled based on function duration at $25.95 per hour with a four-hour minimum. Staff arrive minimally 90 minutes before the function and remain 60 minutes beyond the function end. VIP served meals (breakfast, lunch, or dinner) with China, Glass, and Silver: 1 server per 10 guests. VIP Buffet or Reception with China: 1 server per 20 guests. Standard served meals with China: 1 server per 20 guests. Buffet with China: 1 server per 30 guests. Buffet with paper/plastic: 1 server per 40 guests. Continental Breakfast or Reception with China: 1 server per 40 guests. Continental with paper/plastic: 1 server per 50 guests. Normal service time is two hours; events over two hours are charged $35/hour plus $10/hour overtime."
+    },
+    {
+      "chunk_id": "perkins_cat_04",
+      "text": "China, Linen, and Floral Charges. China service pricing: Continental Breakfast or Reception — $1.50 per person; Full Meal China Service — $1.75 per person; Bar China Service — $1.25 per person. In-house linen and skirting for buffet tables is included in the event price. Additional tables requiring linen only: $7.50 per table. Tables requiring linen and skirting: $25.00 per table. Linen napkins for china events: $0.75 each. Delivery fee: $35.00. Floral arrangements are available in various sizes and colors at additional charge (client is responsible for tax, delivery, and a 20% service charge). Specialty linens in a range of colors and designs are also available."
+    },
+    {
+      "chunk_id": "perkins_cat_05",
+      "text": "Continental Breakfast Menu Options. New Beginnings: Assorted jumbo muffins, scones, fruit-filled croissants, fresh fruit yogurts, sliced fresh fruit display, assorted bottled juices, fresh brewed coffee (regular and decaf), assorted herbal teas. Traditional Breakfast: Fluffy scrambled eggs, crisp strips of lean bacon, savory turkey or pork sausage links, home fried potatoes, fresh hot biscuits, orange juice, coffee, herbal teas. The Carolina Breakfast: Scrambled eggs, bacon, sausage, home fried potatoes, hot buttered grits, fluffy hot cakes, French toast or mini Belgium waffles with maple syrup, cold cereals, assorted Danish and muffins, fresh fruit display, assorted juices, coffee, herbal teas. Sunday Brunch adds: grilled marinated breast of chicken, steamed vegetable medley, assorted mini quiche, waffle or omelet station, champagne."
+    },
+    {
+      "chunk_id": "perkins_cat_06",
+      "text": "Cold Lunch and Luncheon Options. Boxed Lunches: Choice of ham, turkey, roast beef, grilled vegetables, chicken salad, or tuna salad on croissant, kaiser roll, or multigrain bread, with potato chips, whole fresh fruit, cookies, condiments, and bottled beverage. Gourmet Cold Lunches: Smoked breast of turkey, corned beef, pastrami, black forest ham, or gourmet chicken salad on upscale breads, wraps, or baguette with chips, pretzels, fresh baked cookies, fresh cut fruit salad, and beverage. Cold Lunch Buffets: Sliced ham, turkey, and roast beef with fresh rolls, assorted breads, Swiss and American cheese, lettuce, tomatoes, pickles, onions, choice of potato salad, coleslaw, or pasta salad, and dessert. Caesar Salad Lunch: Triple-washed romaine with croutons, Parmesan, warm rolls, whole fruit, baked cookies, and assorted beverages."
+    },
+    {
+      "chunk_id": "perkins_cat_07",
+      "text": "Dinner Entrée and Salad Selections. Salad options: tossed garden salad with two dressings, spinach and mushroom salad with warm bacon dressing, mixed baby field greens with balsamic or raspberry vinaigrette, Caesar salad, tomato/basil/red onion/cucumber salad, pasta salad, or fresh fruit salad. Poultry entrées: grilled marinated praline pecan breast of chicken, roasted Cornish hen with Dijon glaze, chicken Asiago with roasted pepper sauce, rotisserie/barbecued/baked chicken, grilled Cajun breast of chicken, chicken Parmesan. Beef and Lamb: roasted prime rib with au jus, grilled tournedos of beef tenderloin, grilled marinated flank steak, veal chops, grilled lamb chops. Seafood: herb crusted or lemon pepper filet of cod, seared marinated salmon, pan seared jumbo shrimp in scampi sauce, Cajun catfish. Combination entrées also available. All buffets include assorted dinner rolls, butter, iced tea, iced water, coffee, and decaf coffee."
+    },
+    {
+      "chunk_id": "perkins_cat_08",
+      "text": "Starch, Vegetable, and Dessert Selections. Starch options: pasta in herb butter, rice pilaf, jumbo cheese ravioli, wild rice, saffron rice, oven roasted potatoes, garlic and basil mashed potatoes, baked macaroni and cheese, basmati rice or mushroom risotto, herb roasted red potatoes. Vegetable options: green beans almondine, green beans with red peppers, green beans with baby carrots, far east stir fry, corn O'Brien, seasoned collard greens, yellow and green squash, Pacific vegetable blend, honey glazed or ginger carrots, steamed baby asparagus, mélange of seasonal vegetables. Dessert selections: warm fruit cobbler, Black Forest cake, carrot cake, German chocolate cake, New York-style cheesecake, strawberry Romanoff cake, bread pudding, sweet potato pie, raspberry and white chocolate cheesecake, individual strawberry shortcake, lemon raspberry torte, tiramisu, white chocolate mousse cake, triple chocolate wild berry and champagne torte."
+    },
+    {
+      "chunk_id": "perkins_cat_09",
+      "text": "Hors d'Oeuvres Selection. Vegetarian options: vegetable crudité with dip, grilled marinated vegetables with French bread rounds, sliced fresh fruit and seasonal berries, tomato and basil bruschetta, assorted domestic or imported cheeses and crackers, cocktail sandwiches, mini egg rolls, assorted mini quiche, vegetable quesadillas, Spanikopita (spinach and feta in filo dough), assorted tea sandwiches, Boursin cheese on Belgian endive, raspberry and Brie in phyllo. Poultry options: tortilla wraps with turkey or vegetables, honey stung chicken drummettes or wings of fire, Southwest chicken quesadillas, Tandoori chicken skewers, chicken satay, chicken brochette, Thai chicken skewers. Seafood: shrimp cocktail, poached salmon display, seafood spring rolls, petite lump crab cakes, cozy shrimp, coconut shrimp, scallops wrapped in bacon, smoked salmon bruschetta. Beef: barbecued/sweet and sour/Swedish meatballs, beef brochette, beef and duxelle en croute, mini Reuben."
+    }
+  ]
+}
